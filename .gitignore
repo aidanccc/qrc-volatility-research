@@ -1,4 +1,25 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# VS Code local settings
+.vscode/
+
+# Generated output folders
 Classical_Reservoir_learning/
 LSTM/
+
+# Local output files
 output.csv
 predict_results.csv
