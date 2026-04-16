@@ -1,0 +1,31 @@
+# ============================================================
+# Core scientific stack
+# ============================================================
+numpy>=1.26
+pandas>=2.0
+scipy>=1.12
+matplotlib>=3.8
+
+# ============================================================
+# Quantum (Qiskit — for quantum_reservoir_qiskit.py and run_qrc_simulation.py)
+# ============================================================
+qiskit>=1.0
+qiskit-aer>=0.14          # local statevector / density matrix simulator
+h5py>=3.10                # reads coeff_10.jld2 (JLD2 is HDF5-compatible)
+
+# ============================================================
+# Neural networks (LSTM.ipynb)
+# ============================================================
+torch>=2.2                # PyTorch — CPU build is fine for this project
+
+# ============================================================
+# Classical reservoir (classical_reservoir.ipynb)
+# ============================================================
+reservoirpy>=0.4
+
+# ============================================================
+# Time-series / econometrics (Reservoir_Learning.ipynb + preprocess.py)
+# ============================================================
+statsmodels>=0.14         # OLS, AutoReg, ARIMA, ADF test
+scikit-learn>=1.4         # mean_squared_error, mean_absolute_error
+arch>=6.3                 # Model Confidence Set (MCS) and bootstrap tests
