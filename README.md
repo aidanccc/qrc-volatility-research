@@ -94,13 +94,6 @@ results/plots/   results/stats/
 │   │                           # AR(3)_model.png, ARMAX_model.png, QR1_model.png, QR2_model.png
 │   └── stats/                  # dm_stat.csv, p_value.csv
 │
-├── docs/
-│   ├── RUN_ORDER.md            # Stage-by-stage execution guide
-│   ├── REPRO_STATUS.md         # Reproduction status and known gaps
-│   ├── ASSUMPTIONS.md          # Documented assumptions about missing pieces
-│   ├── PAPER_NOTES.md
-│   └── RESULTS_LOG.md
-│
 ├── preprocess.py               # Stage 1: generates data/Data_raw.csv + data/dff.csv
 ├── LSTM.ipynb                  # Stage 2: trains LSTM and LSTMX baselines
 ├── classical_reservoir.ipynb   # Stage 3: trains CRL and CRLX (echo state network) baselines
