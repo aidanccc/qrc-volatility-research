@@ -90,7 +90,7 @@ def main():
     #
     # The RV column is log(realized volatility), normalized to [-1, 0].
     # All other columns are macro-financial predictors.
-    df = pd.read_csv("Data.CSV", header=0, index_col=0)
+    df = pd.read_csv("data/Data.CSV", header=0, index_col=0)
     print(f"Loaded Data.CSV: {df.shape[0]} rows, {df.shape[1]} columns")
 
     # ----------------------------------------------------------------
@@ -98,8 +98,8 @@ def main():
     # ----------------------------------------------------------------
     # Multiple notebooks expect "Data_raw.csv" as their input filename.
     # This is just a renamed copy of Data.CSV.
-    df.to_csv("Data_raw.csv")
-    print("Written: Data_raw.csv")
+    df.to_csv("data/Data_raw.csv")
+    print("Written: data/Data_raw.csv")
 
     # ----------------------------------------------------------------
     # Step 3: Build the differenced DataFrame (dff)
@@ -131,8 +131,8 @@ def main():
     # ----------------------------------------------------------------
     # Step 4: Write dff.csv
     # ----------------------------------------------------------------
-    dff.to_csv("dff.csv")
-    print(f"Written: dff.csv ({dff.shape[0]} rows, {dff.shape[1]} columns)")
+    dff.to_csv("data/dff.csv")
+    print(f"Written: data/dff.csv ({dff.shape[0]} rows, {dff.shape[1]} columns)")
     print(f"Columns: {list(dff.columns)}")
 
 

@@ -66,7 +66,7 @@ print("=" * 60)
 print("Step 1 — Loading Data.CSV")
 print("=" * 60)
 
-data = pd.read_csv("Data.CSV", header=0, index_col=0)
+data = pd.read_csv("data/Data.CSV", header=0, index_col=0)
 print(f"  Loaded {len(data)} rows, {len(data.columns)} columns.")
 
 # Full RV series (all 816 months) — used by ridge regression
@@ -86,7 +86,7 @@ print("\n" + "=" * 60)
 print("Step 2 — Loading coupling matrices (coeff_10.jld2)")
 print("=" * 60)
 
-ms = load_coupling_matrices("coeff_10.jld2")
+ms = load_coupling_matrices("data/coeff_10.jld2")
 
 if ms is None:
     # Fallback: generate new random matrices.
@@ -218,12 +218,12 @@ Pre2_denorm = (Pre2 + 1) * DIF + MIN_RV
 
 # Save with the same column order as predict_result.csv (QR2 first, then QR1)
 out_df = pd.DataFrame({"QR2": Pre2_denorm, "QR1": Pre1_denorm})
-out_df.to_csv("qrc_predict_result.csv", index=False)
-print("  Saved: qrc_predict_result.csv")
+out_df.to_csv("results/predictions/qrc_predict_result.csv", index=False)
+print("  Saved: results/predictions/qrc_predict_result.csv")
 
 # Load original Julia output and compare
 try:
-    ref = pd.read_csv("predict_result.csv")
+    ref = pd.read_csv("data/predict_result.csv")
     diff_qr1 = np.abs(out_df["QR1"].values - ref["QR1"].values)
     diff_qr2 = np.abs(out_df["QR2"].values - ref["QR2"].values)
 

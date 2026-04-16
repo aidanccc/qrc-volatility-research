@@ -16,10 +16,27 @@ __pycache__/
 # VS Code local settings
 .vscode/
 
-# Generated output folders
+# ── Personal / repo-owner-only files ─────────────────────────
+# Claude project instructions (not for public distribution)
+CLAUDE.md
+
+# Claude Code configuration directory
+.claude/
+
+# Personal reproduction documentation
+docs/
+
+# ── Generated data (recreated by running preprocess.py) ──────
+data/Data_raw.csv
+data/dff.csv
+
+# ── Generated results (recreated by running the notebooks) ───
+results/
+
+# ── Legacy paths (kept for safety in case of stale clones) ───
 Classical_Reservoir_learning/
 LSTM/
-
-# Local output files
+Data_raw.csv
+dff.csv
 output.csv
 predict_results.csv
