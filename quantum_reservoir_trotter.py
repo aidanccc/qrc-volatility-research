@@ -45,6 +45,7 @@ QUBIT LAYOUT (same as quantum_reservoir_qiskit.py)
   Qubits n_input..9    (7..9) : hidden qubits  (3 memory qubits)
 """
 
+import os
 import numpy as np
 import pandas as pd
 from scipy.linalg import expm
@@ -306,8 +307,8 @@ def quantum_reservoir_trotter(
 # ============================================================
 
 def run_trotter_simulation(
-    data_path  : str = "Data.CSV",
-    jld2_path  : str = "coeff_10.jld2",
+    data_path  : str = "data/Data.CSV",
+    jld2_path  : str = "data/coeff_10.jld2",
     n_trotter  : int = 4,
     save_csv   : bool = True,
 ) -> dict:
@@ -338,6 +339,8 @@ def run_trotter_simulation(
 
     FEATURES_QR1 = ["RV", "MKT", "DP",  "IP",   "RV_q", "STR", "DEF"]
     FEATURES_QR2 = ["RV", "MKT", "STR", "RV_q", "EP",   "INF", "DEF"]
+
+    os.makedirs("results/predictions", exist_ok=True)
 
     # --- Load data ---
     print("Loading Data.CSV ...")
@@ -397,12 +400,12 @@ def run_trotter_simulation(
         Pre1_denorm = (Pre1 + 1) * DIF + MIN_RV
         Pre2_denorm = (Pre2 + 1) * DIF + MIN_RV
         out = pd.DataFrame({"QR2": Pre2_denorm, "QR1": Pre1_denorm})
-        out.to_csv("qrc_trotter_result.csv", index=False)
-        print("\nSaved: qrc_trotter_result.csv")
+        out.to_csv("results/predictions/qrc_trotter_result.csv", index=False)
+        print("\nSaved: results/predictions/qrc_trotter_result.csv")
 
         # Compare against exact matrix exponential output if available
         try:
-            ref = pd.read_csv("qrc_predict_result.csv")
+            ref = pd.read_csv("results/predictions/qrc_predict_result.csv")
             d1  = np.abs(out["QR1"].values - ref["QR1"].values)
             d2  = np.abs(out["QR2"].values - ref["QR2"].values)
             print("\nDifference vs exact matrix exponential (qrc_predict_result.csv):")

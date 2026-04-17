@@ -19,6 +19,7 @@ from coeff_10.jld2 are loaded successfully.  If h5py cannot parse the
 JLD2 file, fresh random matrices are generated and results will differ.
 """
 
+import os
 import numpy as np
 import pandas as pd
 
@@ -62,6 +63,8 @@ FEATURES_QR2 = ["RV", "MKT", "STR", "RV_q", "EP",   "INF", "DEF"]
 #   data, header = readdlm("Data.CSV", ',', header=true)
 #   Datas = identity.(DataFrame(data, vec(header)))
 # ================================================================
+os.makedirs("results/predictions", exist_ok=True)
+
 print("=" * 60)
 print("Step 1 — Loading Data.CSV")
 print("=" * 60)
