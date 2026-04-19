@@ -40,6 +40,6 @@ dff.csv
 output.csv
 predict_results.csv
 # Root-level model plots and stat files (canonical location: results/)
-*_model.png
-dm_stat.csv
-p_value.csv
+/*_model.png
+/dm_stat.csv
+/p_value.csv
