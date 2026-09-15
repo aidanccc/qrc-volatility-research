@@ -39,3 +39,13 @@
 `modern-pilot`, `modern-pilot-v2`, and the first processed snapshot are diagnostic
 artifacts, not final evaluation results. They are preserved and described in the
 audit. The final run uses only the v2 snapshot and its frozen configuration.
+
+## Source revision and published reports
+
+Both completed experiments used `6e7ddf0`; `execution_revision.json` verifies
+their source hashes against that commit. Later upstream integration changed a
+trailing newline in the exact simulator, with its syntax tree verified identical.
+Strict checkpoint resume therefore requires the recorded revision; new source
+runs use a new output directory. Published reports regenerate from the aggregate
+prediction CSV plus its checksum receipt when local checkpoints are absent.
+Fresh-clone training first retrieves a new raw snapshot with the download command.

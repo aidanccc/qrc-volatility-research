@@ -113,6 +113,12 @@ class StudyTests(unittest.TestCase):
                 records.append({"run_id":run_id,"configuration":"modern","model":"Persistence","seed":0,"window":120,"target_month":str(t.date()),"forecast_origin":str((t-pd.offsets.MonthEnd()).date()),"training_start":str((t-pd.offsets.MonthEnd(120)).date()),"training_end":str((t-pd.offsets.MonthEnd()).date()),"actual_log_rv":-2 if t.month==1 else None,"previous_log_rv":float(np.linspace(-4,-2,len(dates))[prev]),"predicted_log_rv":-2,"status":"ok"})
             for i,r in enumerate(records):write_json(folder/f"checkpoints/Persistence/{i}.json",r)
             self.assertEqual(len(load_validated(folder)[0]),2)
+            published_hash=digest(folder/"predictions.csv")
+            write_json(folder/"report_receipt.json",{"prediction_sha256":published_hash})
+            (folder/"checkpoints").rename(folder/"local-checkpoints")
+            self.assertEqual(len(load_validated(folder)[0]),2)
+            self.assertEqual(digest(folder/"predictions.csv"),published_hash)
+            (folder/"local-checkpoints").rename(folder/"checkpoints")
             records[0]["actual_log_rv"]=-1
             write_json(folder/"checkpoints/Persistence/0.json",records[0])
             with self.assertRaises(ValueError):load_validated(folder)
