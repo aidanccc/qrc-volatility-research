@@ -8,6 +8,7 @@ September 24, 2026. [Overall report](results/colin-study-2026-09-24/report.md).
 - Colin run: all 7,560 expected records; 7,486 successful scored forecasts, two scored ARMAX convergence failures, 28 successful unscored forecasts, and 44 explicitly unavailable September forecasts. No worker failures.
 - Modern run: all 7,560 expected records; 7,486 successful scored forecasts, two scored ARMAX convergence failures, and 72 unscored forecasts. All 7,558 successful predictions match the previous modern publication exactly; failure statuses also match.
 - Legacy rerun: preprocessing, quantum simulation, LSTM, classical reservoir and comparison notebooks completed. QR1/QR2 reference discrepancies are 1.20e-6/1.08e-6.
+- Fresh clone: all 22 tests pass without local caches or checkpoints; regenerating both primary reports preserves prediction, metric, MCS and Markdown report hashes exactly. Evidence: docs-colin/fresh_clone_validation.json and docs-colin/tests-fresh-clone.txt.
 - Validation: 22 unit/integration tests pass; immutable snapshot/source identity checks pass; pilot resume preserves checkpoints byte-for-byte. Forecast plots inspected with explicit month-end labels.
 - Full comparison: both training windows, all models, five stochastic seeds, seed-level errors, positive-variance QLIKE, RMSE/MAE, stationary-bootstrap intervals, MCS and common-date results published.
 - Exploratory ridge/conditioning/outlier diagnostics completed separately on matching 80-month evaluation dates with strictly past-only 24-month penalty selection.

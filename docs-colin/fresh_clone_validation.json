@@ -1,0 +1,22 @@
+{
+  "colin-2026-09-24": {
+    "no_checkpoints_or_cache": true,
+    "regenerated_artifacts_identical": true,
+    "artifact_hashes": {
+      "predictions.csv": "91dd91288f7c1967e4f8021938216c7b6f2fd75a8281e056cc32a6c68f69c656",
+      "metrics.csv": "1c985759b58f9d8f30142aaf69084e7370862a98b2140b01ce8d61bcd7a6138e",
+      "mcs.csv": "5b000ae0e263d211ba91b9810ae1b62625b6122a8e0a017f7a53fc2d0f92dabc",
+      "report.md": "6e86b3e19d9dfc425310bc666e2bbbf907a071d33769dd66ac5ea056ba0b6063"
+    }
+  },
+  "modern-2026-09-24": {
+    "no_checkpoints_or_cache": true,
+    "regenerated_artifacts_identical": true,
+    "artifact_hashes": {
+      "predictions.csv": "fb0ef3c853b143fbbc4be4e7299f1ff1a32556ba95fa012beb3d409b98500683",
+      "metrics.csv": "6f9c172071a59196311a6e93df7536020180bda28d0316208d9b1f2f4312079f",
+      "mcs.csv": "ffafd9270352b0e082ea20f99823572c5a17cd1af94732908a413e18821ca32f",
+      "report.md": "328b5401a51b19f5a9b90a873cedef47d3f770aa5be06eaf995a69eabb8f6de8"
+    }
+  }
+}
