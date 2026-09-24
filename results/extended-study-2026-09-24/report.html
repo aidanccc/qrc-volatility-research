@@ -1,10 +1,10 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><title>Colin dataset testing</title><style>body{font:16px/1.6 system-ui;max-width:1100px;margin:40px auto;padding:20px;color:#193047}table{border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid #ddd}img{max-width:100%}h2{margin-top:40px}</style><h1>Colin dataset testing — September 24, 2026</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Extended dataset testing</title><style>body{font:16px/1.6 system-ui;max-width:1100px;margin:40px auto;padding:20px;color:#193047}table{border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid #ddd}img{max-width:100%}h2{margin-top:40px}</style><h1>Extended dataset testing — September 24, 2026</h1>
 <p>The new data are integrated and tested on the <strong>Vikas</strong> branch of aidanccc/qrc-volatility-research. Original inputs and historical outputs are preserved. This report separates the paper-feature reconstruction from the modern price-feature experiment.</p>
-<p>On Colin’s data, the lowest final-year MSE is HARX with the 120-month window (0.06384); HARX with the 571-month window (0.06385). Over the full 104-month evaluation: AR1 with 120 months (0.18236); HARX with 571 months (0.17110). The confidence sets retain multiple classical and quantum models; these results do not establish unique quantum superiority.</p>
+<p>On the extended dataset, the lowest final-year MSE is HARX with the 120-month window (0.06384); HARX with the 571-month window (0.06385). Over the full 104-month evaluation: AR1 with 120 months (0.18236); HARX with 571 months (0.17110). The confidence sets retain multiple classical and quantum models; these results do not establish unique quantum superiority.</p>
 <h2>Data findings</h2>
 <p>The input contains 920 monthly observations through August 2026. Of 416 missing factor cells, <strong>412 were recovered</strong>; four August values remain unavailable. The prepared copy corrects <strong>211 derived-feature inconsistencies</strong>. <strong>138 statistical flags</strong> were retained for review without deleting observations.</p>
-<p>The 1950–2017 overlap matches the original dataset to floating-point precision. Official FIZ archives verified factor scales before the extension was filled. FIZ observations through 2024 transition to CIZ in 2025. Colin supplied no generation script or scaling metadata; retrospective macro availability and exact extension normalization remain unverified.</p>
-<p>Colin and independently rebuilt modern log-RV targets differ by up to 0.00004776 after 2017. Results below are evaluated against each protocol's own target; their MSE levels must not be treated as a controlled head-to-head test of feature sets.</p>
+<p>The 1950–2017 overlap matches the original dataset to floating-point precision. Official FIZ archives verified factor scales before the extension was filled. FIZ observations through 2024 transition to CIZ in 2025. The source includes no generation script or scaling metadata; retrospective macro availability and exact extension normalization remain unverified.</p>
+<p>Extended and independently rebuilt modern log-RV targets differ by up to 0.00004776 after 2017. Results below are evaluated against each protocol's own target; their MSE levels must not be treated as a controlled head-to-head test of feature sets.</p>
 <p><img src="data_audit.png" alt="Data audit" /></p>
 <h2>Forecast results</h2>
 <table>
@@ -23,7 +23,7 @@
 </thead>
 <tbody>
 <tr>
-  <td>Colin paper features</td>
+  <td>Extended paper features</td>
   <td>last12</td>
   <td>120</td>
   <td>HARX</td>
@@ -34,7 +34,7 @@
   <td>0.123361</td>
 </tr>
 <tr>
-  <td>Colin paper features</td>
+  <td>Extended paper features</td>
   <td>last12</td>
   <td>571</td>
   <td>HARX</td>
@@ -45,7 +45,7 @@
   <td>0.072715</td>
 </tr>
 <tr>
-  <td>Colin paper features</td>
+  <td>Extended paper features</td>
   <td>post2017</td>
   <td>120</td>
   <td>AR1</td>
@@ -56,7 +56,7 @@
   <td>0.23498</td>
 </tr>
 <tr>
-  <td>Colin paper features</td>
+  <td>Extended paper features</td>
   <td>post2017</td>
   <td>571</td>
   <td>HARX</td>
@@ -127,7 +127,7 @@
 </thead>
 <tbody>
 <tr>
-  <td>Colin paper features</td>
+  <td>Extended paper features</td>
   <td>7560</td>
   <td>7486</td>
   <td>2</td>
@@ -149,10 +149,10 @@
 <p>August can be scored using July factors. Missing August inputs make dependent September forecasts unavailable; September has no observed target. Numerical fit failures are retained and excluded from complete-model rankings, with additional all-model common-date comparisons.</p>
 <h2>Statistical evidence</h2>
 <ul>
-<li>Colin, 120-month window, mse_log_rv: 95% Model Confidence Set retains LSTMX, QR2, LSTM, CRLX, Persistence, HARX, AR3, CRL, HAR, QR1, AR1.</li>
-<li>Colin, 120-month window, qlike_variance: 95% Model Confidence Set retains CRLX, LSTMX, LSTM, AR3, CRL, HARX, HAR, QR2, QR1, AR1, Persistence.</li>
-<li>Colin, 571-month window, mse_log_rv: 95% Model Confidence Set retains LSTM, HAR, AR3, CRL, CRLX, QR1, AR1, QR2, HARX.</li>
-<li>Colin, 571-month window, qlike_variance: 95% Model Confidence Set retains LSTMX, AR3, CRL, HAR, LSTM, Persistence, HARX, CRLX, QR1, QR2, AR1.</li>
+<li>Extended, 120-month window, mse_log_rv: 95% Model Confidence Set retains LSTMX, QR2, LSTM, CRLX, Persistence, HARX, AR3, CRL, HAR, QR1, AR1.</li>
+<li>Extended, 120-month window, qlike_variance: 95% Model Confidence Set retains CRLX, LSTMX, LSTM, AR3, CRL, HARX, HAR, QR2, QR1, AR1, Persistence.</li>
+<li>Extended, 571-month window, mse_log_rv: 95% Model Confidence Set retains LSTM, HAR, AR3, CRL, CRLX, QR1, AR1, QR2, HARX.</li>
+<li>Extended, 571-month window, qlike_variance: 95% Model Confidence Set retains LSTMX, AR3, CRL, HAR, LSTM, Persistence, HARX, CRLX, QR1, QR2, AR1.</li>
 <li>Modern, 120-month window, mse_log_rv: 95% Model Confidence Set retains QR2, CRLX, LSTM, Persistence, LSTMX, AR3, CRL, HAR, ARMAX, HARX, QR1, AR1.</li>
 <li>Modern, 120-month window, qlike_variance: 95% Model Confidence Set retains QR2, CRLX, LSTMX, LSTM, AR3, CRL, HAR, Persistence, AR1, QR1, HARX, ARMAX.</li>
 <li>Modern, 571-month window, mse_log_rv: 95% Model Confidence Set retains LSTM, HAR, AR3, CRL, QR2, LSTMX, HARX, AR1, QR1, CRLX.</li>
@@ -160,8 +160,8 @@
 </ul>
 <p>MCS uses 10,000 stationary-bootstrap replications with six-month expected blocks. Each report also contains paired HAR loss-difference intervals, seed-level metrics and common-date comparisons. Seeds are repeated model realizations, not additional market histories.</p>
 <h2>Plots</h2>
-<h3>Colin paper features</h3>
-<p><img src="../colin-2026-09-24/last12_forecasts.png" alt="Colin forecasts" /></p>
+<h3>Extended paper features</h3>
+<p><img src="../extended-2026-09-24/last12_forecasts.png" alt="Extended forecasts" /></p>
 <h3>Modern price features</h3>
 <p><img src="../modern-2026-09-24/last12_forecasts.png" alt="Modern forecasts" /></p>
 <h2>Additional tests and interpretation</h2>
@@ -169,14 +169,14 @@
 <p>Exploratory matched-ridge diagnostics use each reservoir’s same three-step raw inputs, training-only standardization, and a penalty selected using 24 strictly preceding forecast errors. They score the same 80 months beginning January 2020. Conditioning, paired block-bootstrap intervals and descriptive outlier slices are recorded separately. They do not replace the primary benchmark.</p>
 <h2>Read and reproduce</h2>
 <ul>
-<li><a href="../colin-2026-09-24/report.md">Colin report</a></li>
+<li><a href="../extended-2026-09-24/report.md">Extended report</a></li>
 <li><a href="../modern-2026-09-24/report.md">Modern report</a></li>
-<li><a href="../colin-exploratory-2026-09-24/report.md">Colin exploration</a></li>
+<li><a href="../extended-exploratory-2026-09-24/report.md">Extended exploration</a></li>
 <li><a href="../modern-exploratory-2026-09-24/report.md">Modern exploration</a></li>
-<li><a href="../../docs-colin/AUDIT.md">Data audit</a></li>
+<li><a href="../../docs-dataset/AUDIT.md">Data audit</a></li>
 <li><a href="../../RUN_ORDER.md">Run order</a></li>
 </ul>
 <p>Data-source hashes, correction ledgers, complete commit inventories, test evidence, run identities, per-origin forecast records and reproduction commands accompany the results. Quantum results are ideal local simulations and make no hardware-speedup or trading-profit claim.</p>
 <h3>Exploratory finding</h3>
-<p>On the same 80 months, the Colin 571-month QR2 input-matched raw ridge has MSE 0.13262 versus 0.13925 for the quantum features with matched ridge. The six-month-block confidence interval for quantum minus raw loss is approximately [-0.01385, 0.03010]. This does not establish a reservoir advantage; it motivates keeping simple input-matched baselines in future studies. These are exploratory results, separate from the 104-month headline evaluation.</p>
+<p>On the same 80 months, the extended-data 571-month QR2 input-matched raw ridge has MSE 0.13262 versus 0.13925 for the quantum features with matched ridge. The six-month-block confidence interval for quantum minus raw loss is approximately [-0.01385, 0.03010]. This does not establish a reservoir advantage; it motivates keeping simple input-matched baselines in future studies. These are exploratory results, separate from the 104-month headline evaluation.</p>
 </html>

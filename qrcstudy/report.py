@@ -40,7 +40,7 @@ def load_validated(folder):
     data=Path(config["data"])
     # Prefer the local published snapshot in a clone; retain the original path
     # for custom external datasets and execution provenance.
-    local_data=Path(__file__).resolve().parents[1]/"data"/"snapshots"/data.parent.name/data.name
+    local_data=Path(__file__).resolve().parents[1]/"data"/"snapshots"/data.parent.name.replace("colin", "extended")/data.name
     if local_data.exists():data=local_data
     if digest(data)!=config["data_sha256"]:raise ValueError("Dataset changed")
     target=pd.read_csv(data,index_col=0,parse_dates=True).log_rv.loc[:config["end"]]
@@ -72,7 +72,7 @@ def load_validated(folder):
         if pd.Timestamp(r.forecast_origin)!=t-pd.offsets.MonthEnd():raise ValueError("Forecast origin mismatch")
         if pd.Timestamp(r.training_end)!=pd.Timestamp(r.forecast_origin):raise ValueError("Training reaches into target")
         if pd.Timestamp(r.training_start)!=t-pd.offsets.MonthEnd(r.window):raise ValueError("Training window mismatch")
-        if r.configuration!=("colin" if config.get("protocol", "modern").startswith("colin") else "modern") or r.status not in {"ok","failed","unavailable"}:raise ValueError("Invalid record contract")
+        if r.configuration!=("colin" if config.get("protocol", "modern").startswith("colin") else "extended" if config.get("protocol", "modern").startswith("extended") else "modern") or r.status not in {"ok","failed","unavailable"}:raise ValueError("Invalid record contract")
         if t in target.index:
             if not np.isclose(r.actual_log_rv,target.loc[t],rtol=0,atol=1e-12):raise ValueError("Actual target mismatch")
         elif pd.notna(r.actual_log_rv):raise ValueError("Unobserved target has an actual value")

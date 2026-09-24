@@ -1,4 +1,4 @@
-"""Colin protocol with explicit missing-input records and immutable identities."""
+"""Extended protocol with explicit missing-input records and immutable identities."""
 import importlib.metadata
 import json
 import os
@@ -13,7 +13,7 @@ import pandas as pd
 from .data import digest,write_json
 from .models import MODELS,STOCHASTIC,sequences
 from .run import checked_manifest,identity,collect
-from .colin_models import inputs,features,predict,QR1,QR2,MACRO
+from .extended_models import inputs,features,predict,QR1,QR2,MACRO
 
 
 def worker(task):
@@ -35,7 +35,7 @@ def worker(task):
                 continue
             if limit is not None and count>=limit:break
             if t-window<0:raise ValueError('Insufficient calendar history')
-            row={'run_id':run_id,'configuration':'colin','model':model,'seed':seed,'window':window,'target_month':str(date.date()),'forecast_origin':str(dates[t-1].date()),'training_start':str(dates[t-window].date()),'training_end':str(dates[t-1].date()),'actual_log_rv':float(frame.log_rv.iloc[t]) if t<len(frame) else None,'previous_log_rv':float(frame.log_rv.iloc[t-1]),'predicted_log_rv':None,'status':'failed'}
+            row={'run_id':run_id,'configuration':'extended','model':model,'seed':seed,'window':window,'target_month':str(date.date()),'forecast_origin':str(dates[t-1].date()),'training_start':str(dates[t-window].date()),'training_end':str(dates[t-1].date()),'actual_log_rv':float(frame.log_rv.iloc[t]) if t<len(frame) else None,'previous_log_rv':float(frame.log_rv.iloc[t-1]),'predicted_log_rv':None,'status':'failed'}
             started=time.perf_counter()
             try:
                 with warnings.catch_warnings(record=True) as caught:
@@ -55,14 +55,14 @@ def run(data,output,start,end,windows,seeds,models,workers,threads,limit=None):
     data=Path(data).resolve();snapshot=json.loads((data.parent/'manifest.json').read_text())
     for name,sha in snapshot['artifacts'].items():
         if digest(data.parent/name)!=sha:raise ValueError('Snapshot artifact changed: '+name)
-    from .colin_data import read_monthly
+    from .extended_data import read_monthly
     frame=read_monthly(data)
     if pd.Timestamp(end)>frame.index[-1]:raise ValueError('Evaluation beyond completed data')
     if pd.Timestamp(start) not in frame.index or pd.Timestamp(end) not in frame.index:raise ValueError('Evaluation boundaries must be available month ends')
     if min(windows)<16 or frame.index.get_loc(pd.Timestamp(start))-max(windows)<15:raise ValueError('Insufficient training history')
     root=Path(__file__).resolve().parents[1]
-    source_files=['qrcstudy/colin_data.py','qrcstudy/colin_models.py','qrcstudy/colin_run.py','qrcstudy/models.py','qrcstudy/run.py','qrcstudy/data.py','quantum_reservoir_qiskit.py']
-    config={'protocol':'colin-paper-features-v1','data':str(data),'data_sha256':digest(data),'snapshot_sha256':digest(data.parent/'manifest.json'),'start':start,'end':end,'windows':windows,'seeds':seeds,'models':models,'threads':threads,'epochs':100,'features':{m:inputs(frame,m).columns.tolist() for m in models},'target_inverse':snapshot['target_inverse'],'transform_policy':'Inherited normalized inputs; fixed DP/TB differences; no outlier removal; prepared derived identities','versions':{p:importlib.metadata.version(p) for p in ['numpy','pandas','scipy','torch','statsmodels','reservoirpy','qiskit','arch']},'python':platform.python_version(),'source_hashes':{p:digest(root/p) for p in source_files}}
+    source_files=['qrcstudy/extended_data.py','qrcstudy/extended_models.py','qrcstudy/extended_run.py','qrcstudy/models.py','qrcstudy/run.py','qrcstudy/data.py','quantum_reservoir_qiskit.py']
+    config={'protocol':'extended-paper-features-v1','data':str(data),'data_sha256':digest(data),'snapshot_sha256':digest(data.parent/'manifest.json'),'start':start,'end':end,'windows':windows,'seeds':seeds,'models':models,'threads':threads,'epochs':100,'features':{m:inputs(frame,m).columns.tolist() for m in models},'target_inverse':snapshot['target_inverse'],'transform_policy':'Inherited normalized inputs; fixed DP/TB differences; no outlier removal; prepared derived identities','versions':{p:importlib.metadata.version(p) for p in ['numpy','pandas','scipy','torch','statsmodels','reservoirpy','qiskit','arch']},'python':platform.python_version(),'source_hashes':{p:digest(root/p) for p in source_files}}
     checked_manifest(output,config);out=Path(output)
     if not (out/'execution_revision.json').exists():write_json(out/'execution_revision.json',{'commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),'source_hashes':config['source_hashes']})
     for name in ['OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS']:os.environ[name]=str(threads)

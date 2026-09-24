@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><title>Volatility benchmark</title><style>body{font:16px/1.6 system-ui;max-width:1150px;margin:40px auto;padding:20px;color:#193047}table{border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid #ddd}img{max-width:100%}h2{margin-top:40px}</style><h1>modern-v1 results</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Volatility benchmark</title><style>body{font:16px/1.6 system-ui;max-width:1150px;margin:40px auto;padding:20px;color:#193047}table{border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid #ddd}img{max-width:100%}h2{margin-top:40px}</style><h1>Modern price-feature results</h1>
 <p>Evaluation: 2018-01-31–2026-08-31. All 7560 expected records validated, including unscored forecasts.</p>
 <p>Successful scored records: 7486. Failed or unavailable records: 2 (see failures.csv and coverage.csv).</p>
 <h2>Forecast accuracy</h2>
@@ -1346,5 +1346,5 @@
 <p>This run uses rolling windows [571, 120] and stochastic seeds [0, 1, 2, 3, 4]. The month following 2026-08-31 is unscored. Quantum results use ideal exact simulation, not hardware or trading returns. Numerical failures are retained without substituting forecasts. No window or model is selected for deployment using these results.</p>
 <h2>Reproduce</h2>
 <p><code>python run_study.py report --run results/modern-2026-09-24</code></p>
-<p>See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-colin/AUDIT.md for preparation and source limitations.</p>
+<p>See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-dataset/AUDIT.md for preparation and source limitations.</p>
 </html>

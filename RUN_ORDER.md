@@ -1,39 +1,51 @@
-# Colin study execution
+# Run instructions
 
-Use the existing Python environment or install requirements.txt. The original notebooks retain their historical workflow. New experiments use separate immutable snapshots and output directories.
+Install `requirements.txt` in a Python virtual environment. The prepared monthly snapshot is included; the original notebooks remain available for the historical workflow.
 
-1. Inspect docs-colin/AUDIT.md and source manifests.
-2. Prepare with `python run_study.py prepare-colin --data 1950-2026.csv --output data/snapshots/NEW --as-of 2026-09-24 --modern-data data/snapshots/2026-09-14-v2/monthly.csv` once the integration milestone is available.
-3. Run unit tests, then a separate integration pilot, then full colin and modern configurations. Never resume across differing source/data identities.
-4. Regenerate reports from completed forecasts. Unavailable inputs and numerical failures remain explicit.
-
-## Canonical full runs
+## Validate and run
 
 ```bash
 python -m unittest discover -s tests -v
-python run_study.py run --configuration colin --data data/snapshots/colin-2026-09-24-v2/monthly.csv --output results/colin-2026-09-24 --workers 4 --threads 2
-python run_study.py run --configuration modern --data data/snapshots/2026-09-14-v2/monthly.csv --output results/modern-2026-09-24 --workers 4 --threads 2
-python run_study.py report --run results/colin-2026-09-24
-python run_study.py report --run results/modern-2026-09-24
+# Quick integration pilot; use a separate directory from the full run.
+python run_study.py run --configuration extended --models HAR Persistence --seeds 0 --limit 1 --output results/new-pilot
+# Full benchmark, followed by reporting.
+python run_study.py run --configuration extended --output results/new-run
+python run_study.py report --run results/new-run
 ```
 
-Full runs use all 12 models, both windows and five stochastic seeds. An immutable snapshot manifest is mandatory. A fresh clone may regenerate reports from aggregate forecasts and receipts without private caches. Fresh modern training requires downloading a new raw snapshot with `python run_study.py download --as-of 2026-09-24 --output data/snapshots/NEW`, then specifying that monthly file and a new results directory; the published historical raw download is intentionally not redistributed.
+Defaults: January 2018–August 2026, all 12 models, 120- and 571-month rolling windows, and seeds 0–4 for stochastic models. September predictions are unscored. Missing inputs and failed fits remain explicit. Resume with the same command and configuration; changed source or data requires a new output directory. A partial pilot cannot produce a complete benchmark report.
 
-`colin-pilot-2026-09-24` is a diagnostic first-origin run, not a final comparison. Its source hashes precede the final integration revision. Existing historical results and original notebooks are preserved.
-
-## Exploratory diagnostics and overall report
+## Prepare a new snapshot
 
 ```bash
-python run_study.py run --configuration legacy --output results/legacy-validation-2026-09-24
-python run_study.py explore --run results/colin-2026-09-24 --output results/colin-exploratory-2026-09-24
-python run_study.py explore --run results/modern-2026-09-24 --output results/modern-exploratory-2026-09-24
-python run_study.py summarize
+python run_study.py prepare-extended --data 1950-2026.csv --output data/snapshots/new-data --as-of 2026-09-24 --modern-data data/snapshots/2026-09-14-v2/monthly.csv
+python run_study.py run --configuration extended --data data/snapshots/new-data/monthly.csv --output results/new-data-run
 ```
 
-Exploration requires local reservoir feature caches. Its 24-month past-error tuning is excluded from headline results. The primary manifests identify source revision 7497cc6; subsequent report/exploration additions do not change primary model source hashes. Vikas is the publication branch, explicitly selected by the contributor.
+Preparation downloads official factor sources and records hashes, scaling checks, missingness, and corrections. Use the actual preparation date for `--as-of`. Review [the audit](docs-dataset/AUDIT.md) and [assumptions](ASSUMPTIONS.md) before changing inputs. Do not fill unverified factors or score incomplete months.
 
-## Completed artifacts and constraints
+## Other workflows
 
-The overall report is `results/colin-study-2026-09-24/report.md` (also HTML). Primary runs used model revision 7497cc6, with their exact source hashes retained; reports and exploration have their own source receipts. `docs-colin/full_run_validation.json` and `modern_repeatability.json` contain verification evidence. `docs-colin/tests-final.txt` records 22 passing tests.
+```bash
+# Published reports regenerate without training caches.
+python run_study.py report --run results/extended-2026-09-24
+python run_study.py report --run results/modern-2026-09-24
+python run_study.py summarize
+# Original notebook workflow.
+python run_study.py run --configuration legacy --output results/new-legacy-run
+# Exploratory diagnostics require the run's local reservoir feature caches.
+python run_study.py explore --run results/new-run --output results/new-exploration
+```
 
-Both full runs account for 7,560 records. Colin has two failed scored fits and 44 unavailable September forecasts; modern has two failed scored fits. Do not treat unavailable September predictions as missing August scores. The common-date statistical tables preserve failures without backfilling them.
+Fresh modern training requires a daily-price snapshot: run `python run_study.py download --as-of YYYY-MM-DD --output data/snapshots/new-prices`, then `python run_study.py run --configuration modern --data data/snapshots/new-prices/monthly.csv --output results/new-modern-run`. Historical raw downloads are not redistributed. Keep modern and paper-feature target scores separate.
+
+## Code map
+
+- `qrcstudy/extended_data.py`: prepare and audit monthly data.
+- `qrcstudy/extended_models.py`: paper-specific model inputs.
+- `qrcstudy/extended_run.py`: rolling forecasts and checkpoints.
+- `qrcstudy/data.py`, `models.py`, `run.py`: modern price-feature benchmark.
+- `qrcstudy/report.py`, `study_report.py`, `project_report.py`: validation and reports.
+- `qrcstudy/exploration.py`: exploratory readout and outlier diagnostics.
+
+Published manifests, prediction records, and source inventories retain their original identifiers for verification. Directory and module names now use `extended`; new experiments also use that configuration. Renamed source files produce new run identities, so use fresh output directories for training. Historical source code remains available at revision `7497cc6`.

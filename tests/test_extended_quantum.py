@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from qrcstudy.colin_models import features,inputs
+from qrcstudy.extended_models import features,inputs
 from qrcstudy.models import sequences
 from quantum_reservoir_qiskit import build_ising_hamiltonian,compute_unitaries,generate_coupling_matrix,quantum_reservoir
 

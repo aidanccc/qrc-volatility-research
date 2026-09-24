@@ -6,7 +6,7 @@ import pandas as pd
 from .data import digest,write_json,transform,inverse_target
 from .models import sequences
 from .report import load_validated,losses,stationary_indices,table
-from .colin_models import inputs
+from .extended_models import inputs
 
 ALPHAS=np.array([1e-8,1e-6,1e-4,1e-2,1.,100.])
 
@@ -28,18 +28,18 @@ def analyze(run,output):
     run=Path(run);out=Path(output)
     if out.exists():raise FileExistsError('Use a new exploratory output directory')
     frame,config=load_validated(run);out.mkdir(parents=True)
-    data=Path(config['data']);local=Path(__file__).resolve().parents[1]/'data/snapshots'/data.parent.name/data.name
+    data=Path(config['data']);local=Path(__file__).resolve().parents[1]/'data/snapshots'/data.parent.name.replace("colin", "extended")/data.name
     if local.exists():data=local
-    f=pd.read_csv(data,index_col=0,parse_dates=True).loc[:config['end']];is_colin=config['protocol'].startswith('colin')
+    f=pd.read_csv(data,index_col=0,parse_dates=True).loc[:config['end']];is_extended=config['protocol'].startswith(('extended', 'colin'))
     positions=np.flatnonzero(f.index>=pd.Timestamp(config['start']));actual=f.log_rv.iloc[positions].to_numpy()
-    if is_colin:
+    if is_extended:
         from quantum_reservoir_qiskit import MIN_RV,DIF
         y=f.RV.to_numpy();inv=lambda z:(z+1)*DIF+MIN_RV
     else:
         x,y,_=transform(f,config['scaler']);y=y.to_numpy();inv=lambda z:inverse_target(z,config['scaler'])
     rows=[];condition=[];hashes={}
     for model in ['CRLX','QR1','QR2']:
-        model_x=inputs(f,model).to_numpy() if is_colin else x.to_numpy()
+        model_x=inputs(f,model).to_numpy() if is_extended else x.to_numpy()
         raw=sequences(model_x).reshape(len(f)+1,-1)
         for seed in config['seeds']:
             path=run/'cache'/f'{model}-{seed}.npy';a=np.load(path);hashes[path.name]=digest(path)
@@ -75,7 +75,7 @@ def analyze(run,output):
                 sample=diff[stationary_indices(len(diff),10000,block,17)].mean(axis=1);lo,hi=np.quantile(sample,[.025,.975]);intervals.append(dict(window=window,model=model,block=block,loss_difference=float(diff.mean()),ci_lower=lo,ci_upper=hi,months=len(diff)))
     pd.DataFrame(intervals).to_csv(out/'matched_intervals.csv',index=False)
     # Fixed pre-2018 level/change thresholds flag input histories, never targets.
-    source_inputs=f.drop(columns=['log_rv']) if is_colin else f[config['features']]
+    source_inputs=f.drop(columns=['log_rv']) if is_extended else f[config['features']]
     flags=pd.Series(False,index=f.index)
     for column in source_inputs:
         for values in [source_inputs[column],source_inputs[column].diff()]:
@@ -90,5 +90,5 @@ def analyze(run,output):
         groups=g.groupby(['window','model']);result=groups[['mse_log_rv','qlike_variance']].mean().join(groups.agg(successful_records=('target_month','size'),months=('target_month','nunique'))).reset_index();result['flagged_input_history']=flag;slices.append(result)
     pd.concat(slices).to_csv(out/'outlier_sensitivity.csv',index=False)
     write_json(out/'receipt.json',{'protocol':'exploratory-matched-ridge-v1','source_run_identity':json.loads((run/'manifest.json').read_text())['identity'],'source_predictions_sha256':digest(run/'predictions.csv'),'source_sha256':digest(__file__),'cache_hashes':hashes,'alphas':ALPHAS.tolist(),'validation_months':24,'scored_months':len(dates),'flagged_input_history_months':[str(d.date()) for d in forecast_flags.loc[config['start']:].index[forecast_flags.loc[config['start']:]]]})
-    (out/'report.md').write_text('# Exploratory readout and outlier diagnostics\n\nThese post-benchmark choices are not an untouched confirmation test. Standardization and intercept are fitted only on each training window; alpha minimizes errors on the 24 strictly preceding forecast months. Scores cover January 2020–August 2026 (80 months). Each raw-input ridge uses the same three-step inputs as its paired reservoir. Quantum feature sets differ under the Colin protocol, so QR1/QR2 here are not an isolated virtual-node ablation.\n\n'+table(metrics)+'\n\nSee primary_same_dates.csv for primary models on those same 80 dates, matched_intervals.csv for unadjusted paired bootstrap intervals, and outlier_sensitivity.csv for descriptive slices by flagged preceding three-month input history. No primary observation was removed or target clipped.\n')
+    (out/'report.md').write_text('# Exploratory readout and outlier diagnostics\n\nThese post-benchmark choices are not an untouched confirmation test. Standardization and intercept are fitted only on each training window; alpha minimizes errors on the 24 strictly preceding forecast months. Scores cover January 2020–August 2026 (80 months). Each raw-input ridge uses the same three-step inputs as its paired reservoir. Quantum feature sets differ under the Extended protocol, so QR1/QR2 here are not an isolated virtual-node ablation.\n\n'+table(metrics)+'\n\nSee primary_same_dates.csv for primary models on those same 80 dates, matched_intervals.csv for unadjusted paired bootstrap intervals, and outlier_sensitivity.csv for descriptive slices by flagged preceding three-month input history. No primary observation was removed or target clipped.\n')
     print(f'Exploration: {out}')

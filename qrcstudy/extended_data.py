@@ -1,4 +1,4 @@
-"""Immutable, source-audited preparation of Colin's monthly extension."""
+"""Immutable, source-audited preparation of the extended monthly dataset."""
 from pathlib import Path
 import io
 import re
@@ -96,7 +96,7 @@ def prepare(source, output, as_of='2026-09-24', modern=None):
         path=raw/name
         if not path.exists():
             with urlopen(Request(url,headers={'User-Agent':'Mozilla/5.0'}),timeout=60) as r:path.write_bytes(r.read())
-        sources[name]={'url':url,'sha256':digest(path),'observed_at':pd.Timestamp.now(tz='UTC').isoformat(),'retrieval_note':'Downloaded during September 24 audit; retained local bytes used if present'}
+        sources[name]={'url':url,'sha256':digest(path),'observed_at':pd.Timestamp.now(tz='UTC').isoformat(),'retrieval_note':'Retrieved for this snapshot; retained local bytes used if present'}
     old=french(raw/'factors-fiz.zip').join(french(raw/'reversal-fiz.zip'))
     new=french(raw/'factors.zip').join(french(raw/'reversal.zip'))
     mappings={};changes=[];reconciliation=[]
@@ -132,12 +132,12 @@ def prepare(source, output, as_of='2026-09-24', modern=None):
     target_diff=None
     if modern:
         target=pd.read_csv(modern,index_col=0,parse_dates=True).log_rv
-        match=pd.concat([f.log_rv.rename('colin'),target.rename('modern')],axis=1).dropna();match['difference']=match.colin-match.modern
+        match=pd.concat([f.log_rv.rename('extended'),target.rename('modern')],axis=1).dropna();match['difference']=match.extended-match.modern
         match.to_csv(output/'target_reconciliation.csv',index_label='Date')
         target_diff=float(match.loc['2018':,'difference'].abs().max())
     write_json(output/'sources.json',sources)
     artifacts={p.name:digest(p) for p in sorted(output.glob('*.csv'))}
     artifacts['sources.json']=digest(output/'sources.json')
-    manifest={'protocol':'colin-prepared-v1','source_repository':'aidanccc/qrc-volatility-research','source_commit':'ca78df0cae90a658d5b2696e6641bcfa4c3a0356','source_file':str(source),'source_sha256':digest(source),'as_of':as_of,'artifacts':artifacts,'factor_mapping':mappings,'derived_mapping':derived_maps,'target_inverse':{'min':MIN_RV,'span':DIF,'status':'legacy constants applied; Colin construction metadata unavailable'},'rows':len(f),'filled_factor_cells':int(original[FACTORS].isna().sum().sum()-f[FACTORS].isna().sum().sum()),'remaining_missing_factor_cells':int(f[FACTORS].isna().sum().sum()),'derived_corrections':len(derived_changes),'outlier_flags':len(flags),'max_post2017_target_difference':target_diff,'limitations':['Retrospective revised macro data; historical availability not verified','FIZ through December 2024, CIZ from January 2025; provider methodology break','Colin raw construction and exact post-2017 RV normalization unavailable','Original pre-2018 scaling inherited; extension is not a pristine real-time backtest']}
+    manifest={'protocol':'extended-prepared-v1','source_repository':'aidanccc/qrc-volatility-research','source_commit':'ca78df0cae90a658d5b2696e6641bcfa4c3a0356','source_file':str(source),'source_sha256':digest(source),'as_of':as_of,'artifacts':artifacts,'factor_mapping':mappings,'derived_mapping':derived_maps,'target_inverse':{'min':MIN_RV,'span':DIF,'status':'legacy constants applied; Extended construction metadata unavailable'},'rows':len(f),'filled_factor_cells':int(original[FACTORS].isna().sum().sum()-f[FACTORS].isna().sum().sum()),'remaining_missing_factor_cells':int(f[FACTORS].isna().sum().sum()),'derived_corrections':len(derived_changes),'outlier_flags':len(flags),'max_post2017_target_difference':target_diff,'limitations':['Retrospective revised macro data; historical availability not verified','FIZ through December 2024, CIZ from January 2025; provider methodology break','Extended raw construction and exact post-2017 RV normalization unavailable','Original pre-2018 scaling inherited; extension is not a pristine real-time backtest']}
     write_json(output/'manifest.json',manifest)
     print({k:manifest[k] for k in ['rows','filled_factor_cells','remaining_missing_factor_cells','derived_corrections','outlier_flags']})

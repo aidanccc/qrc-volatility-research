@@ -1,6 +1,6 @@
 # Exploratory readout and outlier diagnostics
 
-These post-benchmark choices are not an untouched confirmation test. Standardization and intercept are fitted only on each training window; alpha minimizes errors on the 24 strictly preceding forecast months. Scores cover January 2020–August 2026 (80 months). Each raw-input ridge uses the same three-step inputs as its paired reservoir. Quantum feature sets differ under the Colin protocol, so QR1/QR2 here are not an isolated virtual-node ablation.
+These post-benchmark choices are not an untouched confirmation test. Standardization and intercept are fitted only on each training window; alpha minimizes errors on the 24 strictly preceding forecast months. Scores cover January 2020–August 2026 (80 months). Each raw-input ridge uses the same three-step inputs as its paired reservoir. Quantum feature sets differ under the Extended protocol, so QR1/QR2 here are not an isolated virtual-node ablation.
 
 | window | model | mse_log_rv | mae_log_rv | qlike_variance |
 | --- | --- | --- | --- | --- |

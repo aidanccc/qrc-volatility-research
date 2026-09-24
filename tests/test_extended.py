@@ -3,17 +3,17 @@ from pathlib import Path
 import tempfile
 import numpy as np
 import pandas as pd
-from qrcstudy.colin_data import derived,read_monthly,affine_map,prepare
-from qrcstudy.colin_models import inputs,predict,QR1,QR2
+from qrcstudy.extended_data import derived,read_monthly,affine_map,prepare
+from qrcstudy.extended_models import inputs,predict,QR1,QR2
 from qrcstudy.models import sequences
 from quantum_reservoir_qiskit import MIN_RV,DIF
 ROOT=Path(__file__).resolve().parents[1]
 
-class ColinTests(unittest.TestCase):
+class ExtendedTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.raw=read_monthly(ROOT/'1950-2026.csv')
-        cls.prepared=read_monthly(ROOT/'data/snapshots/colin-2026-09-24-v2/monthly.csv')
+        cls.prepared=read_monthly(ROOT/'data/snapshots/extended-2026-09-24-v2/monthly.csv')
 
     def test_supplied_missing_block_and_prepared_gaps(self):
         self.assertEqual(int(self.raw.loc['2018':,['MKT','SMB','HML','STR']].isna().sum().sum()),416)

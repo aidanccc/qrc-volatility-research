@@ -1,11 +1,11 @@
 {
-  "report_sha256": "48a8ffdc393d3948f557e2ed07bf43f2373b827bdcf0c0529dd3c556b3357659",
-  "source_sha256": "73078a71c11b487122a215ac897088619ae607809532cdd8ea43623428152a66",
+  "report_sha256": "802d28d139b614e28bb3e98eb298ee7cc2a10d29527d4850c5907b7b958c5fb0",
+  "source_sha256": "566f621951095765b9b9c69c4f42f7078554017b67dbeecbfc3c63fb65694ec0",
   "run_receipts": {
-    "colin-2026-09-24": {
+    "extended-2026-09-24": {
       "prediction_sha256": "91dd91288f7c1967e4f8021938216c7b6f2fd75a8281e056cc32a6c68f69c656",
-      "report_sha256": "6e86b3e19d9dfc425310bc666e2bbbf907a071d33769dd66ac5ea056ba0b6063",
-      "report_source_sha256": "a52727043401c44e745b6f3b1227fdddddb27de7bd0d7c26bc938c012a4e1f74",
+      "report_sha256": "a97d1fa67c4680db0084fd9a80119af08d7262b2c434269d0e516bf497cf3299",
+      "report_source_sha256": "061b52a63c2b4d919ea29a41328865c952b01bd842887904e9b89f7c81a18845",
       "records": 7560,
       "failures": 46,
       "scored_months": 104,
@@ -15,8 +15,8 @@
     },
     "modern-2026-09-24": {
       "prediction_sha256": "fb0ef3c853b143fbbc4be4e7299f1ff1a32556ba95fa012beb3d409b98500683",
-      "report_sha256": "328b5401a51b19f5a9b90a873cedef47d3f770aa5be06eaf995a69eabb8f6de8",
-      "report_source_sha256": "a52727043401c44e745b6f3b1227fdddddb27de7bd0d7c26bc938c012a4e1f74",
+      "report_sha256": "818b6ba15e86878141e14919737ed628d7975d093399b8e83c5503ce9724ea4e",
+      "report_source_sha256": "061b52a63c2b4d919ea29a41328865c952b01bd842887904e9b89f7c81a18845",
       "records": 7560,
       "failures": 2,
       "scored_months": 104,

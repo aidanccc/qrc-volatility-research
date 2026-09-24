@@ -1,4 +1,4 @@
-# modern-v1 results
+# Modern price-feature results
 
 Evaluation: 2018-01-31–2026-08-31. All 7560 expected records validated, including unscored forecasts.
 
@@ -189,4 +189,4 @@ This run uses rolling windows [571, 120] and stochastic seeds [0, 1, 2, 3, 4]. T
 
 `python run_study.py report --run results/modern-2026-09-24`
 
-See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-colin/AUDIT.md for preparation and source limitations.
+See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-dataset/AUDIT.md for preparation and source limitations.

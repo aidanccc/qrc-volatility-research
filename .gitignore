@@ -43,7 +43,7 @@ predict_results.csv
 /*_model.png
 /dm_stat.csv
 /p_value.csv
-# Colin study: raw downloads, caches and per-origin checkpoints remain local.
+# Extended study: raw downloads, caches and per-origin checkpoints remain local.
 data/snapshots/*/raw/
 data/snapshots/*/yahoo.json
 data/snapshots/*/fred.csv
