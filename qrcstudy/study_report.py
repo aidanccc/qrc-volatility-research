@@ -61,10 +61,12 @@ def report(folder):
     fig,axes=plt.subplots(len(config['windows']),1,figsize=(11,4*len(config['windows'])),squeeze=False,constrained_layout=True)
     for ax,w in zip(axes[:,0],config['windows']):
         g=scored.loc[(scored.window==w)&(scored.target_month>=last)];a=g.groupby('target_month').actual_log_rv.first();ax.plot(a.index,np.exp(a)*100,label='Observed',color='black',lw=2)
-        for model in ['HAR','QR1','QR2','LSTMX','CRLX']:
+        for model in ['HAR','HARX','QR1','QR2','LSTMX']:
             p=g.loc[g.model==model].assign(rv=lambda x:np.exp(x.predicted_log_rv)*100).groupby('target_month').rv.mean()
             if len(p):ax.plot(p.index,p,label=model)
         ax.set_title(f"{config['protocol']}: {w}-month window");ax.set_ylabel('Monthly volatility (%)');ax.legend(ncol=3);ax.grid(alpha=.2)
+        ax.text(.015,.96,f'{w}-month training window',transform=ax.transAxes,va='top',fontsize=10,bbox={'facecolor':'white','edgecolor':'none','alpha':.9})
+        ax.set_xticks(a.index);ax.set_xticklabels([d.strftime('%b\n%Y') for d in a.index],fontsize=9)
     fig.savefig(folder/'last12_forecasts.png',dpi=160);plt.close(fig)
     fig,axes=plt.subplots(1,len(config['windows']),figsize=(12,5),squeeze=False,constrained_layout=True)
     for ax,w in zip(axes[0],config['windows']):
@@ -81,7 +83,7 @@ def report(folder):
         text += ['Colin paper-feature extension: original QR1/QR2 feature subsets, 11-input LSTMX/CRLX, ten macro predictors for HARX/ARMAX. DP/TB differences are fixed from historical conventions. HAR averages are formed causally. Normalized RV is inverted with inherited legacy constants. Quarterly/annual quantum inputs retain their verified historical transformations.','', 'This is retrospective reconstruction: Colin supplied no construction code or scaling metadata; macro publication availability is unverified. FIZ factors through 2024 transition to CIZ in 2025. Missing August factors block dependent September forecasts. Statistical outliers remain in the primary sample. The target differs slightly from the independently rebuilt modern series, so cross-protocol losses are not pooled.']
     else:
         text += ['Modern price-feature extension: seven causal price-derived inputs; scaling calibrated through 2017 and frozen, input clipping retained and targets never clipped. QR1/QR2 share inputs. This is a separate retrospective price-derived benchmark, not the paper macro feature specification. Raw daily snapshot hashes are verified before training.']
-    text += ['', 'Both protocols use 571- and 120-month rolling windows and seeds 0–4 for stochastic models. September 2026 is unscored. Quantum results use ideal exact simulation, not hardware or trading returns. Numerical failures are retained without substituting forecasts. No window or model is selected for deployment using these results.','', '## Reproduce','',f'`python run_study.py report --run {folder}`','', 'See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-colin/AUDIT.md for preparation and source limitations.']
+    text += ['', f"This run uses rolling windows {config['windows']} and stochastic seeds {config['seeds']}. The month following {config['end']} is unscored. Quantum results use ideal exact simulation, not hardware or trading returns. Numerical failures are retained without substituting forecasts. No window or model is selected for deployment using these results.",'', '## Reproduce','',f'`python run_study.py report --run {folder}`','', 'See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-colin/AUDIT.md for preparation and source limitations.']
     (folder/'report.md').write_text('\n'.join(text)+'\n')
     import mistune
     html=mistune.create_markdown(plugins=['table'])((folder/'report.md').read_text())

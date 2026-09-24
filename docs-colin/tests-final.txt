@@ -1,0 +1,27 @@
+test_current_and_future_targets_cannot_change_forecast (test_colin.ColinTests.test_current_and_future_targets_cannot_change_forecast) ... ok
+test_feature_sets_and_inverse (test_colin.ColinTests.test_feature_sets_and_inverse) ... ok
+test_future_cannot_change_past (test_colin.ColinTests.test_future_cannot_change_past) ... ok
+test_history_and_derived_identities (test_colin.ColinTests.test_history_and_derived_identities) ... ok
+test_incomplete_month_rejected_before_download (test_colin.ColinTests.test_incomplete_month_rejected_before_download) ... ok
+test_invalid_calendar_rejected (test_colin.ColinTests.test_invalid_calendar_rejected) ... ok
+test_mapping_rejects_wrong_definition_and_ignores_future (test_colin.ColinTests.test_mapping_rejects_wrong_definition_and_ignores_future) ... ok
+test_missing_origin_fails_and_observed_month_works (test_colin.ColinTests.test_missing_origin_fails_and_observed_month_works) ... ok
+test_supplied_missing_block_and_prepared_gaps (test_colin.ColinTests.test_supplied_missing_block_and_prepared_gaps) ... ok
+test_adapter_and_cache_match_direct_simulation_with_missing_suffix (test_colin_quantum.QuantumAdapterTests.test_adapter_and_cache_match_direct_simulation_with_missing_suffix) ... ok
+test_affine_feature_invariance (test_exploration.ExplorationTests.test_affine_feature_invariance) ... ok
+test_no_current_or_future_selection (test_exploration.ExplorationTests.test_no_current_or_future_selection) ... ok
+test_aggregation_and_incomplete_month (test_study.StudyTests.test_aggregation_and_incomplete_month) ... ok
+test_bootstrap_reproducibility (test_study.StudyTests.test_bootstrap_reproducibility) ... ok
+test_future_does_not_change_past (test_study.StudyTests.test_future_does_not_change_past) ... ok
+test_manifest_mismatch (test_study.StudyTests.test_manifest_mismatch) ... ok
+test_reject_missing_duplicate_invalid (test_study.StudyTests.test_reject_missing_duplicate_invalid) ... ok
+test_report_rejects_wrong_actual_and_missing_forecast (test_study.StudyTests.test_report_rejects_wrong_actual_and_missing_forecast) ... ok
+test_scaling_roundtrip_and_unclipped_target (test_study.StudyTests.test_scaling_roundtrip_and_unclipped_target) ... ok
+test_seeded_lstm_resume_order (test_study.StudyTests.test_seeded_lstm_resume_order) ... ok
+test_sequence_alignment (test_study.StudyTests.test_sequence_alignment) ... ok
+test_variance_qlike_and_direction (test_study.StudyTests.test_variance_qlike_and_direction) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 11.147s
+
+OK

@@ -51,7 +51,7 @@ Colin paper-feature extension: original QR1/QR2 feature subsets, 11-input LSTMX/
 
 This is retrospective reconstruction: Colin supplied no construction code or scaling metadata; macro publication availability is unverified. FIZ factors through 2024 transition to CIZ in 2025. Missing August factors block dependent September forecasts. Statistical outliers remain in the primary sample. The target differs slightly from the independently rebuilt modern series, so cross-protocol losses are not pooled.
 
-Both protocols use 571- and 120-month rolling windows and seeds 0–4 for stochastic models. September 2026 is unscored. Quantum results use ideal exact simulation, not hardware or trading returns. Numerical failures are retained without substituting forecasts. No window or model is selected for deployment using these results.
+This run uses rolling windows [120] and stochastic seeds [0]. The month following 2026-08-31 is unscored. Quantum results use ideal exact simulation, not hardware or trading returns. Numerical failures are retained without substituting forecasts. No window or model is selected for deployment using these results.
 
 ## Reproduce
 

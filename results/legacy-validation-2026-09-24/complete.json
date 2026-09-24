@@ -1,0 +1,22 @@
+{
+  "run_id": "1f936bed9a1458bf3afa9c512c7c46d224dfef8cf6320793090ea3c12c2353fb",
+  "seconds": 2062.7877793329535,
+  "stages": [
+    {
+      "notebook": "LSTM.ipynb",
+      "seconds": 864.2164167499868
+    },
+    {
+      "notebook": "classical_reservoir.ipynb",
+      "seconds": 5.896071833092719
+    },
+    {
+      "notebook": "Reservoir_Learning.ipynb",
+      "seconds": 157.43852220801637
+    }
+  ],
+  "quantum_max_absolute_error": {
+    "QR2": 1.0803764256550608e-06,
+    "QR1": 1.1982588308256936e-06
+  }
+}

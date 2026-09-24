@@ -1,0 +1,49 @@
+{
+  "protocol": "exploratory-matched-ridge-v1",
+  "source_run_identity": "ded7a08a6e790a8eaa36b7c0df6b714f3909087fac48f4668333eea104b35e34",
+  "source_predictions_sha256": "fb0ef3c853b143fbbc4be4e7299f1ff1a32556ba95fa012beb3d409b98500683",
+  "source_sha256": "7375ee26c224b2ccaee487d23bab6820c071ca2c2cadd5fa4139cc022ffd2d11",
+  "cache_hashes": {
+    "CRLX-0.npy": "aed92c551e91945950ec5062d35c1e38e62e0770cce59a2266fc470c545185aa",
+    "CRLX-1.npy": "42cace7750f8b9a5fd2740aec12604954a2296a3604ef234d26744a99ab77e4e",
+    "CRLX-2.npy": "22457e6cd5161fbdbc983043c5c7526ee1d84307985bc966c3928a488fa7b2ce",
+    "CRLX-3.npy": "8d261df33a9bd746c969e1b9728f41f665112b507128d46427e63fb3d9ffa9bc",
+    "CRLX-4.npy": "2bb552cff2e5b245c9ef68f5ffb21a5b0953b4afaa47bffd6e7e481d4b160f10",
+    "QR1-0.npy": "b1cae2c7a12ac81e1facfb384cae45c14ee20d12d561e882b56934256b9a087f",
+    "QR1-1.npy": "afd295e189e152bcfaf8031755486063d40de520fc4ad1368a51193108a68163",
+    "QR1-2.npy": "c7cf5d628aa8da520f5b3c07fcae3a803abc35a0e41ea88863a660ca1b8bb9df",
+    "QR1-3.npy": "5ff2c0c71dbd978c5f64ba8ecadb65eaa254d5797d7898276f2c95bd811c3f27",
+    "QR1-4.npy": "8d421e339fb5187a4d65c120b208b8b7269f727f29a031f63ae8704e3e731113",
+    "QR2-0.npy": "41d79276a9163cbfa27344d81b9f26b75e1752bce99179002cb4cc4ddd438f59",
+    "QR2-1.npy": "d0e34e73ee66f1b6748bf11e60796484c97b69159c71ecfcfd9cfc2a1a35ea3a",
+    "QR2-2.npy": "9059a7b35e26f16a0f35333255a6a075980a3f502a44546abf6004c49bbe289a",
+    "QR2-3.npy": "c77053299cbfaac143b383bcf5990409f5e157cdab478113aace729bd49fc17d",
+    "QR2-4.npy": "ffd6d28fa52f0bd7c9e7a371764024222281d20547c8ce85a79e65d5f56d6f5c"
+  },
+  "alphas": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01,
+    1.0,
+    100.0
+  ],
+  "validation_months": 24,
+  "scored_months": 80,
+  "flagged_input_history_months": [
+    "2019-01-31",
+    "2019-02-28",
+    "2019-03-31",
+    "2020-04-30",
+    "2020-05-31",
+    "2020-06-30",
+    "2020-07-31",
+    "2020-08-31",
+    "2020-09-30",
+    "2020-10-31",
+    "2025-05-31",
+    "2025-06-30",
+    "2025-07-31",
+    "2025-08-31"
+  ]
+}

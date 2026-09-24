@@ -9,3 +9,5 @@
 - Factor scale validation is specified in docs-colin/AUDIT.md. FIZ-to-CIZ construction changes are reported; unavailable August factors remain missing.
 
 Branch correction: the user explicitly requested continuing on `Vikas`. The two initial milestone commits are retained as a fast-forward continuation of the existing Vikas history. Subsequent work and results publish only to Vikas; the temporary codex branch is removed after verification.
+
+- Five-seed extension ensembles use seeded generated coupling matrices, paired across QR1/QR2 as in the modern infrastructure. The isolated legacy verification uses the supplied author coupling matrices. The extension is therefore not a claim of identical author reservoir realizations.

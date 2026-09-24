@@ -1,0 +1,1335 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Volatility benchmark</title><style>body{font:16px/1.6 system-ui;max-width:1150px;margin:40px auto;padding:20px;color:#193047}table{border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid #ddd}img{max-width:100%}h2{margin-top:40px}</style><h1>colin-paper-features-v1 results</h1>
+<p>Evaluation: 2018-01-31–2026-08-31. All 7560 expected records validated, including unscored forecasts.</p>
+<p>Successful scored records: 7486. Failed or unavailable records: 46 (see failures.csv and coverage.csv).</p>
+<h2>Forecast accuracy</h2>
+<p>Tables average losses across seeds; seeds are not independent market histories. Rankings below include only complete models. Incomplete models have separate common-date comparisons.</p>
+<h3>post2017</h3>
+<table>
+<thead>
+<tr>
+  <th>window</th>
+  <th>model</th>
+  <th>complete</th>
+  <th>successful_forecasts</th>
+  <th>mse_log_rv</th>
+  <th>rmse_log_rv</th>
+  <th>mae_log_rv</th>
+  <th>qlike_variance</th>
+  <th>mse_seed_std</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>120</td>
+  <td>AR1</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.182363</td>
+  <td>0.427039</td>
+  <td>0.326285</td>
+  <td>0.726637</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>HAR</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.192469</td>
+  <td>0.438713</td>
+  <td>0.333343</td>
+  <td>0.821303</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>CRL</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.193199</td>
+  <td>0.439544</td>
+  <td>0.333965</td>
+  <td>0.798792</td>
+  <td>0.000108144</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>AR3</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.193258</td>
+  <td>0.439611</td>
+  <td>0.333942</td>
+  <td>0.800543</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>QR1</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.217209</td>
+  <td>0.466057</td>
+  <td>0.346422</td>
+  <td>0.733268</td>
+  <td>0.0217065</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>Persistence</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.228679</td>
+  <td>0.478204</td>
+  <td>0.378306</td>
+  <td>0.718969</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>HARX</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.231926</td>
+  <td>0.481587</td>
+  <td>0.353037</td>
+  <td>1.14915</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>LSTMX</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.234521</td>
+  <td>0.484273</td>
+  <td>0.369744</td>
+  <td>1.10255</td>
+  <td>0.00298681</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>QR2</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.23498</td>
+  <td>0.484747</td>
+  <td>0.38095</td>
+  <td>0.850863</td>
+  <td>0.00651788</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>LSTM</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.241658</td>
+  <td>0.491587</td>
+  <td>0.366988</td>
+  <td>1.21301</td>
+  <td>0.00266608</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>ARMAX</td>
+  <td>False</td>
+  <td>103</td>
+  <td>0.251922</td>
+  <td>0.501919</td>
+  <td>0.380277</td>
+  <td>0.894432</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>CRLX</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.261788</td>
+  <td>0.511652</td>
+  <td>0.394237</td>
+  <td>1.11919</td>
+  <td>0.0211782</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>HARX</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.1711</td>
+  <td>0.413642</td>
+  <td>0.314295</td>
+  <td>0.614882</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>QR2</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.173687</td>
+  <td>0.416758</td>
+  <td>0.319547</td>
+  <td>0.597621</td>
+  <td>0.00241228</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>AR1</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.175719</td>
+  <td>0.419189</td>
+  <td>0.325137</td>
+  <td>0.591652</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>CRLX</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.177122</td>
+  <td>0.420858</td>
+  <td>0.324961</td>
+  <td>0.620176</td>
+  <td>0.00244937</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>QR1</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.180212</td>
+  <td>0.424514</td>
+  <td>0.319969</td>
+  <td>0.613081</td>
+  <td>0.00280335</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>LSTMX</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.186869</td>
+  <td>0.432284</td>
+  <td>0.326677</td>
+  <td>0.667137</td>
+  <td>0.00156505</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>HAR</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.187131</td>
+  <td>0.432587</td>
+  <td>0.329462</td>
+  <td>0.726581</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>AR3</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.187823</td>
+  <td>0.433385</td>
+  <td>0.330078</td>
+  <td>0.705373</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>CRL</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.187858</td>
+  <td>0.433425</td>
+  <td>0.329911</td>
+  <td>0.706457</td>
+  <td>7.64029e-05</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>ARMAX</td>
+  <td>False</td>
+  <td>103</td>
+  <td>0.197493</td>
+  <td>0.444402</td>
+  <td>0.333296</td>
+  <td>0.683733</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>LSTM</td>
+  <td>True</td>
+  <td>520</td>
+  <td>0.202595</td>
+  <td>0.450105</td>
+  <td>0.342587</td>
+  <td>0.821837</td>
+  <td>0.00346235</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>Persistence</td>
+  <td>True</td>
+  <td>104</td>
+  <td>0.228679</td>
+  <td>0.478204</td>
+  <td>0.378306</td>
+  <td>0.718969</td>
+  <td>0</td>
+</tr>
+</tbody>
+</table>
+<p>571-month window: HARX has the lowest complete-model MSE (0.171100).</p>
+<p>120-month window: AR1 has the lowest complete-model MSE (0.182363).</p>
+<h3>last12</h3>
+<table>
+<thead>
+<tr>
+  <th>window</th>
+  <th>model</th>
+  <th>complete</th>
+  <th>successful_forecasts</th>
+  <th>mse_log_rv</th>
+  <th>rmse_log_rv</th>
+  <th>mae_log_rv</th>
+  <th>qlike_variance</th>
+  <th>mse_seed_std</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>120</td>
+  <td>HARX</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0638399</td>
+  <td>0.252666</td>
+  <td>0.20065</td>
+  <td>0.142306</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>ARMAX</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0668821</td>
+  <td>0.258616</td>
+  <td>0.193714</td>
+  <td>0.124344</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>LSTM</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.0692441</td>
+  <td>0.263143</td>
+  <td>0.229289</td>
+  <td>0.138451</td>
+  <td>0.00255196</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>LSTMX</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.0821014</td>
+  <td>0.286533</td>
+  <td>0.244782</td>
+  <td>0.157004</td>
+  <td>0.00191445</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>HAR</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0901862</td>
+  <td>0.30031</td>
+  <td>0.26002</td>
+  <td>0.185485</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>AR3</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0917743</td>
+  <td>0.302943</td>
+  <td>0.26974</td>
+  <td>0.187173</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>AR1</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0919353</td>
+  <td>0.303208</td>
+  <td>0.261594</td>
+  <td>0.18792</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>CRL</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.0919429</td>
+  <td>0.303221</td>
+  <td>0.270169</td>
+  <td>0.187302</td>
+  <td>0.000359242</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>CRLX</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.102563</td>
+  <td>0.320255</td>
+  <td>0.279985</td>
+  <td>0.228977</td>
+  <td>0.0145835</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>QR1</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.104454</td>
+  <td>0.323193</td>
+  <td>0.27614</td>
+  <td>0.201024</td>
+  <td>0.00784134</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>QR2</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.123361</td>
+  <td>0.351228</td>
+  <td>0.311651</td>
+  <td>0.23787</td>
+  <td>0.0229083</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>Persistence</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.135863</td>
+  <td>0.368595</td>
+  <td>0.324983</td>
+  <td>0.31363</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>HARX</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0638506</td>
+  <td>0.252687</td>
+  <td>0.212257</td>
+  <td>0.129013</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>LSTMX</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.0670397</td>
+  <td>0.25892</td>
+  <td>0.228848</td>
+  <td>0.14056</td>
+  <td>0.00651088</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>ARMAX</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.072411</td>
+  <td>0.269093</td>
+  <td>0.234069</td>
+  <td>0.164862</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>QR2</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.072715</td>
+  <td>0.269657</td>
+  <td>0.24394</td>
+  <td>0.135813</td>
+  <td>0.00648362</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>CRLX</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.0784115</td>
+  <td>0.28002</td>
+  <td>0.250251</td>
+  <td>0.166818</td>
+  <td>0.0126251</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>QR1</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.0827546</td>
+  <td>0.287671</td>
+  <td>0.251812</td>
+  <td>0.14903</td>
+  <td>0.00423928</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>HAR</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0855129</td>
+  <td>0.292426</td>
+  <td>0.257134</td>
+  <td>0.177243</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>CRL</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.087331</td>
+  <td>0.295518</td>
+  <td>0.268643</td>
+  <td>0.183821</td>
+  <td>0.000366531</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>AR3</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0876705</td>
+  <td>0.296092</td>
+  <td>0.269275</td>
+  <td>0.184303</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>LSTM</td>
+  <td>True</td>
+  <td>60</td>
+  <td>0.0889205</td>
+  <td>0.298195</td>
+  <td>0.268184</td>
+  <td>0.18831</td>
+  <td>0.0093051</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>AR1</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.09766</td>
+  <td>0.312506</td>
+  <td>0.270245</td>
+  <td>0.19562</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>571</td>
+  <td>Persistence</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.135863</td>
+  <td>0.368595</td>
+  <td>0.324983</td>
+  <td>0.31363</td>
+  <td>0</td>
+</tr>
+</tbody>
+</table>
+<p>571-month window: HARX has the lowest complete-model MSE (0.063851).</p>
+<p>120-month window: HARX has the lowest complete-model MSE (0.063840).</p>
+<p><img src="last12_forecasts.png" alt="Last twelve months" /></p>
+<p><img src="model_comparison.png" alt="Complete-model comparison" /></p>
+<h2>Statistical evidence</h2>
+<p>MCS uses 10,000 stationary-bootstrap replications, expected block length six months, seed 0 and familywise size 0.05. HAR loss-difference intervals use paired date resampling of seed-averaged losses. Unadjusted pairwise intervals do not establish familywise superiority. A p-value of one is not proof of a unique winner.</p>
+<table>
+<thead>
+<tr>
+  <th>model</th>
+  <th>mcs_pvalue</th>
+  <th>window</th>
+  <th>loss</th>
+  <th>scope</th>
+  <th>months</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Persistence</td>
+  <td>0.0117</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.0422</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.1572</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.4331</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.4891</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.4891</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.8288</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.8288</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>0.904</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.904</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>1</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.0161</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.0481</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>ARMAX</td>
+  <td>0.0609</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.159</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.3923</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.4132</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.4132</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.8309</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.8309</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>0.8524</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.8524</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>1</td>
+  <td>571</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.1243</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.2996</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.3015</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.3457</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.4232</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.7065</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>0.8723</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.8723</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.8723</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.9159</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>1</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.1357</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.3108</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.3155</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>ARMAX</td>
+  <td>0.3398</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.3398</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.4331</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.7343</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>0.8844</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.8844</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.8844</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.9453</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>1</td>
+  <td>571</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.1315</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.1491</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.1912</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.2057</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.2154</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>0.5141</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.5695</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.5695</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.5695</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.5695</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>1</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.0903</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.1823</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.2046</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.2046</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.2509</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>ARMAX</td>
+  <td>0.4467</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>0.5251</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.5402</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.5402</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.5402</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.5402</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>1</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.1775</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.2667</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.4504</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.5146</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.5192</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>0.5192</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.5849</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.5849</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.9933</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>0.9933</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>1</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>104</td>
+</tr>
+<tr>
+  <td>CRLX</td>
+  <td>0.1878</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTMX</td>
+  <td>0.2945</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>LSTM</td>
+  <td>0.4931</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR3</td>
+  <td>0.5549</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>CRL</td>
+  <td>0.562</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HARX</td>
+  <td>0.562</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>0.6518</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR2</td>
+  <td>0.6518</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>ARMAX</td>
+  <td>0.6518</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>QR1</td>
+  <td>0.9942</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>AR1</td>
+  <td>0.9942</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>1</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>103</td>
+</tr>
+</tbody>
+</table>
+<h2>Protocol and limitations</h2>
+<p>Colin paper-feature extension: original QR1/QR2 feature subsets, 11-input LSTMX/CRLX, ten macro predictors for HARX/ARMAX. DP/TB differences are fixed from historical conventions. HAR averages are formed causally. Normalized RV is inverted with inherited legacy constants. Quarterly/annual quantum inputs retain their verified historical transformations.</p>
+<p>This is retrospective reconstruction: Colin supplied no construction code or scaling metadata; macro publication availability is unverified. FIZ factors through 2024 transition to CIZ in 2025. Missing August factors block dependent September forecasts. Statistical outliers remain in the primary sample. The target differs slightly from the independently rebuilt modern series, so cross-protocol losses are not pooled.</p>
+<p>This run uses rolling windows [571, 120] and stochastic seeds [0, 1, 2, 3, 4]. The month following 2026-08-31 is unscored. Quantum results use ideal exact simulation, not hardware or trading returns. Numerical failures are retained without substituting forecasts. No window or model is selected for deployment using these results.</p>
+<h2>Reproduce</h2>
+<p><code>python run_study.py report --run results/colin-2026-09-24</code></p>
+<p>See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-colin/AUDIT.md for preparation and source limitations.</p>
+</html>

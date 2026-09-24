@@ -1,0 +1,86 @@
+{
+  "identity": "ded7a08a6e790a8eaa36b7c0df6b714f3909087fac48f4668333eea104b35e34",
+  "config": {
+    "protocol": "modern-v1",
+    "data": "/private/tmp/qrc-colin-validation/data/snapshots/2026-09-14-v2/monthly.csv",
+    "data_sha256": "e39c27a915a5bfa26b8617f91636e7981a1b9fce5685add3ba4b96ff756356e3",
+    "snapshot_sha256": "c69bf0b1e2c4f1fc58758c2aef350c29aed4a3c636de2e622f634a3d42798dd8",
+    "start": "2018-01-31",
+    "end": "2026-08-31",
+    "windows": [
+      571,
+      120
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "models": [
+      "Persistence",
+      "HAR",
+      "HARX",
+      "AR1",
+      "AR3",
+      "ARMAX",
+      "CRL",
+      "CRLX",
+      "QR1",
+      "QR2",
+      "LSTM",
+      "LSTMX"
+    ],
+    "threads": 2,
+    "scaler": {
+      "cutoff": "2017-12-31",
+      "min": {
+        "log_rv": -4.772271818604702,
+        "log_rv_3": -4.537626125879627,
+        "log_rv_12": -4.241526032648099,
+        "return": -0.2454280339976504,
+        "downside_share": 0.0307273867594191,
+        "max_abs_return": 0.0036274009257724,
+        "close_range": 0.0110725909252122
+      },
+      "span": {
+        "log_rv": 3.517953015402757,
+        "log_rv_3": 2.8913090050429187,
+        "log_rv_12": 2.0176169689828827,
+        "return": 0.3964712393496467,
+        "downside_share": 0.9052813686147525,
+        "max_abs_return": 0.225369885107681,
+        "close_range": 0.3667958273841086
+      }
+    },
+    "features": [
+      "log_rv",
+      "log_rv_3",
+      "log_rv_12",
+      "return",
+      "downside_share",
+      "max_abs_return",
+      "close_range"
+    ],
+    "epochs": 100,
+    "versions": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.2",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "statsmodels": "0.14.6",
+      "reservoirpy": "0.4.1",
+      "qiskit": "2.3.1",
+      "arch": "8.0.0"
+    },
+    "python": "3.11.15",
+    "source_hashes": {
+      "qrcstudy/data.py": "17399b19f0d4645326bbeb7a314fbb3a6cee586dd44d39f4963eb651b9de6caa",
+      "qrcstudy/models.py": "a1f804536ed9a42840c61e40b1f2b44e38b7e43dcf2b06b59c134f24ff3a2786",
+      "qrcstudy/run.py": "3b6d8b87dd1c929692ec7c9a4491c6d2c118af2fbe8edfcefa54bb8e55558f32",
+      "quantum_reservoir_qiskit.py": "d01040abe052a9f1f616c70a376097b4fe22d8b10f3a7e7fb5d5835528deead7"
+    }
+  },
+  "created_at": "2026-09-24T16:10:23.278534+00:00"
+}

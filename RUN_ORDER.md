@@ -31,3 +31,9 @@ python run_study.py summarize
 ```
 
 Exploration requires local reservoir feature caches. Its 24-month past-error tuning is excluded from headline results. The primary manifests identify source revision 7497cc6; subsequent report/exploration additions do not change primary model source hashes. Vikas is the publication branch, explicitly selected by the contributor.
+
+## Completed artifacts and constraints
+
+The overall report is `results/colin-study-2026-09-24/report.md` (also HTML). Primary runs used model revision 7497cc6, with their exact source hashes retained; reports and exploration have their own source receipts. `docs-colin/full_run_validation.json` and `modern_repeatability.json` contain verification evidence. `docs-colin/tests-final.txt` records 22 passing tests.
+
+Both full runs account for 7,560 records. Colin has two failed scored fits and 44 unavailable September forecasts; modern has two failed scored fits. Do not treat unavailable September predictions as missing August scores. The common-date statistical tables preserve failures without backfilling them.

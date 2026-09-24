@@ -1,0 +1,29 @@
+{
+  "report_sha256": "48a8ffdc393d3948f557e2ed07bf43f2373b827bdcf0c0529dd3c556b3357659",
+  "source_sha256": "73078a71c11b487122a215ac897088619ae607809532cdd8ea43623428152a66",
+  "run_receipts": {
+    "colin-2026-09-24": {
+      "prediction_sha256": "91dd91288f7c1967e4f8021938216c7b6f2fd75a8281e056cc32a6c68f69c656",
+      "report_sha256": "6e86b3e19d9dfc425310bc666e2bbbf907a071d33769dd66ac5ea056ba0b6063",
+      "report_source_sha256": "a52727043401c44e745b6f3b1227fdddddb27de7bd0d7c26bc938c012a4e1f74",
+      "records": 7560,
+      "failures": 46,
+      "scored_months": 104,
+      "mcs_reps": 10000,
+      "block_length": 6,
+      "seed": 0
+    },
+    "modern-2026-09-24": {
+      "prediction_sha256": "fb0ef3c853b143fbbc4be4e7299f1ff1a32556ba95fa012beb3d409b98500683",
+      "report_sha256": "328b5401a51b19f5a9b90a873cedef47d3f770aa5be06eaf995a69eabb8f6de8",
+      "report_source_sha256": "a52727043401c44e745b6f3b1227fdddddb27de7bd0d7c26bc938c012a4e1f74",
+      "records": 7560,
+      "failures": 2,
+      "scored_months": 104,
+      "mcs_reps": 10000,
+      "block_length": 6,
+      "seed": 0
+    }
+  },
+  "legacy_complete_sha256": "b703c21cd203c2ee63b75498bfc57fe4347962a87583f4de11e5808170e5ff57"
+}

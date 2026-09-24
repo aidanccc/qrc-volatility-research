@@ -1,0 +1,44 @@
+{
+  "protocol": "exploratory-matched-ridge-v1",
+  "source_run_identity": "6896fea73c283c52ec3df2db2143d92e1dad9531a594c684d1d0adfc23fe05fa",
+  "source_predictions_sha256": "91dd91288f7c1967e4f8021938216c7b6f2fd75a8281e056cc32a6c68f69c656",
+  "source_sha256": "7375ee26c224b2ccaee487d23bab6820c071ca2c2cadd5fa4139cc022ffd2d11",
+  "cache_hashes": {
+    "CRLX-0.npy": "13f324ee94212355370ad42aac1a2e893e7761faa5fae150a5c65b9667f18cd5",
+    "CRLX-1.npy": "f90bb856e603b57561ceeee91861efe235f227a54f8d40ed0ce96ca13912f7ac",
+    "CRLX-2.npy": "00ee5d2e8dde17c96006c05416c163fb69ad61070155999732e9e0ff59a909b2",
+    "CRLX-3.npy": "b2d3c2ff29722e2bc7c42a5ed6a815cc363235bad9cc6b5de60c203de386b803",
+    "CRLX-4.npy": "dc0d9782219877e43888ba18fa7da2fe00e21637951f2d5adc2c87d2a5ec65e6",
+    "QR1-0.npy": "82ea4f83b7c1cfce5065ce70b78d522796469b69f7e70e72ef9ecbc2e18d8360",
+    "QR1-1.npy": "de7bdd66810251ce01a69d69524e23f7e38239d957fcb4c28df340cf4980758e",
+    "QR1-2.npy": "56e533e14285212eb3ff3ad4551f5f161f482a507413741acfd49c93414cf8d9",
+    "QR1-3.npy": "6463843edc4bb83eb639d59291ae939a6590e5617dfa55bea1779483099881c4",
+    "QR1-4.npy": "03bf0def7af7738b59fac9bdfb5befb9162f77ebe908c793e036e170ae2862df",
+    "QR2-0.npy": "ea04a655f079c1538804ccec77b85328ce2871a9d54e04451c704c49c2f0b618",
+    "QR2-1.npy": "ee89b8c01b6cec65b2e058534491847fffcd4a8681049d53d3646bfab5114b9f",
+    "QR2-2.npy": "1ebe0707d1ca7e184b3670ad7ea99da5f8f577a867c4e0f1bfc8a278e5ac8e31",
+    "QR2-3.npy": "a8d16abaa8f12323d3574ecde2613fd1812959635ff39fb5890dddfcb592161e",
+    "QR2-4.npy": "9fcd658c10ce29c8ce529a9e3cc9429d49856a3a52de4062e77d282d12ede7b8"
+  },
+  "alphas": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01,
+    1.0,
+    100.0
+  ],
+  "validation_months": 24,
+  "scored_months": 80,
+  "flagged_input_history_months": [
+    "2020-04-30",
+    "2020-05-31",
+    "2020-06-30",
+    "2020-07-31",
+    "2020-08-31",
+    "2020-09-30",
+    "2021-04-30",
+    "2021-05-31",
+    "2021-06-30"
+  ]
+}

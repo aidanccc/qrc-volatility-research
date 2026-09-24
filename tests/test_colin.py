@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import numpy as np
 import pandas as pd
-from qrcstudy.colin_data import derived,read_monthly,affine_map
+from qrcstudy.colin_data import derived,read_monthly,affine_map,prepare
 from qrcstudy.colin_models import inputs,predict,QR1,QR2
 from qrcstudy.models import sequences
 from quantum_reservoir_qiskit import MIN_RV,DIF
@@ -65,6 +65,11 @@ class ColinTests(unittest.TestCase):
         self.assertEqual(first,affine_map(raw,norm))
         wrong=raw**2
         self.assertFalse(affine_map(raw,wrong)['accepted'])
+
+    def test_incomplete_month_rejected_before_download(self):
+        with tempfile.TemporaryDirectory() as d:
+            with self.assertRaisesRegex(ValueError,'incomplete month'):
+                prepare(ROOT/'1950-2026.csv',Path(d)/'snapshot',as_of='2026-08-24')
 
     def test_invalid_calendar_rejected(self):
         with tempfile.TemporaryDirectory() as d:

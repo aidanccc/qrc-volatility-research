@@ -1,0 +1,9 @@
+{
+  "commit": "7497cc6cac6cee545ba0b40b9dcf915e35f428ba",
+  "source_hashes": {
+    "qrcstudy/data.py": "17399b19f0d4645326bbeb7a314fbb3a6cee586dd44d39f4963eb651b9de6caa",
+    "qrcstudy/models.py": "a1f804536ed9a42840c61e40b1f2b44e38b7e43dcf2b06b59c134f24ff3a2786",
+    "qrcstudy/run.py": "3b6d8b87dd1c929692ec7c9a4491c6d2c118af2fbe8edfcefa54bb8e55558f32",
+    "quantum_reservoir_qiskit.py": "d01040abe052a9f1f616c70a376097b4fe22d8b10f3a7e7fb5d5835528deead7"
+  }
+}

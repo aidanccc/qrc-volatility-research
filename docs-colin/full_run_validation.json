@@ -1,0 +1,59 @@
+{
+  "colin-2026-09-24": {
+    "records": 7560,
+    "status_counts": {
+      "ok": 7514,
+      "unavailable": 44,
+      "failed": 2
+    },
+    "scored_months": 104,
+    "scored_failures": [
+      {
+        "model": "ARMAX",
+        "window": 120,
+        "seed": 0,
+        "target_month": "2019-04-30",
+        "status": "failed",
+        "error": "RuntimeError: ARMAX optimizer did not converge"
+      },
+      {
+        "model": "ARMAX",
+        "window": 571,
+        "seed": 0,
+        "target_month": "2018-03-31",
+        "status": "failed",
+        "error": "RuntimeError: ARMAX optimizer did not converge"
+      }
+    ],
+    "source_hashes_match": true,
+    "receipt_matches": true
+  },
+  "modern-2026-09-24": {
+    "records": 7560,
+    "status_counts": {
+      "ok": 7558,
+      "failed": 2
+    },
+    "scored_months": 104,
+    "scored_failures": [
+      {
+        "model": "ARMAX",
+        "window": 571,
+        "seed": 0,
+        "target_month": "2019-01-31",
+        "status": "failed",
+        "error": "RuntimeError: ARMAX optimizer did not converge"
+      },
+      {
+        "model": "ARMAX",
+        "window": 571,
+        "seed": 0,
+        "target_month": "2020-08-31",
+        "status": "failed",
+        "error": "RuntimeError: ARMAX optimizer did not converge"
+      }
+    ],
+    "source_hashes_match": true,
+    "receipt_matches": true
+  }
+}

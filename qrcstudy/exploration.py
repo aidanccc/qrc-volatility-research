@@ -64,7 +64,8 @@ def analyze(run,output):
     # Compare original model losses on precisely the same 80 target dates.
     dates=pd.to_datetime(pred.target_month.unique());primary=frame.loc[frame.target_month.isin(dates)&frame.status.eq('ok')].copy()
     for k,v in losses(primary.actual_log_rv,primary.predicted_log_rv,primary.previous_log_rv).items():primary[k]=v
-    primary.groupby(['window','model'])[['mse_log_rv','mae_log_rv','qlike_variance']].mean().to_csv(out/'primary_same_dates.csv')
+    primary_groups=primary.groupby(['window','model'])
+    primary_groups[['mse_log_rv','mae_log_rv','qlike_variance']].mean().join(primary_groups.agg(successful_records=('target_month','size'),months=('target_month','nunique'))).to_csv(out/'primary_same_dates.csv')
     intervals=[]
     for window,g in pred.groupby('window'):
         matrix=g.groupby(['target_month','model']).mse_log_rv.mean().unstack()
@@ -73,16 +74,21 @@ def analyze(run,output):
             for block in [3,6,12]:
                 sample=diff[stationary_indices(len(diff),10000,block,17)].mean(axis=1);lo,hi=np.quantile(sample,[.025,.975]);intervals.append(dict(window=window,model=model,block=block,loss_difference=float(diff.mean()),ci_lower=lo,ci_upper=hi,months=len(diff)))
     pd.DataFrame(intervals).to_csv(out/'matched_intervals.csv',index=False)
-    # Fixed training-period threshold labels unusually volatile target months;
-    # posthoc slices are descriptive, not a cleaned headline benchmark.
-    hist=f.log_rv.loc[:'2017'];med=hist.median();scale=1.4826*(hist-med).abs().median();flags=((f.log_rv-med).abs()>6*scale)
+    # Fixed pre-2018 level/change thresholds flag input histories, never targets.
+    source_inputs=f.drop(columns=['log_rv']) if is_colin else f[config['features']]
+    flags=pd.Series(False,index=f.index)
+    for column in source_inputs:
+        for values in [source_inputs[column],source_inputs[column].diff()]:
+            history=values.loc[:'2017'];median=history.median();scale=1.4826*(history-median).abs().median()
+            if scale>0:flags |= (values-median).abs()>6*scale
+    forecast_flags=flags.astype(int).rolling(3,min_periods=3).max().shift(1).fillna(0).astype(bool)
     slices=[]
     primary=frame.loc[frame.actual_log_rv.notna()&frame.status.eq('ok')].copy()
     for k,v in losses(primary.actual_log_rv,primary.predicted_log_rv,primary.previous_log_rv).items():primary[k]=v
-    primary['flagged_target']=primary.target_month.map(flags).astype(bool)
-    for flag,g in primary.groupby('flagged_target'):
-        result=g.groupby(['window','model'])[['mse_log_rv','qlike_variance']].mean().reset_index();result['flagged_target']=flag;result['months']=g.target_month.nunique();slices.append(result)
+    primary['flagged_input_history']=primary.target_month.map(forecast_flags).astype(bool)
+    for flag,g in primary.groupby('flagged_input_history'):
+        groups=g.groupby(['window','model']);result=groups[['mse_log_rv','qlike_variance']].mean().join(groups.agg(successful_records=('target_month','size'),months=('target_month','nunique'))).reset_index();result['flagged_input_history']=flag;slices.append(result)
     pd.concat(slices).to_csv(out/'outlier_sensitivity.csv',index=False)
-    write_json(out/'receipt.json',{'protocol':'exploratory-matched-ridge-v1','source_run_identity':json.loads((run/'manifest.json').read_text())['identity'],'source_predictions_sha256':digest(run/'predictions.csv'),'source_sha256':digest(__file__),'cache_hashes':hashes,'alphas':ALPHAS.tolist(),'validation_months':24,'scored_months':len(dates),'flagged_target_months':[str(d.date()) for d in flags.loc[config['start']:].index[flags.loc[config['start']:]]]})
-    (out/'report.md').write_text('# Exploratory readout and outlier diagnostics\n\nThese post-benchmark choices are not an untouched confirmation test. Standardization and intercept are fitted only on each training window; alpha minimizes errors on the 24 strictly preceding forecast months. Scores cover January 2020–August 2026 (80 months). Each raw-input ridge uses the same three-step inputs as its paired reservoir. Quantum feature sets differ under the Colin protocol, so QR1/QR2 here are not an isolated virtual-node ablation.\n\n'+table(metrics)+'\n\nSee primary_same_dates.csv for primary models on those same 80 dates, matched_intervals.csv for unadjusted paired bootstrap intervals, and outlier_sensitivity.csv for descriptive target-volatility slices. No primary observation was removed or target clipped.\n')
+    write_json(out/'receipt.json',{'protocol':'exploratory-matched-ridge-v1','source_run_identity':json.loads((run/'manifest.json').read_text())['identity'],'source_predictions_sha256':digest(run/'predictions.csv'),'source_sha256':digest(__file__),'cache_hashes':hashes,'alphas':ALPHAS.tolist(),'validation_months':24,'scored_months':len(dates),'flagged_input_history_months':[str(d.date()) for d in forecast_flags.loc[config['start']:].index[forecast_flags.loc[config['start']:]]]})
+    (out/'report.md').write_text('# Exploratory readout and outlier diagnostics\n\nThese post-benchmark choices are not an untouched confirmation test. Standardization and intercept are fitted only on each training window; alpha minimizes errors on the 24 strictly preceding forecast months. Scores cover January 2020–August 2026 (80 months). Each raw-input ridge uses the same three-step inputs as its paired reservoir. Quantum feature sets differ under the Colin protocol, so QR1/QR2 here are not an isolated virtual-node ablation.\n\n'+table(metrics)+'\n\nSee primary_same_dates.csv for primary models on those same 80 dates, matched_intervals.csv for unadjusted paired bootstrap intervals, and outlier_sensitivity.csv for descriptive slices by flagged preceding three-month input history. No primary observation was removed or target clipped.\n')
     print(f'Exploration: {out}')

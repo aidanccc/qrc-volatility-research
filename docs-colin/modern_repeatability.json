@@ -1,0 +1,10 @@
+{
+  "reference_repository": "vikasyarlagadda/quantum-reservoir-realized-volatility-predictor",
+  "reference_file": "results/modern-2026-09-14/predictions.csv",
+  "reference_sha256": "991a4bb584effb30a0f44bbd86c1fc06ec3d0dca94f271d22d59faf9de988a87",
+  "new_sha256": "fb0ef3c853b143fbbc4be4e7299f1ff1a32556ba95fa012beb3d409b98500683",
+  "compared_records": 7560,
+  "successful_prediction_pairs": 7558,
+  "status_mismatches": 0,
+  "maximum_absolute_prediction_difference": 0.0
+}
