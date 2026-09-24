@@ -1,0 +1,752 @@
+[
+  {
+    "sha": "e88ceec72486743dccebf95ae88a4dc178b6036e",
+    "date": "2026-09-14T22:59:08-04:00",
+    "author": "vikasyarlagadda",
+    "parents": [
+      "85208b51660b0df9210ea1bb16293bc403b257cc",
+      "56058f7ca9bf6411861646e0906b87655405ddf4"
+    ],
+    "message": "Merge pull request #1 from vikasyarlagadda/codex/current-market-volatility\n\nModernize monthly volatility study through August 2026",
+    "files": [
+      ".gitignore",
+      "ASSUMPTIONS.md",
+      "Current_Market_Results.ipynb",
+      "MODERNIZATION_AUDIT.md",
+      "README.md",
+      "REPRO_STATUS.md",
+      "RUN_ORDER.md",
+      "data/snapshots/2026-09-14-v2/historical_reconciliation.csv",
+      "data/snapshots/2026-09-14-v2/manifest.json",
+      "data/snapshots/2026-09-14-v2/monthly.csv",
+      "data/snapshots/2026-09-14-v2/price_corrections.csv",
+      "data/snapshots/2026-09-14-v2/sources.json",
+      "qrcstudy/__init__.py",
+      "qrcstudy/data.py",
+      "qrcstudy/legacy.py",
+      "qrcstudy/models.py",
+      "qrcstudy/report.py",
+      "qrcstudy/run.py",
+      "quantum_reservoir_qiskit.py",
+      "quantum_reservoir_trotter.py",
+      "requirements-lock.txt",
+      "requirements.txt",
+      "results/legacy-2026-09-14/complete.json",
+      "results/legacy-2026-09-14/execution.log",
+      "results/legacy-2026-09-14/execution_revision.json",
+      "results/legacy-2026-09-14/legacy_dm_metadata.json",
+      "results/legacy-2026-09-14/legacy_dm_pvalues.csv",
+      "results/legacy-2026-09-14/legacy_dm_statistics.csv",
+      "results/legacy-2026-09-14/legacy_metrics.csv",
+      "results/legacy-2026-09-14/manifest.json",
+      "results/legacy-2026-09-14/predictions.csv",
+      "results/legacy-2026-09-14/preprocess.py.done.json",
+      "results/legacy-2026-09-14/publication_notes.json",
+      "results/legacy-2026-09-14/quantum_reference_comparison.json",
+      "results/legacy-2026-09-14/run_qrc_simulation.py.done.json",
+      "results/modern-2026-09-14/clipping.csv",
+      "results/modern-2026-09-14/common_dates_metrics.csv",
+      "results/modern-2026-09-14/execution.json",
+      "results/modern-2026-09-14/execution_revision.json",
+      "results/modern-2026-09-14/failures.csv",
+      "results/modern-2026-09-14/last12_forecasts.csv",
+      "results/modern-2026-09-14/last12_forecasts.png",
+      "results/modern-2026-09-14/loss_difference_ci.csv",
+      "results/modern-2026-09-14/losses.csv",
+      "results/modern-2026-09-14/manifest.json",
+      "results/modern-2026-09-14/mcs.csv",
+      "results/modern-2026-09-14/metrics.csv",
+      "results/modern-2026-09-14/metrics_by_seed.csv",
+      "results/modern-2026-09-14/model_comparison.png",
+      "results/modern-2026-09-14/predictions.csv",
+      "results/modern-2026-09-14/report.html",
+      "results/modern-2026-09-14/report.md",
+      "results/modern-2026-09-14/report_receipt.json",
+      "results/modern-2026-09-14/scaler.json",
+      "results/modern-2026-09-14/unscored_forecasts.csv",
+      "results/publication_validation.json",
+      "results/resume_validation.json",
+      "results/test_output.txt",
+      "results/validation_receipt.json",
+      "run_study.py",
+      "tests/test_study.py"
+    ]
+  },
+  {
+    "sha": "56058f7ca9bf6411861646e0906b87655405ddf4",
+    "date": "2026-09-14T22:58:44-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "eca995cc9200ba9d39bceeb8660dd5164c6a4f10"
+    ],
+    "message": "docs: establish personal repository as sole development destination",
+    "files": [
+      "README.md",
+      "REPRO_STATUS.md",
+      "RUN_ORDER.md"
+    ]
+  },
+  {
+    "sha": "eca995cc9200ba9d39bceeb8660dd5164c6a4f10",
+    "date": "2026-09-14T22:40:21-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "a3222efdc41d14d180cdc712aa7142adf81ce799"
+    ],
+    "message": "results: publish August 2026 volatility benchmarks and validation\n\nRecord the complete 7,560-record modern experiment and 2,695 legacy forecasts, with transparent ARMAX failures, per-seed metrics, common-date comparisons, stationary-bootstrap inference, and readable reports.\n\nVerify deterministic resume, portable artifact-only report regeneration, fresh quantum reference agreement, and preserve upstream maintenance with the executed source revision documented.",
+    "files": [
+      "README.md",
+      "REPRO_STATUS.md",
+      "RUN_ORDER.md",
+      "qrcstudy/report.py",
+      "requirements.txt",
+      "results/legacy-2026-09-14/complete.json",
+      "results/legacy-2026-09-14/execution.log",
+      "results/legacy-2026-09-14/execution_revision.json",
+      "results/legacy-2026-09-14/legacy_dm_metadata.json",
+      "results/legacy-2026-09-14/legacy_dm_pvalues.csv",
+      "results/legacy-2026-09-14/legacy_dm_statistics.csv",
+      "results/legacy-2026-09-14/legacy_metrics.csv",
+      "results/legacy-2026-09-14/manifest.json",
+      "results/legacy-2026-09-14/predictions.csv",
+      "results/legacy-2026-09-14/preprocess.py.done.json",
+      "results/legacy-2026-09-14/publication_notes.json",
+      "results/legacy-2026-09-14/quantum_reference_comparison.json",
+      "results/legacy-2026-09-14/run_qrc_simulation.py.done.json",
+      "results/modern-2026-09-14/clipping.csv",
+      "results/modern-2026-09-14/common_dates_metrics.csv",
+      "results/modern-2026-09-14/execution.json",
+      "results/modern-2026-09-14/execution_revision.json",
+      "results/modern-2026-09-14/failures.csv",
+      "results/modern-2026-09-14/last12_forecasts.csv",
+      "results/modern-2026-09-14/last12_forecasts.png",
+      "results/modern-2026-09-14/loss_difference_ci.csv",
+      "results/modern-2026-09-14/losses.csv",
+      "results/modern-2026-09-14/manifest.json",
+      "results/modern-2026-09-14/mcs.csv",
+      "results/modern-2026-09-14/metrics.csv",
+      "results/modern-2026-09-14/metrics_by_seed.csv",
+      "results/modern-2026-09-14/model_comparison.png",
+      "results/modern-2026-09-14/predictions.csv",
+      "results/modern-2026-09-14/report.html",
+      "results/modern-2026-09-14/report.md",
+      "results/modern-2026-09-14/report_receipt.json",
+      "results/modern-2026-09-14/scaler.json",
+      "results/modern-2026-09-14/unscored_forecasts.csv",
+      "results/publication_validation.json",
+      "results/resume_validation.json",
+      "results/test_output.txt",
+      "results/validation_receipt.json",
+      "tests/test_study.py"
+    ]
+  },
+  {
+    "sha": "a3222efdc41d14d180cdc712aa7142adf81ce799",
+    "date": "2026-09-14T22:31:38-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "6e7ddf01f91388c2a011b407f3a136f48589bf90",
+      "4cc490263b0efbb2d9604f859ad535f835bec5f2"
+    ],
+    "message": "Merge upstream Trotter maintenance into current-market study",
+    "files": [
+      ".gitignore",
+      "ASSUMPTIONS.md",
+      "Current_Market_Results.ipynb",
+      "MODERNIZATION_AUDIT.md",
+      "README.md",
+      "REPRO_STATUS.md",
+      "RUN_ORDER.md",
+      "data/snapshots/2026-09-14-v2/historical_reconciliation.csv",
+      "data/snapshots/2026-09-14-v2/manifest.json",
+      "data/snapshots/2026-09-14-v2/monthly.csv",
+      "data/snapshots/2026-09-14-v2/price_corrections.csv",
+      "data/snapshots/2026-09-14-v2/sources.json",
+      "qrcstudy/__init__.py",
+      "qrcstudy/data.py",
+      "qrcstudy/legacy.py",
+      "qrcstudy/models.py",
+      "qrcstudy/report.py",
+      "qrcstudy/run.py",
+      "quantum_reservoir_qiskit.py",
+      "quantum_reservoir_trotter.py",
+      "requirements-lock.txt",
+      "requirements.txt",
+      "run_study.py",
+      "tests/test_study.py"
+    ]
+  },
+  {
+    "sha": "6e7ddf01f91388c2a011b407f3a136f48589bf90",
+    "date": "2026-09-14T22:28:32-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "85208b51660b0df9210ea1bb16293bc403b257cc"
+    ],
+    "message": "feat: add reproducible current-market volatility study\n\nAdd validated public-data ingestion, causal price features, paired quantum benchmarks, classical baselines, and resumable per-origin execution. Preserve legacy reproduction separately and document data reconciliation and methodology changes.\n\nPin the local environment and test aggregation, forecast timing, losses, identity checks, and deterministic LSTM resume behavior.",
+    "files": [
+      ".gitignore",
+      "ASSUMPTIONS.md",
+      "Current_Market_Results.ipynb",
+      "MODERNIZATION_AUDIT.md",
+      "README.md",
+      "REPRO_STATUS.md",
+      "RUN_ORDER.md",
+      "data/snapshots/2026-09-14-v2/historical_reconciliation.csv",
+      "data/snapshots/2026-09-14-v2/manifest.json",
+      "data/snapshots/2026-09-14-v2/monthly.csv",
+      "data/snapshots/2026-09-14-v2/price_corrections.csv",
+      "data/snapshots/2026-09-14-v2/sources.json",
+      "qrcstudy/__init__.py",
+      "qrcstudy/data.py",
+      "qrcstudy/legacy.py",
+      "qrcstudy/models.py",
+      "qrcstudy/report.py",
+      "qrcstudy/run.py",
+      "requirements-lock.txt",
+      "requirements.txt",
+      "run_study.py",
+      "tests/test_study.py"
+    ]
+  },
+  {
+    "sha": "4cc490263b0efbb2d9604f859ad535f835bec5f2",
+    "date": "2026-04-20T19:25:21-04:00",
+    "author": "aidanccc",
+    "parents": [
+      "ee4afc8a824d87f0b5005741dd9e01873be1ed92",
+      "85208b51660b0df9210ea1bb16293bc403b257cc"
+    ],
+    "message": "Merge branch 'main' of https://github.com/aidanccc/qrc-volatility-research",
+    "files": [
+      ".gitignore",
+      "quantum_reservoir_qiskit.py",
+      "quantum_reservoir_trotter.py",
+      "results/plots/AR(1)_model.png",
+      "results/plots/AR(3)_model.png",
+      "results/plots/ARMAX_model.png",
+      "results/plots/HARX_model.png",
+      "results/plots/HAR_model.png",
+      "results/plots/QR1_model.png",
+      "results/plots/QR2_model.png",
+      "results/predictions/qrc_predict_result.csv",
+      "results/stats/dm_stat.csv",
+      "results/stats/p_value.csv"
+    ]
+  },
+  {
+    "sha": "ee4afc8a824d87f0b5005741dd9e01873be1ed92",
+    "date": "2026-04-20T19:25:02-04:00",
+    "author": "aidanccc",
+    "parents": [
+      "1730bcec4763eff4eba60c467833be7cf3cf0b2d"
+    ],
+    "message": "feature/trotterized-circuit",
+    "files": [
+      "quantum_reservoir_qiskit.py",
+      "quantum_reservoir_trotter.py"
+    ]
+  },
+  {
+    "sha": "85208b51660b0df9210ea1bb16293bc403b257cc",
+    "date": "2026-04-20T14:59:27-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "7560d4e9c629b0da8d9d7a8945b560c505c0c45c",
+      "1730bcec4763eff4eba60c467833be7cf3cf0b2d"
+    ],
+    "message": "Merge branch 'main' of https://github.com/aidanccc/qrc-volatility-research",
+    "files": [
+      ".gitignore",
+      "quantum_reservoir_trotter.py",
+      "results/plots/AR(1)_model.png",
+      "results/plots/AR(3)_model.png",
+      "results/plots/ARMAX_model.png",
+      "results/plots/HARX_model.png",
+      "results/plots/HAR_model.png",
+      "results/plots/QR1_model.png",
+      "results/plots/QR2_model.png",
+      "results/predictions/qrc_predict_result.csv",
+      "results/stats/dm_stat.csv",
+      "results/stats/p_value.csv",
+      "run_qrc_simulation.py"
+    ]
+  },
+  {
+    "sha": "7560d4e9c629b0da8d9d7a8945b560c505c0c45c",
+    "date": "2026-04-19T14:10:12-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "f7d9e09cd9b789f2b72a57faa6db9024cc959f16"
+    ],
+    "message": "results: add plots, predictions, and stats to version control\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      ".gitignore",
+      "results/plots/AR(1)_model.png",
+      "results/plots/AR(3)_model.png",
+      "results/plots/ARMAX_model.png",
+      "results/plots/HARX_model.png",
+      "results/plots/HAR_model.png",
+      "results/plots/QR1_model.png",
+      "results/plots/QR2_model.png",
+      "results/predictions/qrc_predict_result.csv",
+      "results/stats/dm_stat.csv",
+      "results/stats/p_value.csv"
+    ]
+  },
+  {
+    "sha": "f7d9e09cd9b789f2b72a57faa6db9024cc959f16",
+    "date": "2026-04-19T14:06:56-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "65dc642034921d9c5fd34aaa79f41e8ef80205c7"
+    ],
+    "message": "gitignore: include results/ and data/, keep docs/.venv/.claude ignored\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      ".gitignore"
+    ]
+  },
+  {
+    "sha": "1730bcec4763eff4eba60c467833be7cf3cf0b2d",
+    "date": "2026-04-16T22:15:59-04:00",
+    "author": "aidanccc",
+    "parents": [
+      "08141bacaed5ea91ff0f5654a43be379ef9397e7"
+    ],
+    "message": "fix:directory changes for quantum circuit files",
+    "files": [
+      "quantum_reservoir_trotter.py",
+      "run_qrc_simulation.py"
+    ]
+  },
+  {
+    "sha": "08141bacaed5ea91ff0f5654a43be379ef9397e7",
+    "date": "2026-04-16T22:05:06-04:00",
+    "author": "aidanccc",
+    "parents": [
+      "65dc642034921d9c5fd34aaa79f41e8ef80205c7",
+      "9bf3e051cfde61967854624a36eae770077a9a0a"
+    ],
+    "message": "Merge branch 'feature/quantum-circuit'",
+    "files": [
+      ".gitignore",
+      "Data.CSV",
+      "Data_raw.csv",
+      "LSTM.ipynb",
+      "README.md",
+      "Reservoir_Learning.ipynb",
+      "classical_reservoir.ipynb",
+      "coeff_10.jld2",
+      "data/Data.CSV",
+      "data/coeff_10.jld2",
+      "data/predict_result.csv",
+      "dff.csv",
+      "predict_result.csv",
+      "preprocess.py",
+      "quantum_reservoir_trotter.py",
+      "run_qrc_simulation.py"
+    ]
+  },
+  {
+    "sha": "9bf3e051cfde61967854624a36eae770077a9a0a",
+    "date": "2026-04-16T22:03:59-04:00",
+    "author": "aidanccc",
+    "parents": [
+      "38a4954a22e10e82c061e2de95dc8db11c44fbcd"
+    ],
+    "message": "feature/trotter-circuit",
+    "files": [
+      "quantum_reservoir_trotter.py"
+    ]
+  },
+  {
+    "sha": "65dc642034921d9c5fd34aaa79f41e8ef80205c7",
+    "date": "2026-04-16T15:08:03-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "a54ff20ca73d5599ce4497e2e0d30628956aadc4"
+    ],
+    "message": "README: remove docs/ from repository structure tree\n\ndocs/ is gitignored and personal \u2014 other users won't have it.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "README.md"
+    ]
+  },
+  {
+    "sha": "a54ff20ca73d5599ce4497e2e0d30628956aadc4",
+    "date": "2026-04-16T15:00:37-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "ebb173308c7ffe83a2f75d7c2b0fa703209499cc"
+    ],
+    "message": "gitignore: cover root-level model PNGs and stat CSVs\n\nThese are legacy artifacts left at root from an earlier commit.\nCanonical outputs live in results/ which is already gitignored.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      ".gitignore"
+    ]
+  },
+  {
+    "sha": "ebb173308c7ffe83a2f75d7c2b0fa703209499cc",
+    "date": "2026-04-16T14:59:58-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "f7b2383a5a58d5a8a7bb3cadf35c56c3f8dd6002",
+      "feee324f5b73b92b96a45fc69f0819032148b2c5"
+    ],
+    "message": "Merge Vikas into main: complete reproduction pipeline\n\nIncludes full repo restructuring, verified Qiskit quantum implementation,\nupdated README with architecture diagram and results, and proper gitignore\nfor generated outputs and personal files.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": []
+  },
+  {
+    "sha": "feee324f5b73b92b96a45fc69f0819032148b2c5",
+    "date": "2026-04-16T14:59:39-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "be855f3b3bd355235e921013e73e7281e675aaba"
+    ],
+    "message": "Remove stale root-level result artifacts from tracking\n\nThese files (model PNGs, dm_stat.csv, p_value.csv) were committed\nin an earlier Vikas branch commit but have since been moved to\nresults/ which is now gitignored (generated outputs, not source).\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "AR(1)_model.png",
+      "AR(3)_model.png",
+      "ARMAX_model.png",
+      "HARX_model.png",
+      "HAR_model.png",
+      "QR1_model.png",
+      "QR2_model.png",
+      "dm_stat.csv",
+      "p_value.csv"
+    ]
+  },
+  {
+    "sha": "be855f3b3bd355235e921013e73e7281e675aaba",
+    "date": "2026-04-16T14:59:23-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "7f3d180dec8ae7319c8447c4aaa3287b3c495cda",
+      "f7b2383a5a58d5a8a7bb3cadf35c56c3f8dd6002"
+    ],
+    "message": "Merge main into Vikas: complete reproduction pipeline\n\nBrings in full restructuring, README rewrite, Qiskit verification,\nand gitignore updates from main branch.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      ".gitignore",
+      "AR(1)_model.png",
+      "AR(3)_model.png",
+      "ARMAX_model.png",
+      "Data.CSV",
+      "Data_raw.csv",
+      "HARX_model.png",
+      "HAR_model.png",
+      "LSTM.ipynb",
+      "QR1_model.png",
+      "QR2_model.png",
+      "README.md",
+      "Reservoir_Learning.ipynb",
+      "classical_reservoir.ipynb",
+      "coeff_10.jld2",
+      "data/Data.CSV",
+      "data/coeff_10.jld2",
+      "data/predict_result.csv",
+      "dff.csv",
+      "dm_stat.csv",
+      "p_value.csv",
+      "predict_result.csv",
+      "preprocess.py",
+      "quantum_reservoir_qiskit.py",
+      "requirements.txt",
+      "run_qrc_simulation.py"
+    ]
+  },
+  {
+    "sha": "f7b2383a5a58d5a8a7bb3cadf35c56c3f8dd6002",
+    "date": "2026-04-16T14:59:01-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "38a4954a22e10e82c061e2de95dc8db11c44fbcd"
+    ],
+    "message": "Restructure repo layout and update README, gitignore, and paths\n\n- Moved source data files to data/ (Data.CSV, coeff_10.jld2, predict_result.csv)\n- Moved generated outputs to results/predictions/, results/plots/, results/stats/\n- Moved personal docs to docs/ (now gitignored)\n- Updated all notebook and script paths to match new layout\n- Updated .gitignore: exclude CLAUDE.md, .claude/, docs/, generated data/results\n- Rewrote README: add pipeline architecture diagram, Python Qiskit section,\n  verified results tables, updated structure tree and run instructions\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      ".gitignore",
+      "Data.CSV",
+      "Data_raw.csv",
+      "LSTM.ipynb",
+      "README.md",
+      "Reservoir_Learning.ipynb",
+      "classical_reservoir.ipynb",
+      "coeff_10.jld2",
+      "data/Data.CSV",
+      "data/coeff_10.jld2",
+      "data/predict_result.csv",
+      "dff.csv",
+      "predict_result.csv",
+      "preprocess.py",
+      "run_qrc_simulation.py"
+    ]
+  },
+  {
+    "sha": "38a4954a22e10e82c061e2de95dc8db11c44fbcd",
+    "date": "2026-04-15T23:43:27-04:00",
+    "author": "aidanccc",
+    "parents": [
+      "9c1554e9067bd78754f2bf1c06b0d1e448f2cf42"
+    ],
+    "message": "Adding Qiskit implementation of circuit",
+    "files": [
+      "README.md",
+      "quantum_reservoir_qiskit.py",
+      "requirements.txt",
+      "run_qrc_simulation.py"
+    ]
+  },
+  {
+    "sha": "7f3d180dec8ae7319c8447c4aaa3287b3c495cda",
+    "date": "2026-04-12T23:49:17-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "e44428427018e81d5015663fef12d4103f0bb810"
+    ],
+    "message": "Add reproduction output artifacts: model plots and DM test results\n\nIncludes per-model out-of-sample forecast plots (AR1, AR3, HAR, HARX,\nARMAX, QR1, QR2) and the full 11\u00d711 Diebold-Mariano test statistic and\np-value matrices from a complete notebook run.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "AR(1)_model.png",
+      "AR(3)_model.png",
+      "ARMAX_model.png",
+      "HARX_model.png",
+      "HAR_model.png",
+      "QR1_model.png",
+      "QR2_model.png",
+      "dm_stat.csv",
+      "p_value.csv"
+    ]
+  },
+  {
+    "sha": "9c1554e9067bd78754f2bf1c06b0d1e448f2cf42",
+    "date": "2026-04-12T22:10:50-04:00",
+    "author": "vyarlagadda",
+    "parents": [
+      "82d56c97c4ab66f7823d11dac9752e546110cea3",
+      "e44428427018e81d5015663fef12d4103f0bb810"
+    ],
+    "message": "Merge pull request #1 from aidanccc/Vikas\n\nVikas",
+    "files": [
+      "Data_raw.csv",
+      "LSTM.ipynb",
+      "Reservoir_Learning.ipynb",
+      "Time_series.jl",
+      "classical_reservoir.ipynb",
+      "dff.csv",
+      "preprocess.py"
+    ]
+  },
+  {
+    "sha": "e44428427018e81d5015663fef12d4103f0bb810",
+    "date": "2026-04-12T22:02:37-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "d86765aade235264c8fe1975c56917b0254c5613"
+    ],
+    "message": "Add comprehensive documentation throughout all source files\n\n- preprocess.py: full module docstring explaining pipeline role, ADF logic,\n  inputs/outputs, usage instructions; annotated every function and step\n- LSTM.ipynb: header explaining both variants, architecture comments,\n  hyperparameter rationale with paper refs, detailed rolling-window logic,\n  QLIKE function docs throughout every cell\n- classical_reservoir.ipynb: ESN reservoir dynamics equations, parameter\n  justifications, step-by-step inline comments for every cell\n- Reservoir_Learning.ipynb: overview table of all 11 models, MCS/QLIKE\n  theory explanations, HAR/HARX/AR/ARMAX formula comments, QR scale\n  conversion explanation, DM test Newey-West derivation comments\n- Time_series.jl: file-level header with dependency warnings, documented\n  every function (Qreservoir, Quantum_Reservoir, MyModel, metrics, utils)\n  with physics explanations and paper equation references\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "Reservoir_Learning.ipynb",
+      "Time_series.jl",
+      "classical_reservoir.ipynb",
+      "preprocess.py"
+    ]
+  },
+  {
+    "sha": "d86765aade235264c8fe1975c56917b0254c5613",
+    "date": "2026-04-12T17:38:25-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "9d1de3a83e356563c939f8af9bbb6c692dfa1831"
+    ],
+    "message": "Fix methodology discrepancies to match paper (arXiv 2505.13933)\n\n- AR(1), AR(3), ARMAX: fix expanding window \u2192 fixed-size rolling window\n- ARMAX: fix AR order from (1,0,0) to (3,0,0) per paper spec\n- HAR, HARX: fix rolling_window_end off-by-one (len(train)-1 \u2192 len(train))\n- HARX: fix subsample start (277 \u2192 0) to use full training window\n- HARX: expand exogenous vars from 4 to all available macro predictors\n- DM test: replace simple variance with Newey-West HAC estimator (Bartlett kernel)\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "Reservoir_Learning.ipynb",
+      "classical_reservoir.ipynb"
+    ]
+  },
+  {
+    "sha": "9d1de3a83e356563c939f8af9bbb6c692dfa1831",
+    "date": "2026-04-12T08:04:33-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "e36e7eb234f91bbb09b0bebf2dad1bbbb4311aa5"
+    ],
+    "message": "Align hyperparameters with paper specifications\n\nLSTM.ipynb:\n- batch_size: 256 \u2192 64 (paper Section IV)\n\nclassical_reservoir.ipynb:\n- input_scaling: 1.0 \u2192 0.1 (paper Section IV)\n- Use paper's fixed reservoir sizes: CRL N=50, CRLX N=20\n  instead of searching N=20-100\n\nThese were the two significant parameter discrepancies between\nthe code and arXiv:2505.13933.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "classical_reservoir.ipynb"
+    ]
+  },
+  {
+    "sha": "016e09e8dbce9778d63a48f10bae6646c1fa3f3f",
+    "date": "2026-04-12T08:04:33-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "e50b3f3469bcc79d1373d76f123a45f00a67d2c8"
+    ],
+    "message": "Align hyperparameters with paper specifications\n\nLSTM.ipynb:\n- batch_size: 256 \u2192 64 (paper Section IV)\n\nclassical_reservoir.ipynb:\n- input_scaling: 1.0 \u2192 0.1 (paper Section IV)\n- Use paper's fixed reservoir sizes: CRL N=50, CRLX N=20\n  instead of searching N=20-100\n\nThese were the two significant parameter discrepancies between\nthe code and arXiv:2505.13933.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "classical_reservoir.ipynb"
+    ]
+  },
+  {
+    "sha": "e36e7eb234f91bbb09b0bebf2dad1bbbb4311aa5",
+    "date": "2026-04-12T07:23:17-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "856a62117caadb59ae833e4ce0b0d48d3b207c44"
+    ],
+    "message": "Fix QR prediction scale mismatch \u2014 root cause of wrong results\n\nThe shipped predict_result.csv contains QR predictions in the original\ndenormalized log-RV scale (range [-3.9, -1.7]) because the Julia code\napplied denormalization(Max_RV, Min_RV, Pre, -1, 0) before saving.\n\nHowever, all Python-side models and the actual RV target operate in the\nData.CSV normalized scale (range [-1, 0]).\n\nFix: renormalize QR predictions back to [-1, 0] when loading:\n  qr_norm = (qr_raw - Min_RV) / dif - 1\n\nAfter this fix, QR1 MSE=0.0085 and QR2 MSE=0.0084, which are competitive\nwith ARMAX (0.0084) and better than AR3/LSTM/CRL \u2014 consistent with the\npaper's reported results.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "Reservoir_Learning.ipynb"
+    ]
+  },
+  {
+    "sha": "e50b3f3469bcc79d1373d76f123a45f00a67d2c8",
+    "date": "2026-04-12T07:23:17-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "5a57d5913a4b163d6f76f807afae32f448f2ae37"
+    ],
+    "message": "Fix QR prediction scale mismatch \u2014 root cause of wrong results\n\nThe shipped predict_result.csv contains QR predictions in the original\ndenormalized log-RV scale (range [-3.9, -1.7]) because the Julia code\napplied denormalization(Max_RV, Min_RV, Pre, -1, 0) before saving.\n\nHowever, all Python-side models and the actual RV target operate in the\nData.CSV normalized scale (range [-1, 0]).\n\nFix: renormalize QR predictions back to [-1, 0] when loading:\n  qr_norm = (qr_raw - Min_RV) / dif - 1\n\nAfter this fix, QR1 MSE=0.0085 and QR2 MSE=0.0084, which are competitive\nwith ARMAX (0.0084) and better than AR3/LSTM/CRL \u2014 consistent with the\npaper's reported results.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "Reservoir_Learning.ipynb"
+    ]
+  },
+  {
+    "sha": "856a62117caadb59ae833e4ce0b0d48d3b207c44",
+    "date": "2026-04-11T21:06:55-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "23bdd8eff76b1765dbf9053abc4fc236b1d78201"
+    ],
+    "message": "Fix runtime errors in all three notebooks\n\nLSTM.ipynb:\n- Pass optimizer and criterion as arguments to train_model() to fix\n  NameError from closure scoping issue\n- Add progress logging every 50 windows\n\nclassical_reservoir.ipynb:\n- Replace removed rpy.verbosity() with rpy.set_seed(0) for v0.4+\n- Fix readout.run() return shape: extract scalar with float(pred.flat[0])\n- Add progress logging every 50 windows\n\nReservoir_Learning.ipynb:\n- Fix cell 48 bug: MCS was using MSE losses instead of QLIKE losses\n- Add model names to MCS DataFrames for interpretable output\n- Wrap MCS computations in try/except for robustness\n- Fix glob pattern: best_CRL(* no longer matches best_CRLX(* files\n\nAll three notebooks verified working via integration test.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "Reservoir_Learning.ipynb",
+      "classical_reservoir.ipynb"
+    ]
+  },
+  {
+    "sha": "5a57d5913a4b163d6f76f807afae32f448f2ae37",
+    "date": "2026-04-11T21:06:55-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "ca28bbe9fe7ce5e61ad719e0364c80ea3724ec73"
+    ],
+    "message": "Fix runtime errors in all three notebooks\n\nLSTM.ipynb:\n- Pass optimizer and criterion as arguments to train_model() to fix\n  NameError from closure scoping issue\n- Add progress logging every 50 windows\n\nclassical_reservoir.ipynb:\n- Replace removed rpy.verbosity() with rpy.set_seed(0) for v0.4+\n- Fix readout.run() return shape: extract scalar with float(pred.flat[0])\n- Add progress logging every 50 windows\n\nReservoir_Learning.ipynb:\n- Fix cell 48 bug: MCS was using MSE losses instead of QLIKE losses\n- Add model names to MCS DataFrames for interpretable output\n- Wrap MCS computations in try/except for robustness\n- Fix glob pattern: best_CRL(* no longer matches best_CRLX(* files\n\nAll three notebooks verified working via integration test.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "Reservoir_Learning.ipynb",
+      "classical_reservoir.ipynb"
+    ]
+  },
+  {
+    "sha": "23bdd8eff76b1765dbf9053abc4fc236b1d78201",
+    "date": "2026-04-11T20:37:46-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "506d088cc8f984f01555fad8a600caa83560833a"
+    ],
+    "message": "Patch Reservoir_Learning.ipynb for reproducibility\n\n- Guard broken/unused imports (pandas_datareader, nolitsa, yfinance)\n  with try/except so the core pipeline doesn't crash on import\n- Convert QR predictions from pandas Series to numpy arrays to prevent\n  type mismatches in np.column_stack and DM test calculations\n- Use glob to find CRL/CRLX prediction files instead of hardcoding\n  best-N values (50, 20) that may differ between stochastic runs\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "Reservoir_Learning.ipynb"
+    ]
+  },
+  {
+    "sha": "ca28bbe9fe7ce5e61ad719e0364c80ea3724ec73",
+    "date": "2026-04-11T20:37:46-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "24dc8ca39f117476c21435f4e4dab449a05218d3"
+    ],
+    "message": "Patch Reservoir_Learning.ipynb for reproducibility\n\n- Guard broken/unused imports (pandas_datareader, nolitsa, yfinance)\n  with try/except so the core pipeline doesn't crash on import\n- Convert QR predictions from pandas Series to numpy arrays to prevent\n  type mismatches in np.column_stack and DM test calculations\n- Use glob to find CRL/CRLX prediction files instead of hardcoding\n  best-N values (50, 20) that may differ between stochastic runs\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "Reservoir_Learning.ipynb"
+    ]
+  },
+  {
+    "sha": "506d088cc8f984f01555fad8a600caa83560833a",
+    "date": "2026-04-11T20:28:00-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "18dfebff8637f26fa891e7b6958efe73b8ad5bfb"
+    ],
+    "message": "Patch LSTM and classical reservoir notebooks for reproducibility\n\nLSTM.ipynb:\n- Add os.makedirs(\"LSTM\") for output directory\n- Refactor training into run_lstm_rolling() function\n- Run both base LSTM (RV only, hidden=60) and LSTMX (11 features, hidden=50)\n- Save outputs to LSTM/lstm60_predictions.csv and LSTM/lstmx50_predictions.csv\n\nclassical_reservoir.ipynb:\n- Add os.makedirs(\"Classical_Reservoir_learning\") for output directory\n- Fix reservoirpy 0.4.1 API: replace run(X, reset=True) with reset()+run(X)\n- Refactor into run_crl() function with warmup call for state init\n- Run both CRL (RV only) and CRLX (11 features), save best-N predictions\n- Remove old commented-out cells\n\nBoth notebooks now produce the output files expected by Reservoir_Learning.ipynb.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "classical_reservoir.ipynb"
+    ]
+  },
+  {
+    "sha": "24dc8ca39f117476c21435f4e4dab449a05218d3",
+    "date": "2026-04-11T20:28:00-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "af83ddf60355d348aa12ba8a5130cb4e065b10d0"
+    ],
+    "message": "Patch LSTM and classical reservoir notebooks for reproducibility\n\nLSTM.ipynb:\n- Add os.makedirs(\"LSTM\") for output directory\n- Refactor training into run_lstm_rolling() function\n- Run both base LSTM (RV only, hidden=60) and LSTMX (11 features, hidden=50)\n- Save outputs to LSTM/lstm60_predictions.csv and LSTM/lstmx50_predictions.csv\n\nclassical_reservoir.ipynb:\n- Add os.makedirs(\"Classical_Reservoir_learning\") for output directory\n- Fix reservoirpy 0.4.1 API: replace run(X, reset=True) with reset()+run(X)\n- Refactor into run_crl() function with warmup call for state init\n- Run both CRL (RV only) and CRLX (11 features), save best-N predictions\n- Remove old commented-out cells\n\nBoth notebooks now produce the output files expected by Reservoir_Learning.ipynb.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "LSTM.ipynb",
+      "classical_reservoir.ipynb"
+    ]
+  },
+  {
+    "sha": "18dfebff8637f26fa891e7b6958efe73b8ad5bfb",
+    "date": "2026-04-11T20:09:30-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "82d56c97c4ab66f7823d11dac9752e546110cea3"
+    ],
+    "message": "Add preprocessing script and generated artifacts\n\npreprocess.py reads Data.CSV, runs ADF stationarity tests on each column,\ndifferences non-stationary columns (DP\u2192diff_DP, TB\u2192diff_TB), fills NaN\nwith 0, and writes Data_raw.csv and dff.csv to the repo root.\n\nThis unblocks LSTM.ipynb and classical_reservoir.ipynb, both of which\nfail at their first cell without these files.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "Data_raw.csv",
+      "dff.csv",
+      "preprocess.py"
+    ]
+  },
+  {
+    "sha": "af83ddf60355d348aa12ba8a5130cb4e065b10d0",
+    "date": "2026-04-11T20:09:30-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "82d56c97c4ab66f7823d11dac9752e546110cea3"
+    ],
+    "message": "Add preprocessing script and generated artifacts\n\npreprocess.py reads Data.CSV, runs ADF stationarity tests on each column,\ndifferences non-stationary columns (DP\u2192diff_DP, TB\u2192diff_TB), fills NaN\nwith 0, and writes Data_raw.csv and dff.csv to the repo root.\n\nThis unblocks LSTM.ipynb and classical_reservoir.ipynb, both of which\nfail at their first cell without these files.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>",
+    "files": [
+      "Data_raw.csv",
+      "dff.csv",
+      "preprocess.py"
+    ]
+  },
+  {
+    "sha": "82d56c97c4ab66f7823d11dac9752e546110cea3",
+    "date": "2026-04-10T14:50:13-04:00",
+    "author": "Vikas Yarlagadda",
+    "parents": [
+      "915cd10709271c6cdb917ed8afc3612c794d1d1a"
+    ],
+    "message": "Update gitignore for local environment and outputs",
+    "files": [
+      ".gitignore"
+    ]
+  },
+  {
+    "sha": "915cd10709271c6cdb917ed8afc3612c794d1d1a",
+    "date": "2026-04-07T23:44:17-04:00",
+    "author": "aidanccc",
+    "parents": [],
+    "message": "Initial commit",
+    "files": [
+      ".gitignore",
+      "Data.CSV",
+      "LSTM.ipynb",
+      "README.md",
+      "Reservoir_Learning.ipynb",
+      "Time_serial_Finance_regression.ipynb",
+      "Time_series.jl",
+      "classical_reservoir.ipynb",
+      "coeff_10.jld2",
+      "predict_result.csv"
+    ]
+  }
+]

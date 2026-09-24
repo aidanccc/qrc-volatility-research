@@ -1,0 +1,26 @@
+{
+  "factors.zip": {
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_CSV.zip",
+    "sha256": "b840dba55d319f4818fc7300e65c52eff5f64870c8d495fa58ff5d4cd749f5eb",
+    "observed_at": "2026-09-24T16:02:52.743938+00:00",
+    "retrieval_note": "Downloaded during September 24 audit; retained local bytes used if present"
+  },
+  "reversal.zip": {
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_ST_Reversal_Factor_CSV.zip",
+    "sha256": "8d2b558ca55592ae3a10f3fc39fa2fcd28c1b7d47e807109de0ef0133c326b83",
+    "observed_at": "2026-09-24T16:02:52.744018+00:00",
+    "retrieval_note": "Downloaded during September 24 audit; retained local bytes used if present"
+  },
+  "factors-fiz.zip": {
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp_202412/F-F_Research_Data_Factors_CSV.zip",
+    "sha256": "fc9e41cc3b66c62fa8f565a01fb4c8c0d7962c777303c46b8ab7102190b98ea2",
+    "observed_at": "2026-09-24T16:02:52.744055+00:00",
+    "retrieval_note": "Downloaded during September 24 audit; retained local bytes used if present"
+  },
+  "reversal-fiz.zip": {
+    "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp_202412/F-F_ST_Reversal_Factor_CSV.zip",
+    "sha256": "2dc10c37c3cafe69ab78d8c26651e6c6c2623736a025bc0aed9426776b4162fb",
+    "observed_at": "2026-09-24T16:02:52.744083+00:00",
+    "retrieval_note": "Downloaded during September 24 audit; retained local bytes used if present"
+  }
+}

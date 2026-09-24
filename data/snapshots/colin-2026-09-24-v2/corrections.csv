@@ -1,0 +1,624 @@
+date,column,old,new,reason
+2018-01-31,MKT,,0.4646670055922719,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-02-28,MKT,,-0.004067107269953019,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-03-31,MKT,,0.062023385866803185,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-04-30,MKT,,0.19623792577529275,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-05-31,MKT,,0.3162175902389425,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-06-30,MKT,,0.20589730554143407,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-07-31,MKT,,0.3436705643111336,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-08-31,MKT,,0.3563802745297405,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-09-30,MKT,,0.18454499237417435,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-10-31,MKT,,-0.2089476359938973,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-11-30,MKT,,0.26741230299949176,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-12-31,MKT,,-0.30503304524656605,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-01-31,MKT,,0.6085409252669027,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-02-28,MKT,,0.35434672089476343,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-03-31,MKT,,0.23741738688357933,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-04-30,MKT,,0.38332486019318734,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-05-31,MKT,,-0.17132689374682072,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-06-30,MKT,,0.5338078291814938,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-07-31,MKT,,0.24199288256227786,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-08-31,MKT,,0.050330452465684794,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-09-30,MKT,,0.2541942043721405,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-10-31,MKT,,0.2862226741230301,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-11-30,MKT,,0.3787493645144888,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-12-31,MKT,,0.3223182511438739,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-01-31,MKT,,0.1759023894255216,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-02-29,MKT,,-0.23182511438738992,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-03-31,MKT,,-0.49923741738688043,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-04-30,MKT,,0.8754448398576491,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-05-31,MKT,,0.46517539400101615,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-06-30,MKT,,0.30655821047280124,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-07-31,MKT,,0.47483477376715744,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-08-31,MKT,,0.5693950177935932,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-09-30,MKT,,-0.0030503304524644725,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-10-31,MKT,,0.07473309608541016,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-11-30,MKT,,0.8154550076258242,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-12-31,MKT,,0.4168784951703097,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-01-31,MKT,,0.17996949669547585,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-02-28,MKT,,0.32282663955261814,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-03-31,MKT,,0.33807829181494653,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-04-30,MKT,,0.432130147432638,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-05-31,MKT,,0.19623792577529275,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-06-30,MKT,,0.32130147432638534,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-07-31,MKT,,0.2460599898322321,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-08-31,MKT,,0.3294356888662938,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-09-30,MKT,,-0.040671072699541094,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-10-31,MKT,,0.519572953736654,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-11-30,MKT,,0.10269445856634549,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-12-31,MKT,,0.3390950686324351,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-01-31,MKT,,-0.13624809354346548,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-02-28,MKT,,0.06507371631926887,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-03-31,MKT,,0.33706151499745796,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-04-30,MKT,,-0.29944077275037895,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-05-31,MKT,,0.1642094560244032,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-06-30,MKT,,-0.24758515505846249,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-07-31,MKT,,0.6680223690899834,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-08-31,MKT,,-0.010167768174884378,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-09-30,MKT,,-0.29384850025419185,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-10-31,MKT,,0.5795627859684789,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-11-30,MKT,,0.41586171835282115,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-12-31,MKT,,-0.14438230808337396,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-01-31,MKT,,0.5190645653279097,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-02-28,MKT,,0.04982206405694051,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-03-31,MKT,,0.3091001525165226,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-04-30,MKT,,0.21250635485510969,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-05-31,MKT,,0.19928825622775842,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-06-30,MKT,,0.510421962379257,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-07-31,MKT,,0.3446873411286221,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-08-31,MKT,,0.05998983223182608,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-09-30,MKT,,-0.08490086426029333,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-10-31,MKT,,0.01982714794102805,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-11-30,MKT,,0.6304016268429068,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-12-31,MKT,,0.4290798169801724,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-01-31,MKT,,0.21708185053380818,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-02-29,MKT,,0.439247585155058,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-03-31,MKT,,0.3253685815963395,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-04-30,MKT,,-0.05592272496186945,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-05-31,MKT,,0.4021352313167256,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-06-30,MKT,,0.3223182511438739,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-07-31,MKT,,0.24453482460599923,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-08-31,MKT,,0.2633451957295376,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-09-30,MKT,,0.2699542450432132,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-10-31,MKT,,0.13218098627351366,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-11-30,MKT,,0.5124555160142341,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-12-31,MKT,,0.020335536349772337,Official FIZ_2024 factor; pre-2018 validated affine scale
+2025-01-31,MKT,,0.3238434163701067,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-02-28,MKT,,0.057447890188104686,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-03-31,MKT,,-0.1433655312658854,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-04-30,MKT,,0.13879003558718928,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-05-31,MKT,,0.4895780376207415,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-06-30,MKT,,0.42857142857142816,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-07-31,MKT,,0.28215556685307586,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-08-31,MKT,,0.27503812913065595,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-09-30,MKT,,0.35383833248601915,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-10-31,MKT,,0.2811387900355873,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-11-30,MKT,,0.17488561260803306,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-12-31,MKT,,0.16319267920691466,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-01-31,MKT,,0.23385866802236938,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-02-28,MKT,,0.12201321809862808,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-03-31,MKT,,-0.08185053380782767,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-04-30,MKT,,0.6873411286222659,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-05-31,MKT,,0.43111337061514954,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-06-30,MKT,,0.12709710218607087,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-07-31,MKT,,0.15099135739705197,Official CIZ_2026 factor; pre-2018 validated affine scale
+2018-01-31,SMB,,-0.26970954356846477,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-02-28,SMB,,-0.09439834024896276,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-03-31,SMB,,0.10269709543568444,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-04-30,SMB,,-0.04927385892116196,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-05-31,SMB,,0.16493775933609933,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-06-30,SMB,,-0.04875518672199184,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-07-31,SMB,,-0.22302904564315357,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-08-31,SMB,,-0.04823651452282171,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-09-30,SMB,,-0.22665975103734443,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-10-31,SMB,,-0.3537344398340249,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-11-30,SMB,,-0.14315352697095446,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-12-31,SMB,,-0.23080912863070546,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-01-31,SMB,,0.04149377593360977,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-02-28,SMB,,-0.001037344398340398,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-03-31,SMB,,-0.26607883817427386,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-04-30,SMB,,-0.19709543568464738,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-05-31,SMB,,-0.17582987551867227,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-06-30,SMB,,-0.09336099585062252,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-07-31,SMB,,-0.20798755186721996,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-08-31,SMB,,-0.2318464730290457,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-09-30,SMB,,-0.15819502074688804,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-10-31,SMB,,-0.0928423236514524,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-11-30,SMB,,-0.0674273858921163,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-12-31,SMB,,-0.07002074688796692,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-01-31,SMB,,-0.2702282157676349,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-02-29,SMB,,-0.0523858921161827,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-03-31,SMB,,-0.35632780082987553,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-04-30,SMB,,0.01919087136929444,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-05-31,SMB,,0.02126556016597496,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-06-30,SMB,,0.03163900414937741,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-07-31,SMB,,-0.22717842323651455,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-08-31,SMB,,-0.12240663900414947,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-09-30,SMB,,-0.10943983402489636,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-10-31,SMB,,0.11358921161825704,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-11-30,SMB,,0.18879668049792503,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-12-31,SMB,,0.1405601659751035,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-01-31,SMB,,0.2811203319502072,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-02-28,SMB,,-0.0005186721991702892,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-03-31,SMB,,-0.2261410788381743,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-04-30,SMB,,-0.27385892116182575,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-05-31,SMB,,-0.12188796680497935,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-06-30,SMB,,-0.02489626556016611,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-07-31,SMB,,-0.31224066390041494,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-08-31,SMB,,-0.1317427385892117,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-09-30,SMB,,-0.07313278008298767,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-10-31,SMB,,-0.23080912863070546,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-11-30,SMB,,-0.1763485477178424,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-12-31,SMB,,-0.19294605809128634,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-01-31,SMB,,-0.41701244813278004,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-02-28,SMB,,0.00570539419087121,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-03-31,SMB,,-0.19398340248962662,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-04-30,SMB,,-0.17946058091286313,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-05-31,SMB,,-0.20954356846473032,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-06-30,SMB,,0.0051867219917011015,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-07-31,SMB,,0.03734439834024879,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-08-31,SMB,,-0.0352697095435686,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-09-30,SMB,,-0.15041493775933618,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-10-31,SMB,,-0.10425311203319512,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-11-30,SMB,,-0.2899377593360996,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-12-31,SMB,,-0.14367219917012455,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-01-31,SMB,,0.1519709543568462,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-02-28,SMB,,-0.047199170124481465,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-03-31,SMB,,-0.39367219917012447,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-04-30,SMB,,-0.2821576763485477,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-05-31,SMB,,-0.02489626556016611,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-06-30,SMB,,-0.027489626556016736,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-07-31,SMB,,-0.0015560165975105344,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-08-31,SMB,,-0.27385892116182575,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-09-30,SMB,,-0.23703319502074693,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-10-31,SMB,,-0.3091286307053942,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-11-30,SMB,,-0.10943983402489636,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-12-31,SMB,,0.22199170124481304,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-01-31,SMB,,-0.36825726141078835,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-02-29,SMB,,-0.11929460580912873,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-03-31,SMB,,-0.23807053941908718,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-04-30,SMB,,-0.2318464730290457,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-05-31,SMB,,-0.0674273858921163,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-06-30,SMB,,-0.26659751037344404,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-07-31,SMB,,0.24481327800829844,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-08-31,SMB,,-0.2920124481327801,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-09-30,SMB,,-0.11670124481327811,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-10-31,SMB,,-0.16026970954356853,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-11-30,SMB,,0.1322614107883815,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-12-31,SMB,,-0.24948132780082993,Official FIZ_2024 factor; pre-2018 validated affine scale
+2025-01-31,SMB,,-0.21161825726141084,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-02-28,SMB,,-0.40715767634854766,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-03-31,SMB,,-0.2489626556016598,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-04-30,SMB,,-0.13744813278008308,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-05-31,SMB,,-0.07624481327800842,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-06-30,SMB,,-0.07105809128630718,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-07-31,SMB,,-0.09232365145228227,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-08-31,SMB,,0.08921161825726122,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-09-30,SMB,,-0.20280082987551873,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-10-31,SMB,,-0.13744813278008308,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-11-30,SMB,,-0.08713692946058102,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-12-31,SMB,,-0.16182572614107893,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-01-31,SMB,,0.0051867219917011015,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-02-28,SMB,,-0.099585062240664,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-03-31,SMB,,-0.08506224066390053,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-04-30,SMB,,-0.09802904564315364,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-05-31,SMB,,-0.19035269709543576,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-06-30,SMB,,0.06794605809128614,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-07-31,SMB,,-0.20954356846473032,Official CIZ_2026 factor; pre-2018 validated affine scale
+2018-01-31,HML,,-0.19436619718309878,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-02-28,HML,,-0.1750503018108654,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-03-31,HML,,-0.1074446680080485,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-04-30,HML,,-0.0478873239436622,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-05-31,HML,,-0.35050301810865203,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-06-30,HML,,-0.2788732394366199,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-07-31,HML,,-0.055130784708249725,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-08-31,HML,,-0.4132796780684106,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-09-30,HML,,-0.22897384305835025,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-10-31,HML,,0.1822937625754524,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-11-30,HML,,-0.0688128772635817,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-12-31,HML,,-0.24265593561368223,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-01-31,HML,,-0.12756539235412495,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-02-28,HML,,-0.30945674044265603,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-03-31,HML,,-0.4229376257545273,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-04-30,HML,,0.08249496981891322,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-05-31,HML,,-0.2820925553319921,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-06-30,HML,,-0.1476861167002014,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-07-31,HML,,-0.053521126760563614,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-08-31,HML,,-0.4768611670020122,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-09-30,HML,,0.4535211267605629,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-10-31,HML,,-0.24426559356136837,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-11-30,HML,,-0.2515090543259559,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-12-31,HML,,0.051911468812877004,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-01-31,HML,,-0.5943661971830987,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-02-29,HML,,-0.39718309859154943,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-03-31,HML,,-1.2084507042253518,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-04-30,HML,,-0.19919517102615714,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-05-31,HML,,-0.48169014084507045,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-06-30,HML,,-0.27082494969818927,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-07-31,HML,,-0.2072434607645877,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-08-31,HML,,-0.32313883299798807,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-09-30,HML,,-0.3046277665995977,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-10-31,HML,,0.2555331991951707,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-11-30,HML,,0.08169014084507015,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-12-31,HML,,-0.19919517102615714,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-01-31,HML,,0.1380281690140842,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-02-28,HML,,0.4800804828973838,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-03-31,HML,,0.49376257545271585,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-04-30,HML,,-0.16780684104627785,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-05-31,HML,,0.48249496981891304,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-06-30,HML,,-0.7150905432595573,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-07-31,HML,,-0.23702213279678086,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-08-31,HML,,-0.09939637826961792,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-09-30,HML,,0.3191146881287722,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-10-31,HML,,-0.12756539235412495,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-11-30,HML,,-0.12434607645875272,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-12-31,HML,,0.16780684104627738,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-01-31,HML,,0.938832997987927,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-02-28,HML,,0.15814889336016066,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-03-31,HML,,-0.23299798792756557,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-04-30,HML,,0.4052313883299795,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-05-31,HML,,0.5999999999999995,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-06-30,HML,,-0.5822937625754527,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-07-31,HML,,-0.4156941649899397,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-08-31,HML,,-0.06800804828973865,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-09-30,HML,,-0.08973843058350123,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-10-31,HML,,0.5573440643863175,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-11-30,HML,,0.022132796780683847,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-12-31,HML,,0.016498993963782446,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-01-31,HML,,-0.4132796780684106,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-02-28,HML,,-0.15814889336016114,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-03-31,HML,,-0.8052313883299798,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-04-30,HML,,-0.09537223340040263,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-05-31,HML,,-0.7142857142857143,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-06-30,HML,,-0.1074446680080485,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-07-31,HML,,0.23943661971830957,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-08-31,HML,,-0.17826961770623762,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-09-30,HML,,0.025352112676056082,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-10-31,HML,,-0.07605633802816923,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-11-30,HML,,0.042253521126760285,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-12-31,HML,,0.3046277665995972,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-01-31,HML,,-0.2901408450704227,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-02-29,HML,,-0.37464788732394383,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-03-31,HML,,0.24828973843058313,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-04-30,HML,,-0.13319919517102635,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-05-31,HML,,-0.22575452716297803,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-06-30,HML,,-0.3577464788732395,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-07-31,HML,,0.37062374245472807,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-08-31,HML,,-0.18229376257545288,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-09-30,HML,,-0.29979879275653937,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-10-31,HML,,-0.019718309859155167,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-11-30,HML,,-0.09537223340040263,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-12-31,HML,,-0.32877263581488947,Official FIZ_2024 factor; pre-2018 validated affine scale
+2025-01-31,HML,,0.050301810865190894,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-02-28,HML,,0.2981891348088528,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-03-31,HML,,0.13963782696177035,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-04-30,HML,,-0.35613682092555343,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-05-31,HML,,-0.31750503018108667,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-06-30,HML,,-0.20643863179074462,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-07-31,HML,,-0.19919517102615714,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-08-31,HML,,0.26036217303822906,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-09-30,HML,,-0.17585513078470844,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-10-31,HML,,-0.34728370221327987,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-11-30,HML,,0.21126760563380245,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-12-31,HML,,0.1018108651911466,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-01-31,HML,,0.21448692152917473,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-02-28,HML,,0.1340040241448689,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-03-31,HML,,0.17344064386317878,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-04-30,HML,,-0.20160965794768632,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-05-31,HML,,-0.27726358148893376,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-06-30,HML,,0.19678068410462748,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-07-31,HML,,0.0784708249496979,Official CIZ_2026 factor; pre-2018 validated affine scale
+2018-01-31,STR,,-0.008430609597924514,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-02-28,STR,,-0.11802853437094649,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-03-31,STR,,-0.031128404669260423,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-04-30,STR,,-0.10376134889753534,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-05-31,STR,,-0.05901426718547311,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-06-30,STR,,-0.00907911802853411,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-07-31,STR,,0.06225680933852161,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-08-31,STR,,0.047989623865110465,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-09-30,STR,,-0.04539559014267157,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-10-31,STR,,0.02983138780804173,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-11-30,STR,,0.02853437094682254,Official FIZ_2024 factor; pre-2018 validated affine scale
+2018-12-31,STR,,-0.15499351491569352,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-01-31,STR,,0.47470817120622555,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-02-28,STR,,-0.062256809338521096,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-03-31,STR,,-0.04669260700389076,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-04-30,STR,,0.0038910505836578374,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-05-31,STR,,2.5673907444456745e-16,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-06-30,STR,,0.19584954604409868,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-07-31,STR,,-0.0642023346303499,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-08-31,STR,,-0.20557717250324212,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-09-30,STR,,0.277561608300908,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-10-31,STR,,-0.07717250324254184,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-11-30,STR,,-0.0616083009079115,Official FIZ_2024 factor; pre-2018 validated affine scale
+2019-12-31,STR,,-0.008430609597924514,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-01-31,STR,,0.11478599221789901,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-02-29,STR,,-0.20946822308689972,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-03-31,STR,,-0.8054474708171198,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-04-30,STR,,0.9714656290531772,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-05-31,STR,,-0.26459143968871546,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-06-30,STR,,-0.17574578469520064,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-07-31,STR,,-0.2619974059662771,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-08-31,STR,,-0.19974059662775576,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-09-30,STR,,-0.02399481193255485,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-10-31,STR,,-0.011024643320362904,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-11-30,STR,,0.14850843060959806,Official FIZ_2024 factor; pre-2018 validated affine scale
+2020-12-31,STR,,-0.25291828793774274,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-01-31,STR,,-0.007133592736705316,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-02-28,STR,,0.23994811932555132,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-03-31,STR,,-0.10894941634241212,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-04-30,STR,,0.034370946822308915,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-05-31,STR,,0.03761348897535691,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-06-30,STR,,0.14980544747081725,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-07-31,STR,,-0.09792477302204895,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-08-31,STR,,-0.14915693904020716,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-09-30,STR,,-0.0032425421530477352,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-10-31,STR,,-0.15564202334630312,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-11-30,STR,,-0.22632944228274926,Official FIZ_2024 factor; pre-2018 validated affine scale
+2021-12-31,STR,,-0.0616083009079115,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-01-31,STR,,-0.3702983138780799,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-02-28,STR,,-0.26653696498054424,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-03-31,STR,,-0.05317769130998674,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-04-30,STR,,-0.18028534370946783,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-05-31,STR,,-0.1854734111543446,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-06-30,STR,,0.05512321660181603,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-07-31,STR,,0.36186770428015563,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-08-31,STR,,0.055771725032425626,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-09-30,STR,,-0.1608300907911799,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-10-31,STR,,-0.028534370946822034,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-11-30,STR,,-0.01556420233463008,Official FIZ_2024 factor; pre-2018 validated affine scale
+2022-12-31,STR,,-0.27107652399481147,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-01-31,STR,,0.5629053177691309,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-02-28,STR,,-0.138132295719844,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-03-31,STR,,-0.2120622568093381,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-04-30,STR,,-0.10051880674448735,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-05-31,STR,,0.2107652399481194,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-06-30,STR,,0.0025940337224386392,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-07-31,STR,,-0.17055771725032387,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-08-31,STR,,0.09468223086900149,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-09-30,STR,,-0.22503242542153007,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-10-31,STR,,-0.21789883268482446,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-11-30,STR,,0.16147859922179,Official FIZ_2024 factor; pre-2018 validated affine scale
+2023-12-31,STR,,-0.3164721141374833,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-01-31,STR,,0.09208819714656308,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-02-29,STR,,-0.15434500648508392,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-03-31,STR,,-0.04020752269779479,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-04-30,STR,,-0.29831387808041454,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-05-31,STR,,-0.1621271076523991,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-06-30,STR,,-0.17769130998702945,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-07-31,STR,,0.17380025940337238,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-08-31,STR,,-0.062256809338521096,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-09-30,STR,,-0.014915693904020484,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-10-31,STR,,-0.14072632944228236,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-11-30,STR,,-0.34824902723735357,Official FIZ_2024 factor; pre-2018 validated affine scale
+2024-12-31,STR,,-0.02983138780804123,Official FIZ_2024 factor; pre-2018 validated affine scale
+2025-01-31,STR,,0.11932555123216618,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-02-28,STR,,0.16147859922179,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-03-31,STR,,-0.2782101167315171,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-04-30,STR,,0.10116731517509744,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-05-31,STR,,-0.3787289234760046,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-06-30,STR,,-0.4143968871595325,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-07-31,STR,,-0.3884565499351486,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-08-31,STR,,0.024643320363164953,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-09-30,STR,,-0.20492866407263255,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-10-31,STR,,-0.557068741893644,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-11-30,STR,,-0.06290531776913069,Official CIZ_2026 factor; pre-2018 validated affine scale
+2025-12-31,STR,,0.036316472114137716,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-01-31,STR,,-0.07068741893644587,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-02-28,STR,,-0.487678339818417,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-03-31,STR,,-0.030479896238650824,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-04-30,STR,,-0.1394293125810632,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-05-31,STR,,-0.4623865110246427,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-06-30,STR,,-0.04928664072632915,Official CIZ_2026 factor; pre-2018 validated affine scale
+2026-07-31,STR,,0.5667963683527883,Official CIZ_2026 factor; pre-2018 validated affine scale
+2018-01-31,RV1,-0.8261406127906119,-0.8261272957853698,Recomputed from preceding RV with verified historical transformation
+2018-01-31,RV2,-0.7731569714073181,-0.7731447019931023,Recomputed from preceding RV with verified historical transformation
+2018-02-28,RV2,-0.8261406127906119,-0.8261272957853698,Recomputed from preceding RV with verified historical transformation
+2018-01-31,RV_q,-0.9073556041354908,-0.9073487087493162,Recomputed from preceding RV with verified historical transformation
+2018-02-28,RV_q,-0.8608631780508817,-0.8608605612977612,Recomputed from preceding RV with verified historical transformation
+2018-03-31,RV_q,-0.7601517283559701,-0.7601536499208568,Recomputed from preceding RV with verified historical transformation
+2018-04-30,RV_q,-0.6648899841080548,-0.6648966407169248,Recomputed from preceding RV with verified historical transformation
+2018-05-31,RV_q,-0.6235335849593264,-0.6235408031440203,Recomputed from preceding RV with verified historical transformation
+2018-06-30,RV_q,-0.6891234988335492,-0.6891298263771168,Recomputed from preceding RV with verified historical transformation
+2018-07-31,RV_q,-0.7497770346212591,-0.7497825385544539,Recomputed from preceding RV with verified historical transformation
+2018-08-31,RV_q,-0.7973014862935146,-0.7973063448953059,Recomputed from preceding RV with verified historical transformation
+2018-09-30,RV_q,-0.8219103375128203,-0.8219148619526396,Recomputed from preceding RV with verified historical transformation
+2018-10-31,RV_q,-0.8586555589721834,-0.8586595844510574,Recomputed from preceding RV with verified historical transformation
+2018-11-30,RV_q,-0.7865682231778568,-0.7865732275259218,Recomputed from preceding RV with verified historical transformation
+2018-12-31,RV_q,-0.7206508469323366,-0.7206567463681182,Recomputed from preceding RV with verified historical transformation
+2019-01-31,RV_q,-0.5963228638858027,-0.5963304515630881,Recomputed from preceding RV with verified historical transformation
+2019-02-28,RV_q,-0.612568627992726,-0.6125759950698493,Recomputed from preceding RV with verified historical transformation
+2019-03-31,RV_q,-0.674148403967517,-0.6741549348569127,Recomputed from preceding RV with verified historical transformation
+2019-04-30,RV_q,-0.7406198154553392,-0.7406254437338105,Recomputed from preceding RV with verified historical transformation
+2019-05-31,RV_q,-0.8170687465792444,-0.8170733367627085,Recomputed from preceding RV with verified historical transformation
+2019-06-30,RV_q,-0.7710261459003037,-0.7710313612932138,Recomputed from preceding RV with verified historical transformation
+2019-07-31,RV_q,-0.7729685404837489,-0.7729737295010108,Recomputed from preceding RV with verified historical transformation
+2019-08-31,RV_q,-0.7557906289882107,-0.7557960512632029,Recomputed from preceding RV with verified historical transformation
+2019-09-30,RV_q,-0.724380119663214,-0.7243859684594463,Recomputed from preceding RV with verified historical transformation
+2019-10-31,RV_q,-0.7448536736985322,-0.7448592444857209,Recomputed from preceding RV with verified historical transformation
+2019-11-30,RV_q,-0.710447459107564,-0.7104534970944776,Recomputed from preceding RV with verified historical transformation
+2019-12-31,RV_q,-0.808197926377478,-0.8082026370172262,Recomputed from preceding RV with verified historical transformation
+2020-01-31,RV_q,-0.8149603836587124,-0.8149650024714978,Recomputed from preceding RV with verified historical transformation
+2020-02-29,RV_q,-0.8258314077491318,-0.8258358789449962,Recomputed from preceding RV with verified historical transformation
+2020-03-31,RV_q,-0.7235626998888084,-0.7235685597847301,Recomputed from preceding RV with verified historical transformation
+2020-04-30,RV_q,-0.5397302237235814,-0.5397385798686052,Recomputed from preceding RV with verified historical transformation
+2020-05-31,RV_q,-0.4472129571151875,-0.4472225695460892,Recomputed from preceding RV with verified historical transformation
+2020-06-30,RV_q,-0.4543237995769918,-0.4543333154502315,Recomputed from preceding RV with verified historical transformation
+2020-07-31,RV_q,-0.539175908991608,-0.5391842726636351,Recomputed from preceding RV with verified historical transformation
+2020-08-31,RV_q,-0.6188057640321649,-0.6188130464156283,Recomputed from preceding RV with verified historical transformation
+2020-09-30,RV_q,-0.6814605626331742,-0.6814669942312485,Recomputed from preceding RV with verified historical transformation
+2020-10-31,RV_q,-0.6961439388949743,-0.6961501711084479,Recomputed from preceding RV with verified historical transformation
+2020-11-30,RV_q,-0.6653085034875069,-0.6653151544133298,Recomputed from preceding RV with verified historical transformation
+2020-12-31,RV_q,-0.6210843396597912,-0.6210915911026257,Recomputed from preceding RV with verified historical transformation
+2021-01-31,RV_q,-0.6945257140208636,-0.6945319682081064,Recomputed from preceding RV with verified historical transformation
+2021-02-28,RV_q,-0.7154116227274474,-0.7154175933063098,Recomputed from preceding RV with verified historical transformation
+2021-03-31,RV_q,-0.7334054069680578,-0.7334111332105073,Recomputed from preceding RV with verified historical transformation
+2021-04-30,RV_q,-0.6859333580527364,-0.6859397289150158,Recomputed from preceding RV with verified historical transformation
+2021-05-31,RV_q,-0.7112906247523132,-0.711296651289936,Recomputed from preceding RV with verified historical transformation
+2021-06-30,RV_q,-0.7114312024547222,-0.7114372270834496,Recomputed from preceding RV with verified historical transformation
+2021-07-31,RV_q,-0.7627811866191497,-0.7627865139698197,Recomputed from preceding RV with verified historical transformation
+2021-08-31,RV_q,-0.7604060612472372,-0.7604114208495782,Recomputed from preceding RV with verified historical transformation
+2021-09-30,RV_q,-0.7940142666982718,-0.7940191699370017,Recomputed from preceding RV with verified historical transformation
+2021-10-31,RV_q,-0.7630732218553462,-0.7630785452404887,Recomputed from preceding RV with verified historical transformation
+2021-11-30,RV_q,-0.7623814263126539,-0.7623867590916428,Recomputed from preceding RV with verified historical transformation
+2021-12-31,RV_q,-0.7328618016769232,-0.7328675353009533,Recomputed from preceding RV with verified historical transformation
+2022-01-31,RV_q,-0.7117811694669577,-0.7117871893435062,Recomputed from preceding RV with verified historical transformation
+2022-02-28,RV_q,-0.6790735321595591,-0.6790799961709628,Recomputed from preceding RV with verified historical transformation
+2022-03-31,RV_q,-0.6418633538897751,-0.6418703231757423,Recomputed from preceding RV with verified historical transformation
+2022-04-30,RV_q,-0.6183861444977099,-0.6183934325791591,Recomputed from preceding RV with verified historical transformation
+2022-05-31,RV_q,-0.5968146202574275,-0.5968222012571853,Recomputed from preceding RV with verified historical transformation
+2022-06-30,RV_q,-0.569231019138826,-0.5692389746944893,Recomputed from preceding RV with verified historical transformation
+2022-07-31,RV_q,-0.5533131178766141,-0.5533212895804117,Recomputed from preceding RV with verified historical transformation
+2022-08-31,RV_q,-0.5705176910108806,-0.5705256290949111,Recomputed from preceding RV with verified historical transformation
+2022-09-30,RV_q,-0.6013865475609222,-0.6013940664787802,Recomputed from preceding RV with verified historical transformation
+2022-10-31,RV_q,-0.6150794714480009,-0.615086804430546,Recomputed from preceding RV with verified historical transformation
+2022-11-30,RV_q,-0.588735444038599,-0.5887431347449594,Recomputed from preceding RV with verified historical transformation
+2022-12-31,RV_q,-0.5666213268351801,-0.5666293178276836,Recomputed from preceding RV with verified historical transformation
+2023-01-31,RV_q,-0.5891745630807049,-0.589182247824297,Recomputed from preceding RV with verified historical transformation
+2023-02-28,RV_q,-0.627455965245707,-0.6274631301686568,Recomputed from preceding RV with verified historical transformation
+2023-03-31,RV_q,-0.6738188453620431,-0.6738253807264933,Recomputed from preceding RV with verified historical transformation
+2023-04-30,RV_q,-0.6716677006803451,-0.6716742652550476,Recomputed from preceding RV with verified historical transformation
+2023-05-31,RV_q,-0.7008942693746132,-0.7009004370836618,Recomputed from preceding RV with verified historical transformation
+2023-06-30,RV_q,-0.7100439301116759,-0.7100499735780832,Recomputed from preceding RV with verified historical transformation
+2023-07-31,RV_q,-0.7453282376062389,-0.7453338019493554,Recomputed from preceding RV with verified historical transformation
+2023-08-31,RV_q,-0.7691045402063055,-0.7691097816925729,Recomputed from preceding RV with verified historical transformation
+2023-09-30,RV_q,-0.7697528100169948,-0.7697580427004492,Recomputed from preceding RV with verified historical transformation
+2023-10-31,RV_q,-0.772205378611359,-0.7722105779915458,Recomputed from preceding RV with verified historical transformation
+2023-11-30,RV_q,-0.7301088825315081,-0.7301146535372462,Recomputed from preceding RV with verified historical transformation
+2023-12-31,RV_q,-0.7305616820010234,-0.7305674468582273,Recomputed from preceding RV with verified historical transformation
+2024-01-31,RV_q,-0.7401500710138813,-0.7401557056709814,Recomputed from preceding RV with verified historical transformation
+2024-02-29,RV_q,-0.7601035888269116,-0.7601089525365059,Recomputed from preceding RV with verified historical transformation
+2024-03-31,RV_q,-0.7623562853922196,-0.7623616185125954,Recomputed from preceding RV with verified historical transformation
+2024-04-30,RV_q,-0.7631453685399779,-0.7631506909454456,Recomputed from preceding RV with verified historical transformation
+2024-05-31,RV_q,-0.7458903049440151,-0.7458958616548563,Recomputed from preceding RV with verified historical transformation
+2024-06-30,RV_q,-0.7610397335701903,-0.7610450845679365,Recomputed from preceding RV with verified historical transformation
+2024-07-31,RV_q,-0.7900790923088628,-0.7900840489830667,Recomputed from preceding RV with verified historical transformation
+2024-08-31,RV_q,-0.7858481963216264,-0.7858532104468888,Recomputed from preceding RV with verified historical transformation
+2024-09-30,RV_q,-0.7360194313077671,-0.7360251220545523,Recomputed from preceding RV with verified historical transformation
+2024-10-31,RV_q,-0.6835816115604241,-0.6835880143569143,Recomputed from preceding RV with verified historical transformation
+2024-11-30,RV_q,-0.7018229361144912,-0.701829091213235,Recomputed from preceding RV with verified historical transformation
+2024-12-31,RV_q,-0.7363777645285531,-0.7363834504095548,Recomputed from preceding RV with verified historical transformation
+2025-01-31,RV_q,-0.7317672924464054,-0.7317730409327043,Recomputed from preceding RV with verified historical transformation
+2025-02-28,RV_q,-0.7187899314876459,-0.7187958561926757,Recomputed from preceding RV with verified historical transformation
+2025-03-31,RV_q,-0.7182671385179101,-0.7182730703219113,Recomputed from preceding RV with verified historical transformation
+2025-04-30,RV_q,-0.6904387185643326,-0.6904450282486179,Recomputed from preceding RV with verified historical transformation
+2025-05-31,RV_q,-0.5978587769428082,-0.5978663437640314,Recomputed from preceding RV with verified historical transformation
+2025-06-30,RV_q,-0.575356683528579,-0.5753645559042485,Recomputed from preceding RV with verified historical transformation
+2025-07-31,RV_q,-0.6276067028046239,-0.6276138656807184,Recomputed from preceding RV with verified historical transformation
+2025-08-31,RV_q,-0.7721144685523624,-0.7721196691670109,Recomputed from preceding RV with verified historical transformation
+2025-09-30,RV_q,-0.798469505136666,-0.7984743478780062,Recomputed from preceding RV with verified historical transformation
+2025-10-31,RV_q,-0.8215481645359646,-0.8215526938937068,Recomputed from preceding RV with verified historical transformation
+2025-11-30,RV_q,-0.766439967616454,-0.7664452452847774,Recomputed from preceding RV with verified historical transformation
+2025-12-31,RV_q,-0.7516862932573188,-0.751691771264816,Recomputed from preceding RV with verified historical transformation
+2026-01-31,RV_q,-0.7388106405198145,-0.7388162933649534,Recomputed from preceding RV with verified historical transformation
+2026-02-28,RV_q,-0.7639854862518373,-0.7639907972494018,Recomputed from preceding RV with verified historical transformation
+2026-03-31,RV_q,-0.7736509489064785,-0.7736561286573613,Recomputed from preceding RV with verified historical transformation
+2026-04-30,RV_q,-0.7193979706699599,-0.7194038871184656,Recomputed from preceding RV with verified historical transformation
+2026-05-31,RV_q,-0.696919929832615,-0.6969261515089586,Recomputed from preceding RV with verified historical transformation
+2026-06-30,RV_q,-0.7110719343454001,-0.7110779638526055,Recomputed from preceding RV with verified historical transformation
+2026-07-31,RV_q,-0.7174089302364787,-0.7174148736940338,Recomputed from preceding RV with verified historical transformation
+2026-08-31,RV_q,-0.7272906740995989,-0.727296483373604,Recomputed from preceding RV with verified historical transformation
+2018-01-31,RV_a,-0.937585740738888,-0.9375851395354122,Recomputed from preceding RV with verified historical transformation
+2018-02-28,RV_a,-0.9293756050244824,-0.9293758379986008,Recomputed from preceding RV with verified historical transformation
+2018-03-31,RV_a,-0.8979123310329847,-0.8979129964751607,Recomputed from preceding RV with verified historical transformation
+2018-04-30,RV_a,-0.8808670411110651,-0.8808683157988413,Recomputed from preceding RV with verified historical transformation
+2018-05-31,RV_a,-0.8630733251574093,-0.8630752850422538,Recomputed from preceding RV with verified historical transformation
+2018-06-30,RV_a,-0.8572583349224536,-0.8572610502426865,Recomputed from preceding RV with verified historical transformation
+2018-07-31,RV_a,-0.8539826403524466,-0.8539862229391462,Recomputed from preceding RV with verified historical transformation
+2018-08-31,RV_a,-0.8449065519218869,-0.8449109230527043,Recomputed from preceding RV with verified historical transformation
+2018-09-30,RV_a,-0.8495955126126815,-0.8496007629488805,Recomputed from preceding RV with verified historical transformation
+2018-10-31,RV_a,-0.8506764323563915,-0.8506826589211668,Recomputed from preceding RV with verified historical transformation
+2018-11-30,RV_a,-0.8206124915266703,-0.8206192555156593,Recomputed from preceding RV with verified historical transformation
+2018-12-31,RV_a,-0.8001716598723053,-0.8001789740481576,Recomputed from preceding RV with verified historical transformation
+2019-01-31,RV_a,-0.7674923054305359,-0.7675000638733731,Recomputed from preceding RV with verified historical transformation
+2019-02-28,RV_a,-0.7542073749770257,-0.7542149398462188,Recomputed from preceding RV with verified historical transformation
+2019-03-31,RV_a,-0.7771705074976984,-0.777178406960833,Recomputed from preceding RV with verified historical transformation
+2019-04-30,RV_a,-0.7877458642610599,-0.78775391781686,Recomputed from preceding RV with verified historical transformation
+2019-05-31,RV_a,-0.8059673711622614,-0.8059756902221608,Recomputed from preceding RV with verified historical transformation
+2019-06-30,RV_a,-0.7990749545462477,-0.7990831731773036,Recomputed from preceding RV with verified historical transformation
+2019-07-31,RV_a,-0.7939483147353038,-0.7939564586665069,Recomputed from preceding RV with verified historical transformation
+2019-08-31,RV_a,-0.7948655031720508,-0.7948736604675322,Recomputed from preceding RV with verified historical transformation
+2019-09-30,RV_a,-0.7729909930501196,-0.7729988316138884,Recomputed from preceding RV with verified historical transformation
+2019-10-31,RV_a,-0.7635125784156944,-0.763520278870252,Recomputed from preceding RV with verified historical transformation
+2019-11-30,RV_a,-0.7745073913699518,-0.7745152520290374,Recomputed from preceding RV with verified historical transformation
+2019-12-31,RV_a,-0.7964050148753026,-0.7964131946028841,Recomputed from preceding RV with verified historical transformation
+2020-01-31,RV_a,-0.8219860728167785,-0.8219946252838805,Recomputed from preceding RV with verified historical transformation
+2020-02-29,RV_a,-0.8315434388470645,-0.8315521305737718,Recomputed from preceding RV with verified historical transformation
+2020-03-31,RV_a,-0.8096206173889439,-0.8096289896799976,Recomputed from preceding RV with verified historical transformation
+2020-04-30,RV_a,-0.768259171644629,-0.7682669412614116,Recomputed from preceding RV with verified historical transformation
+2020-05-31,RV_a,-0.7326273861178809,-0.7326346365468066,Recomputed from preceding RV with verified historical transformation
+2020-06-30,RV_a,-0.724920183109498,-0.7249273212373939,Recomputed from preceding RV with verified historical transformation
+2020-07-31,RV_a,-0.7057325195733394,-0.7057393781193462,Recomputed from preceding RV with verified historical transformation
+2020-08-31,RV_a,-0.6959914796075973,-0.6959981962177006,Recomputed from preceding RV with verified historical transformation
+2020-09-30,RV_a,-0.7134415655314186,-0.7134485364053085,Recomputed from preceding RV with verified historical transformation
+2020-10-31,RV_a,-0.6927053483528076,-0.6927120170809589,Recomputed from preceding RV with verified historical transformation
+2020-11-30,RV_a,-0.6839192951469354,-0.6839258358542182,Recomputed from preceding RV with verified historical transformation
+2020-12-31,RV_a,-0.6633989869444147,-0.663405228651951,Recomputed from preceding RV with verified historical transformation
+2021-01-31,RV_a,-0.6604957075369052,-0.6605019069409928,Recomputed from preceding RV with verified historical transformation
+2021-02-28,RV_a,-0.654388084365087,-0.6543941947754925,Recomputed from preceding RV with verified historical transformation
+2021-03-31,RV_a,-0.6660313689705545,-0.6660376490343158,Recomputed from preceding RV with verified historical transformation
+2021-04-30,RV_a,-0.6995969933797757,-0.6996037625255278,Recomputed from preceding RV with verified historical transformation
+2021-05-31,RV_a,-0.7250143155630503,-0.7250214550625425,Recomputed from preceding RV with verified historical transformation
+2021-06-30,RV_a,-0.734793438254287,-0.7348007202445825,Recomputed from preceding RV with verified historical transformation
+2021-07-31,RV_a,-0.7593990893923329,-0.7594067299095757,Recomputed from preceding RV with verified historical transformation
+2021-08-31,RV_a,-0.7628845959934053,-0.7628922872976819,Recomputed from preceding RV with verified historical transformation
+2021-09-30,RV_a,-0.7648953548480518,-0.7649030754509327,Recomputed from preceding RV with verified historical transformation
+2021-10-31,RV_a,-0.7772989862468012,-0.7773068875819893,Recomputed from preceding RV with verified historical transformation
+2021-11-30,RV_a,-0.7888462562574292,-0.7888543258469518,Recomputed from preceding RV with verified historical transformation
+2021-12-31,RV_a,-0.7947896694479196,-0.7947978256384338,Recomputed from preceding RV with verified historical transformation
+2022-01-31,RV_a,-0.7819138701810106,-0.7819218387592979,Recomputed from preceding RV with verified historical transformation
+2022-02-28,RV_a,-0.7791278184633373,-0.7791357464462914,Recomputed from preceding RV with verified historical transformation
+2022-03-31,RV_a,-0.7703072122114103,-0.7703150116700259,Recomputed from preceding RV with verified historical transformation
+2022-04-30,RV_a,-0.7638487109269123,-0.7638564162792294,Recomputed from preceding RV with verified historical transformation
+2022-05-31,RV_a,-0.7485117923812505,-0.7485192742605716,Recomputed from preceding RV with verified historical transformation
+2022-06-30,RV_a,-0.7322764952896688,-0.7322837406057927,Recomputed from preceding RV with verified historical transformation
+2022-07-31,RV_a,-0.7078275396405546,-0.7078344287129288,Recomputed from preceding RV with verified historical transformation
+2022-08-31,RV_a,-0.697727112032794,-0.6977338539326567,Recomputed from preceding RV with verified historical transformation
+2022-09-30,RV_a,-0.6807591899883167,-0.6807656846499635,Recomputed from preceding RV with verified historical transformation
+2022-10-31,RV_a,-0.6682473626204914,-0.6682536749733166,Recomputed from preceding RV with verified historical transformation
+2022-11-30,RV_a,-0.6512863758644596,-0.6512924410801222,Recomputed from preceding RV with verified historical transformation
+2022-12-31,RV_a,-0.636299019176881,-0.636304866012985,Recomputed from preceding RV with verified historical transformation
+2023-01-31,RV_a,-0.6354568483505305,-0.6354626829154317,Recomputed from preceding RV with verified historical transformation
+2023-02-28,RV_a,-0.6374815197122784,-0.6374873837785017,Recomputed from preceding RV with verified historical transformation
+2023-03-31,RV_a,-0.6448453530981052,-0.6448513244621475,Recomputed from preceding RV with verified historical transformation
+2023-04-30,RV_a,-0.6497067299827517,-0.6497127721815223,Recomputed from preceding RV with verified historical transformation
+2023-05-31,RV_a,-0.6653170933422835,-0.6653233629983928,Recomputed from preceding RV with verified historical transformation
+2023-06-30,RV_a,-0.6825050510764002,-0.6825115711768475,Recomputed from preceding RV with verified historical transformation
+2023-07-31,RV_a,-0.7010601986833459,-0.701066989149344,Recomputed from preceding RV with verified historical transformation
+2023-08-31,RV_a,-0.7184281377166372,-0.718435181249466,Recomputed from preceding RV with verified historical transformation
+2023-09-30,RV_a,-0.7275337529903362,-0.7275409292003467,Recomputed from preceding RV with verified historical transformation
+2023-10-31,RV_a,-0.7430827246538416,-0.7430901274266573,Recomputed from preceding RV with verified historical transformation
+2023-11-30,RV_a,-0.7562377459337598,-0.7562453403873235,Recomputed from preceding RV with verified historical transformation
+2023-12-31,RV_a,-0.7713787684746795,-0.7713865835468546,Recomputed from preceding RV with verified historical transformation
+2024-01-31,RV_a,-0.7834603575825392,-0.7834683486945693,Recomputed from preceding RV with verified historical transformation
+2024-02-29,RV_a,-0.7917136792632675,-0.7917217906337783,Recomputed from preceding RV with verified historical transformation
+2024-03-31,RV_a,-0.7950576572091844,-0.7950658173045267,Recomputed from preceding RV with verified historical transformation
+2024-04-30,RV_a,-0.807925595319275,-0.8079339429122997,Recomputed from preceding RV with verified historical transformation
+2024-05-31,RV_a,-0.8037476404821434,-0.8037559271985272,Recomputed from preceding RV with verified historical transformation
+2024-06-30,RV_a,-0.8086962258826096,-0.80870458470443,Recomputed from preceding RV with verified historical transformation
+2024-07-31,RV_a,-0.8198939841603828,-0.8199025061438306,Recomputed from preceding RV with verified historical transformation
+2024-08-31,RV_a,-0.8082256462843032,-0.8082339982493462,Recomputed from preceding RV with verified historical transformation
+2024-09-30,RV_a,-0.7996744050481417,-0.7996826324137422,Recomputed from preceding RV with verified historical transformation
+2024-10-31,RV_a,-0.7961920077025529,-0.7962001843264241,Recomputed from preceding RV with verified historical transformation
+2024-11-30,RV_a,-0.8006607135538059,-0.8006689552908277,Recomputed from preceding RV with verified historical transformation
+2024-12-31,RV_a,-0.8012298867855077,-0.8012381368159065,Recomputed from preceding RV with verified historical transformation
+2025-01-31,RV_a,-0.7939500761432305,-0.7939582201000991,Recomputed from preceding RV with verified historical transformation
+2025-02-28,RV_a,-0.7896115856931121,-0.789619666434188,Recomputed from preceding RV with verified historical transformation
+2025-03-31,RV_a,-0.789438468342867,-0.789446546561464,Recomputed from preceding RV with verified historical transformation
+2025-04-30,RV_a,-0.7745050518185481,-0.7745129124435443,Recomputed from preceding RV with verified historical transformation
+2025-05-31,RV_a,-0.7500213052474088,-0.7500288091217193,Recomputed from preceding RV with verified historical transformation
+2025-06-30,RV_a,-0.739778479525478,-0.7397858341524057,Recomputed from preceding RV with verified historical transformation
+2025-07-31,RV_a,-0.7310526362959312,-0.731059863779305,Recomputed from preceding RV with verified historical transformation
+2025-08-31,RV_a,-0.7463482894966986,-0.7463557398517948,Recomputed from preceding RV with verified historical transformation
+2025-09-30,RV_a,-0.7564804346435849,-0.7564880326333463,Recomputed from preceding RV with verified historical transformation
+2025-10-31,RV_a,-0.7679510902819232,-0.7679588554096775,Recomputed from preceding RV with verified historical transformation
+2025-11-30,RV_a,-0.7636297864404492,-0.7636374886028354,Recomputed from preceding RV with verified historical transformation
+2025-12-31,RV_a,-0.7605746229139243,-0.7605822805597708,Recomputed from preceding RV with verified historical transformation
+2026-01-31,RV_a,-0.7698347979573632,-0.7698425905324691,Recomputed from preceding RV with verified historical transformation
+2026-02-28,RV_a,-0.775717108054794,-0.7757249863405632,Recomputed from preceding RV with verified historical transformation
+2026-03-31,RV_a,-0.7753867417580749,-0.7753946152301037,Recomputed from preceding RV with verified historical transformation
+2026-04-30,RV_a,-0.7775798028751687,-0.777587708302113,Recomputed from preceding RV with verified historical transformation
+2026-05-31,RV_a,-0.8022105103531891,-0.8022187746721745,Recomputed from preceding RV with verified historical transformation
+2026-06-30,RV_a,-0.8116830964140443,-0.8116914987573131,Recomputed from preceding RV with verified historical transformation
+2026-07-31,RV_a,-0.8015969525775413,-0.8016052079564261,Recomputed from preceding RV with verified historical transformation
+2026-08-31,RV_a,-0.7902226141463015,-0.7902307037906234,Recomputed from preceding RV with verified historical transformation

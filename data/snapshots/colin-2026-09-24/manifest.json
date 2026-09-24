@@ -1,0 +1,84 @@
+{
+  "protocol": "colin-prepared-v1",
+  "source_repository": "aidanccc/qrc-volatility-research",
+  "source_commit": "ca78df0cae90a658d5b2696e6641bcfa4c3a0356",
+  "source_file": "1950-2026.csv",
+  "source_sha256": "eae949b9e7a7983e78ca2ab6d9e2615544362097b9744de07299be4b966c9ee0",
+  "as_of": "2026-09-24",
+  "artifacts": {
+    "corrections.csv": "38b8bbcec860f7e2a169ab87ec41308e33ad792a9beeef23c0f8a4ad421b795b",
+    "factor_reconciliation.csv": "c3a006f59af08379e4c4ebcdb98041c6e6d303a7821a76091eed3a08dfd1538b",
+    "missingness.csv": "b471d602327bdc53ef557a2512d1055df8f0f7ea1ea0f6b02215421facd0e5b8",
+    "monthly.csv": "196008bf6cc9cc1398f9223a9be2048e11b9abf5d2fc8a69395c67dfe906e96a",
+    "outlier_flags.csv": "2b4a37515ce04f86b56c0620fbe34b20eeb56de4d62b6b1507bc72b493eb68cd",
+    "target_reconciliation.csv": "91b6e109108901a83adec1ffd6a2cee6db9ea611bfbd124102adf02798575f58",
+    "sources.json": "8eb52043169e04e455858f428af3868ba507e3738021f78e95efc828f92a7cd0"
+  },
+  "factor_mapping": {
+    "MKT": {
+      "slope": 0.05083884087442787,
+      "offset": 0.18149466192170868,
+      "train_exact_fraction": 1.0,
+      "validation_exact_fraction": 0.9975490196078431,
+      "max_raw_residual_percentage_points": 0.01000000000001545,
+      "calibration_end": "2017-12-31",
+      "accepted": true
+    },
+    "SMB": {
+      "slope": 0.05186721991701242,
+      "offset": -0.107883817427386,
+      "train_exact_fraction": 0.9950980392156863,
+      "validation_exact_fraction": 0.8848039215686274,
+      "max_raw_residual_percentage_points": 0.019999999999999404,
+      "calibration_end": "2017-12-31",
+      "accepted": false
+    },
+    "HML": {
+      "slope": 0.08048289738430581,
+      "offset": -0.09134808853118734,
+      "train_exact_fraction": 0.9975490196078431,
+      "validation_exact_fraction": 0.9240196078431373,
+      "max_raw_residual_percentage_points": 0.03000000000000076,
+      "calibration_end": "2017-12-31",
+      "accepted": true
+    },
+    "STR": {
+      "slope": 0.06485084306095974,
+      "offset": -0.05123216601815794,
+      "train_exact_fraction": 0.9975490196078431,
+      "validation_exact_fraction": 0.928921568627451,
+      "max_raw_residual_percentage_points": 0.1599999999999942,
+      "calibration_end": "2017-12-31",
+      "accepted": false
+    }
+  },
+  "derived_mapping": {
+    "RV_q": {
+      "slope": 0.7752848995951102,
+      "offset": -0.2764262123862846,
+      "lagged_months": 3
+    },
+    "RV_a": {
+      "slope": 0.8294073850600303,
+      "offset": -0.2957234715871446,
+      "lagged_months": 12
+    }
+  },
+  "target_inverse": {
+    "min": -4.7722718186046515,
+    "span": 3.517953015402707,
+    "status": "legacy constants applied; Colin construction metadata unavailable"
+  },
+  "rows": 920,
+  "filled_factor_cells": 206,
+  "remaining_missing_factor_cells": 210,
+  "derived_corrections": 211,
+  "outlier_flags": 134,
+  "max_post2017_target_difference": 4.775841416204685e-05,
+  "limitations": [
+    "Retrospective revised macro data; historical availability not verified",
+    "FIZ through December 2024, CIZ from January 2025; provider methodology break",
+    "Colin raw construction and exact post-2017 RV normalization unavailable",
+    "Original pre-2018 scaling inherited; extension is not a pristine real-time backtest"
+  ]
+}
