@@ -1,0 +1,9 @@
+scope,window,model,loss,mean_loss_minus_HAR,ci_lower,ci_upper,months
+complete_period,120,HAR,mse_log_rv,0.0,0.0,0.0,14
+complete_period,120,Persistence,mse_log_rv,0.04490236767661147,0.016456842908197572,0.0745316607897038,14
+all_model_common_dates,120,HAR,mse_log_rv,0.0,0.0,0.0,14
+all_model_common_dates,120,Persistence,mse_log_rv,0.04490236767661147,0.016456842908197572,0.0745316607897038,14
+complete_period,120,HAR,qlike_variance,0.0,0.0,0.0,14
+complete_period,120,Persistence,qlike_variance,0.15157215840904126,0.05096152203079798,0.25927771906243147,14
+all_model_common_dates,120,HAR,qlike_variance,0.0,0.0,0.0,14
+all_model_common_dates,120,Persistence,qlike_variance,0.15157215840904126,0.05096152203079798,0.25927771906243147,14

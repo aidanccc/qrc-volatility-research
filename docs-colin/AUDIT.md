@@ -25,3 +25,5 @@ The legacy inverse RV normalization differs from modern price-derived log RV by 
 The modern package, CLI, dependency pins and baseline tests are ported from personal commit 6e7ddf0 (and subsequent report maintenance visible in personal history). Personal uncommitted follow-up files are not silently included. Original notebooks and simulator stay intact.
 
 Official sources: https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html and its December 2024 FIZ archive; paper https://arxiv.org/html/2505.13933v2. Downloaded provider bytes remain local; hashes and derived research data are published.
+
+Branch correction: the user explicitly requested continuing on `Vikas`. The two initial milestone commits are retained as a fast-forward continuation of the existing Vikas history. Subsequent work and results publish only to Vikas; the temporary codex branch is removed after verification.

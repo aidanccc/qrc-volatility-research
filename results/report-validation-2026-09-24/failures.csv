@@ -1,0 +1,1 @@
+run_id,configuration,model,seed,window,target_month,forecast_origin,training_start,training_end,actual_log_rv,previous_log_rv,predicted_log_rv,status,warnings,seconds

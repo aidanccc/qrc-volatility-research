@@ -9,3 +9,7 @@ Integration and full benchmark execution pending. No new-data model results clai
 ## Integration validation
 
 Paper-feature adapters, explicit missing-input records, dynamic record validation and protocol-neutral reports added. Ten-model first-origin pilot completed all 20 fits across both windows without failures. Quantum adapter validation compares the real simulator with a cached adapter on a small input, including an unavailable suffix. No model result is interpreted from the pilot. The separate modern interface retains its original default configuration.
+
+## Reporting and branch validation
+
+Publication moved to the existing Vikas branch by explicit user instruction; the temporary branch was deleted after verifying identical published history. The 21-test suite passes. A two-model, 14-month report integration run completed, produced tables/plots/MCS, and was visually checked. Its checkpoint resume preserves all 30 records byte-for-byte. Full Colin, modern and original legacy workflows are running; final metrics remain pending.

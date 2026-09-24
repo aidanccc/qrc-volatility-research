@@ -1,0 +1,9 @@
+model,mcs_pvalue,window,loss,scope,months
+Persistence,0.0048,120,mse_log_rv,complete_period,14
+HAR,1.0,120,mse_log_rv,complete_period,14
+Persistence,0.0048,120,mse_log_rv,all_model_common_dates,14
+HAR,1.0,120,mse_log_rv,all_model_common_dates,14
+Persistence,0.0054,120,qlike_variance,complete_period,14
+HAR,1.0,120,qlike_variance,complete_period,14
+Persistence,0.0054,120,qlike_variance,all_model_common_dates,14
+HAR,1.0,120,qlike_variance,all_model_common_dates,14

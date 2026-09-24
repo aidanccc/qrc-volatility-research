@@ -1,0 +1,177 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Volatility benchmark</title><style>body{font:16px/1.6 system-ui;max-width:1150px;margin:40px auto;padding:20px;color:#193047}table{border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid #ddd}img{max-width:100%}h2{margin-top:40px}</style><h1>colin-paper-features-v1 results</h1>
+<p>Evaluation: 2025-07-31–2026-08-31. All 30 expected records validated, including unscored forecasts.</p>
+<p>Successful scored records: 28. Failed or unavailable records: 0 (see failures.csv and coverage.csv).</p>
+<h2>Forecast accuracy</h2>
+<p>Tables average losses across seeds; seeds are not independent market histories. Rankings below include only complete models. Incomplete models have separate common-date comparisons.</p>
+<h3>post2017</h3>
+<table>
+<thead>
+<tr>
+  <th>window</th>
+  <th>model</th>
+  <th>complete</th>
+  <th>successful_forecasts</th>
+  <th>mse_log_rv</th>
+  <th>rmse_log_rv</th>
+  <th>mae_log_rv</th>
+  <th>qlike_variance</th>
+  <th>mse_seed_std</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>120</td>
+  <td>HAR</td>
+  <td>True</td>
+  <td>14</td>
+  <td>0.106763</td>
+  <td>0.326745</td>
+  <td>0.283207</td>
+  <td>0.20485</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>Persistence</td>
+  <td>True</td>
+  <td>14</td>
+  <td>0.151665</td>
+  <td>0.389442</td>
+  <td>0.348755</td>
+  <td>0.356422</td>
+  <td>0</td>
+</tr>
+</tbody>
+</table>
+<p>120-month window: HAR has the lowest complete-model MSE (0.106763).</p>
+<h3>last12</h3>
+<table>
+<thead>
+<tr>
+  <th>window</th>
+  <th>model</th>
+  <th>complete</th>
+  <th>successful_forecasts</th>
+  <th>mse_log_rv</th>
+  <th>rmse_log_rv</th>
+  <th>mae_log_rv</th>
+  <th>qlike_variance</th>
+  <th>mse_seed_std</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>120</td>
+  <td>HAR</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.0901862</td>
+  <td>0.30031</td>
+  <td>0.26002</td>
+  <td>0.185485</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>120</td>
+  <td>Persistence</td>
+  <td>True</td>
+  <td>12</td>
+  <td>0.135863</td>
+  <td>0.368595</td>
+  <td>0.324983</td>
+  <td>0.31363</td>
+  <td>0</td>
+</tr>
+</tbody>
+</table>
+<p>120-month window: HAR has the lowest complete-model MSE (0.090186).</p>
+<p><img src="last12_forecasts.png" alt="Last twelve months" /></p>
+<p><img src="model_comparison.png" alt="Complete-model comparison" /></p>
+<h2>Statistical evidence</h2>
+<p>MCS uses 10,000 stationary-bootstrap replications, expected block length six months, seed 0 and familywise size 0.05. HAR loss-difference intervals use paired date resampling of seed-averaged losses. Unadjusted pairwise intervals do not establish familywise superiority. A p-value of one is not proof of a unique winner.</p>
+<table>
+<thead>
+<tr>
+  <th>model</th>
+  <th>mcs_pvalue</th>
+  <th>window</th>
+  <th>loss</th>
+  <th>scope</th>
+  <th>months</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Persistence</td>
+  <td>0.0048</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>1</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>complete_period</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.0048</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>1</td>
+  <td>120</td>
+  <td>mse_log_rv</td>
+  <td>all_model_common_dates</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.0054</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>1</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>complete_period</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>Persistence</td>
+  <td>0.0054</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>1</td>
+  <td>120</td>
+  <td>qlike_variance</td>
+  <td>all_model_common_dates</td>
+  <td>14</td>
+</tr>
+</tbody>
+</table>
+<h2>Protocol and limitations</h2>
+<p>Colin paper-feature extension: original QR1/QR2 feature subsets, 11-input LSTMX/CRLX, ten macro predictors for HARX/ARMAX. DP/TB differences are fixed from historical conventions. HAR averages are formed causally. Normalized RV is inverted with inherited legacy constants. Quarterly/annual quantum inputs retain their verified historical transformations.</p>
+<p>This is retrospective reconstruction: Colin supplied no construction code or scaling metadata; macro publication availability is unverified. FIZ factors through 2024 transition to CIZ in 2025. Missing August factors block dependent September forecasts. Statistical outliers remain in the primary sample. The target differs slightly from the independently rebuilt modern series, so cross-protocol losses are not pooled.</p>
+<p>Both protocols use 571- and 120-month rolling windows and seeds 0–4 for stochastic models. September 2026 is unscored. Quantum results use ideal exact simulation, not hardware or trading returns. Numerical failures are retained without substituting forecasts. No window or model is selected for deployment using these results.</p>
+<h2>Reproduce</h2>
+<p><code>python run_study.py report --run results/report-validation-2026-09-24</code></p>
+<p>See manifest.json for identity, inputs, source hashes and environment. See RUN_ORDER.md and docs-colin/AUDIT.md for preparation and source limitations.</p>
+</html>

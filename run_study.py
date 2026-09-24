@@ -27,6 +27,10 @@ def main():
     run.add_argument("--workers", type=int, default=4)
     run.add_argument("--threads", type=int, default=2)
     run.add_argument("--limit", type=int, help="Pilot forecasts per model/seed/window; rerun without limit to resume")
+    sub.add_parser("summarize")
+    explore = sub.add_parser("explore")
+    explore.add_argument("--run", required=True)
+    explore.add_argument("--output", required=True)
     report = sub.add_parser("report")
     report.add_argument("--run", required=True)
     args = p.parse_args()
@@ -38,6 +42,12 @@ def main():
     elif args.command == "download":
         from qrcstudy.data import download
         download(args.output, args.as_of, args.legacy_data)
+    elif args.command == "summarize":
+        from qrcstudy.project_report import summarize
+        summarize()
+    elif args.command == "explore":
+        from qrcstudy.exploration import analyze
+        analyze(args.run, args.output)
     elif args.command == "report":
         from qrcstudy.report import report
         report(args.run)
