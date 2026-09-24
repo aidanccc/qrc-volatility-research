@@ -81,7 +81,7 @@ def lstm_forecast(seq, y, start, end, model_name, seed, threads=2):
             out, _ = self.lstm(x)
             return self.fc(out[:, -1])
 
-    n = 1 if model_name == "LSTM" else 7
+    n = 1 if model_name == "LSTM" else seq.shape[2]
     model = LSTM(n, 60 if n == 1 else 50)
     x = torch.tensor(seq[start:end, :, :n], dtype=torch.float32)
     target = torch.tensor(y[start:end, None], dtype=torch.float32)

@@ -117,6 +117,9 @@ def run_modern(data, output, start, end, windows, seeds, models, workers, thread
     config = {"protocol": "modern-v1", "data": str(data), "data_sha256": digest(data), "snapshot_sha256": digest(data.parent / "manifest.json"), "start": start, "end": end, "windows": windows, "seeds": seeds, "models": models, "threads": threads, "scaler": scaler, "features": FEATURES, "epochs": 100, "versions": versions, "python": platform.python_version(), "source_hashes": {p: digest(root / p) for p in ["qrcstudy/data.py", "qrcstudy/models.py", "qrcstudy/run.py", "quantum_reservoir_qiskit.py"]}}
     checked_manifest(output, config)
     output = Path(output)
+    import subprocess
+    if not (output / "execution_revision.json").exists():
+        write_json(output / "execution_revision.json", {"commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip(), "source_hashes": config["source_hashes"]})
     _, _, clipped = transform(frame, scaler)
     clipped.loc[start:end].mean().rename("clipped_fraction").to_csv(output / "clipping.csv")
     write_json(output / "scaler.json", scaler)

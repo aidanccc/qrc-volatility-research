@@ -10,9 +10,14 @@ def main():
     data.add_argument("--output", required=True)
     data.add_argument("--as-of", required=True)
     data.add_argument("--legacy-data", default="data/Data.CSV")
+    prepare = sub.add_parser("prepare-colin")
+    prepare.add_argument("--data", default="1950-2026.csv")
+    prepare.add_argument("--output", required=True)
+    prepare.add_argument("--as-of", required=True)
+    prepare.add_argument("--modern-data")
     run = sub.add_parser("run")
-    run.add_argument("--configuration", choices=["modern", "legacy"], default="modern")
-    run.add_argument("--data", default="data/snapshots/2026-09-14-v2/monthly.csv")
+    run.add_argument("--configuration", choices=["modern", "legacy", "colin"], default="modern")
+    run.add_argument("--data", default=None)
     run.add_argument("--output", required=True)
     run.add_argument("--start", default="2018-01-31")
     run.add_argument("--end", default="2026-08-31")
@@ -27,7 +32,10 @@ def main():
     args = p.parse_args()
     for name in ["OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "VECLIB_MAXIMUM_THREADS"]:
         os.environ[name] = str(getattr(args, "threads", 2))
-    if args.command == "download":
+    if args.command == "prepare-colin":
+        from qrcstudy.colin_data import prepare
+        prepare(args.data, args.output, args.as_of, args.modern_data)
+    elif args.command == "download":
         from qrcstudy.data import download
         download(args.output, args.as_of, args.legacy_data)
     elif args.command == "report":
@@ -42,7 +50,12 @@ def main():
         models = args.models or MODELS
         if set(models)-set(MODELS):
             p.error("Unknown model")
-        run_modern(args.data, args.output, args.start, args.end, args.windows, args.seeds, models, args.workers, args.threads, args.limit)
+        if args.data is None:
+            args.data = "data/snapshots/colin-2026-09-24-v2/monthly.csv" if args.configuration == "colin" else "data/snapshots/2026-09-14-v2/monthly.csv"
+        runner = run_modern
+        if args.configuration == "colin":
+            from qrcstudy.colin_run import run as runner
+        runner(args.data, args.output, args.start, args.end, args.windows, args.seeds, models, args.workers, args.threads, args.limit)
 
 
 if __name__ == "__main__":

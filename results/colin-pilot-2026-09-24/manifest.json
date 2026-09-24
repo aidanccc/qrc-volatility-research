@@ -1,0 +1,134 @@
+{
+  "identity": "5f1156e0334cb9074a25c1383b42a8c75a8f6301a5d4f23c88ac01b1bd82a163",
+  "config": {
+    "protocol": "colin-paper-features-v1",
+    "data": "/private/tmp/qrc-colin-validation/data/snapshots/colin-2026-09-24-v2/monthly.csv",
+    "data_sha256": "f7214ff933e460ce66931ab73f074f1c91c2b615dea9e2428bf8b063d5c6fbcc",
+    "snapshot_sha256": "266ce6ff24b1b4d10e52973f2db03eed1bdce890aa831915f972dcb94b7ab1f3",
+    "start": "2018-01-31",
+    "end": "2026-08-31",
+    "windows": [
+      571,
+      120
+    ],
+    "seeds": [
+      0
+    ],
+    "models": [
+      "Persistence",
+      "HAR",
+      "HARX",
+      "AR1",
+      "AR3",
+      "ARMAX",
+      "CRL",
+      "CRLX",
+      "LSTM",
+      "LSTMX"
+    ],
+    "threads": 2,
+    "epochs": 100,
+    "features": {
+      "Persistence": [
+        "RV"
+      ],
+      "HAR": [
+        "RV",
+        "har3",
+        "har12"
+      ],
+      "HARX": [
+        "RV",
+        "har3",
+        "har12",
+        "MKT",
+        "diff_DP",
+        "IP",
+        "DEF",
+        "EP",
+        "SMB",
+        "diff_TB",
+        "HML",
+        "INF",
+        "STR"
+      ],
+      "AR1": [
+        "RV"
+      ],
+      "AR3": [
+        "RV"
+      ],
+      "ARMAX": [
+        "MKT",
+        "diff_DP",
+        "IP",
+        "DEF",
+        "EP",
+        "SMB",
+        "diff_TB",
+        "HML",
+        "INF",
+        "STR"
+      ],
+      "CRL": [
+        "RV"
+      ],
+      "CRLX": [
+        "RV",
+        "MKT",
+        "diff_DP",
+        "IP",
+        "DEF",
+        "EP",
+        "SMB",
+        "diff_TB",
+        "HML",
+        "INF",
+        "STR"
+      ],
+      "LSTM": [
+        "RV"
+      ],
+      "LSTMX": [
+        "RV",
+        "MKT",
+        "diff_DP",
+        "IP",
+        "DEF",
+        "EP",
+        "SMB",
+        "diff_TB",
+        "HML",
+        "INF",
+        "STR"
+      ]
+    },
+    "target_inverse": {
+      "min": -4.7722718186046515,
+      "span": 3.517953015402707,
+      "status": "legacy constants applied; Colin construction metadata unavailable"
+    },
+    "transform_policy": "Inherited normalized inputs; fixed DP/TB differences; no outlier removal; prepared derived identities",
+    "versions": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.2",
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "statsmodels": "0.14.6",
+      "reservoirpy": "0.4.1",
+      "qiskit": "2.3.1",
+      "arch": "8.0.0"
+    },
+    "python": "3.11.15",
+    "source_hashes": {
+      "qrcstudy/colin_data.py": "2f05d1fe5f05cc6a34e6c704fab8c9651cb46734aa516a2290d1e258a08b7019",
+      "qrcstudy/colin_models.py": "aa06f1b3c2e544e288647d8af843ed04c841d78cd5b6ebfb604925cb80ad13e6",
+      "qrcstudy/colin_run.py": "d4d46c3a5e5a97dc09784ad3d72f2238db5222186249e23f712aac7ddc0da8c6",
+      "qrcstudy/models.py": "a1f804536ed9a42840c61e40b1f2b44e38b7e43dcf2b06b59c134f24ff3a2786",
+      "qrcstudy/run.py": "db2c51073e057d83c47f4a6c2096d7edd92d6ba85bda40fa4c3d29ae787d07bf",
+      "qrcstudy/data.py": "17399b19f0d4645326bbeb7a314fbb3a6cee586dd44d39f4963eb651b9de6caa",
+      "quantum_reservoir_qiskit.py": "d01040abe052a9f1f616c70a376097b4fe22d8b10f3a7e7fb5d5835528deead7"
+    }
+  },
+  "created_at": "2026-09-24T16:08:55.730382+00:00"
+}
