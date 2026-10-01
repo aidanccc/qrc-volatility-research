@@ -1,0 +1,8 @@
+test_full_history_resource_counts_include_repeated_endpoints (test_diagnostics.DiagnosticProtocolTests.test_full_history_resource_counts_include_repeated_endpoints) ... ok
+test_known_shot_variance_and_joint_correlation (test_diagnostics.DiagnosticProtocolTests.test_known_shot_variance_and_joint_correlation) ... ok
+test_reset_circuit_matches_partial_trace_protocol_at_both_endpoints (test_diagnostics.DiagnosticProtocolTests.test_reset_circuit_matches_partial_trace_protocol_at_both_endpoints) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 13.206s
+
+OK

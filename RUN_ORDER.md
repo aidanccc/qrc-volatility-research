@@ -49,3 +49,17 @@ Fresh modern training requires a daily-price snapshot: run `python run_study.py 
 - `qrcstudy/exploration.py`: exploratory readout and outlier diagnostics.
 
 Published manifests, prediction records, and source inventories retain their original identifiers for verification. Directory and module names now use `extended`; new experiments also use that configuration. Renamed source files produce new run identities, so use fresh output directories for training. Historical source code remains available at revision `7497cc6`.
+
+## Analysis-only diagnostic study (1 October 2026)
+
+The working branch is shared `Vikas` from `aidanccc/qrc-volatility-research`. Preserve this distinction from the archived personal checkout; see `analysis/diagnostics/MIGRATION.md`.
+
+Read `results/diagnostics-2026-10-01/report.html` first. For a complete fresh diagnostic run using the unchanged existing models and published extended forecasts:
+
+```bash
+.venv/bin/python analysis/diagnostics/run.py --output results/diagnostics-new-run
+```
+
+Use a new output directory; the runner rejects existing ones. It computes seed-0 quantum features and the 12-history circuit study, renders 21 figure pairs and the report, runs baseline/diagnostic tests, and verifies original-artifact preservation and deterministic re-rendering. It does not train LSTMs, rerun the full classical benchmark, download data, or use IonQ. The first computation took about seven minutes locally.
+
+See `analysis/diagnostics/README.md` for report-only regeneration, caches, and precise scope. Deferred model changes are copy-ready prompts, not prerequisites for reading this study. The established historical and benchmark workflows above remain separate and unchanged.

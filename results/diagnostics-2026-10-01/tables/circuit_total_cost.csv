@@ -1,0 +1,9 @@
+model,steps,total_rxx,max_circuit_depth,executions_per_shot
+QR1,1,135,46,1
+QR1,2,270,79,1
+QR1,4,540,145,1
+QR1,8,1080,277,1
+QR2,1,315,57,2
+QR2,2,630,101,2
+QR2,4,1260,189,2
+QR2,8,2520,365,2

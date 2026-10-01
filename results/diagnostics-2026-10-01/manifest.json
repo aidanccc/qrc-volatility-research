@@ -1,0 +1,76 @@
+{
+  "repository": "aidanccc/qrc-volatility-research",
+  "branch": "Vikas",
+  "baseline_commit": "008a1d152a50147b5429bcca6cc81a8cf6d5da3e",
+  "input_hashes": {
+    "data/snapshots/extended-2026-09-24-v2/monthly.csv": "f7214ff933e460ce66931ab73f074f1c91c2b615dea9e2428bf8b063d5c6fbcc",
+    "results/extended-2026-09-24/predictions.csv": "91dd91288f7c1967e4f8021938216c7b6f2fd75a8281e056cc32a6c68f69c656",
+    "results/extended-2026-09-24/manifest.json": "503eac8c928b32975fcc8deaed52986deefa4449808e7279a024ffbc40789124",
+    "data/coeff_10.jld2": "c4b90e6fb79530e34f2a72995a44b9a494146a78f6806b717b529281f41c66dc",
+    "data/Data.CSV": "40982cc705dee23bd67ef4a3337424cd3288e05a944371108e0b566001be323c",
+    "1950-2026.csv": "eae949b9e7a7983e78ca2ab6d9e2615544362097b9744de07299be4b966c9ee0",
+    "data/predict_result.csv": "58d9a227c19e89e23e5ae9b993dc6b90ced8f25fbb2a00d9fa68b236af90249a",
+    "results/predictions/qrc_predict_result.csv": "377625ff81cfb02456ce2c19d73c15604732c9118eb4e12b24d2bdd4a60e93f0"
+  },
+  "source_hashes": {
+    "analysis/diagnostics/compute.py": "2ec1e2dda6ac71a28f09910d9c7ef866168870640ae17ef7bff29a45122602d7",
+    "quantum_reservoir_qiskit.py": "d01040abe052a9f1f616c70a376097b4fe22d8b10f3a7e7fb5d5835528deead7",
+    "quantum_reservoir_trotter.py": "50c88c235ea836bea887b8e0a7f236d04f60274abf8a157467804fec34241960",
+    "qrcstudy/models.py": "a1f804536ed9a42840c61e40b1f2b44e38b7e43dcf2b06b59c134f24ff3a2786",
+    "qrcstudy/extended_models.py": "aa06f1b3c2e544e288647d8af843ed04c841d78cd5b6ebfb604925cb80ad13e6",
+    "analysis/diagnostics/test_diagnostics.py": "a55b0874e78359c4ec49ebfd2ac3b1ece46ac64e28b4f8f4a84f4b94ac230870",
+    "analysis/diagnostics/run.py": "6ff9bac988df7e07534b38ae7776fd3a7ac05d26cafdc3a1300245ddc5598b38",
+    "analysis/diagnostics/render.py": "d268c9b712be5427c914975b66f92d4d90dd43f714f7e315e99f24c9efa44495",
+    "analysis/diagnostics/verify.py": "c7d840d392bde8413eac070bb6e5f5188649a8de3d0be4b6b142628aadfc9c08",
+    "analysis/diagnostics/circuit_diagram.py": "2e3ff59ca3a1cd743d927360cc3b2314bd6a541851baa4bda17fe9c85bea55d9"
+  },
+  "versions": {
+    "qiskit": "2.3.1",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "pandas": "3.0.2",
+    "matplotlib": "3.10.8",
+    "h5py": "3.16.0"
+  },
+  "seed": 0,
+  "tau": 1.0,
+  "qubits": 10,
+  "input_qubits": 7,
+  "hidden_qubits": 3,
+  "history_months": 3,
+  "trotter_steps": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "shot_counts": [
+    100,
+    1000,
+    10000
+  ],
+  "forecast_scope": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "windows": [
+      571,
+      120
+    ]
+  },
+  "couplings": "Extended: generate_coupling_matrix(10, seed=0), shared QR1/QR2. Historical: original JLD2 matrices 0 and 1.",
+  "historical_data_max_abs_difference": 0.0,
+  "historical_published_predictions_max_abs_difference": {
+    "QR1": 1.1982504504182145e-06,
+    "QR2": 1.0814242239476357e-06
+  },
+  "historical_check_scope": "Existing Python versus author prediction artifacts; no new full historical forecast rerun.",
+  "feature_scope": "Seed 0, full valid history; published forecast diagnostics use seeds 0-4.",
+  "backend_execution": "None: ideal density matrix, logical circuit inspection, analytic shot uncertainty only.",
+  "elapsed_seconds": 412.27560806274414,
+  "study_date": "2026-10-01"
+}

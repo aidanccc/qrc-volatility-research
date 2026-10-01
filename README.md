@@ -16,3 +16,7 @@ python run_study.py report --run results/new-run
 The prepared snapshot is included. Use a new output directory for each changed dataset or configuration. The default run tests all models with 120- and 571-month windows and five stochastic seeds; it can take several hours.
 
 See [results](results/extended-study-2026-09-24/report.md), [data checks](docs-dataset/AUDIT.md), and [run instructions](RUN_ORDER.md) for preparation, a quick pilot, and the separate modern benchmark. Targets differ between the two protocols, so their scores are reported separately.
+
+## Circuit and data diagnostics
+
+The [1 October diagnostic report](results/diagnostics-2026-10-01/report.html) explains the 10-qubit circuit and includes 21 data, reservoir, forecast, and resource figures. [Markdown report](results/diagnostics-2026-10-01/report.md) · [Reproduction instructions](analysis/diagnostics/README.md) · [Deferred optimization prompts](analysis/diagnostics/FUTURE_CODEX_PROMPTS.md). Model implementations and published benchmarks are unchanged.

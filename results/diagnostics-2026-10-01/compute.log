@@ -1,0 +1,41 @@
+QR1: regenerating 917 exact forecast feature vectors
+    time step 200 / 920
+    time step 400 / 920
+    time step 600 / 920
+    time step 800 / 920
+QR1: measuring Trotter steps=1 on 12 histories
+QR1: measuring Trotter steps=2 on 12 histories
+QR1: measuring Trotter steps=4 on 12 histories
+QR1: measuring Trotter steps=8 on 12 histories
+QR2: regenerating 917 exact forecast feature vectors
+    time step 200 / 920
+    time step 400 / 920
+    time step 600 / 920
+    time step 800 / 920
+QR2: measuring Trotter steps=1 on 12 histories
+QR2: measuring Trotter steps=2 on 12 histories
+QR2: measuring Trotter steps=4 on 12 histories
+QR2: measuring Trotter steps=8 on 12 histories
+{
+  "published_forecasts_validated": true,
+  "reproduced_seed0_forecasts": 416,
+  "max_forecast_difference": 3.4683322880368905e-10,
+  "historical_instrumentation_max_difference": 0.0,
+  "gate_order_actual_Z_after_XX_error": 1.155141435058132e-16,
+  "gate_order_docstring_reversed_error": 0.33372652085494153,
+  "qubit_order_probe": [
+    -1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "hidden_states_valid": true,
+  "sampled_histories_per_model": 12,
+  "elapsed_seconds": 412.2755160331726
+}

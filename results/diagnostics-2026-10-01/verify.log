@@ -1,0 +1,15 @@
+{
+  "protected_baseline_files_checked": 176,
+  "intentional_documentation_changes": [
+    "ASSUMPTIONS.md",
+    "README.md",
+    "REPRO_STATUS.md",
+    "RUN_ORDER.md"
+  ],
+  "model_data_and_published_artifacts_unchanged": true,
+  "figures_verified": 21,
+  "png_pdf_pairs": 21,
+  "local_report_links_valid": true,
+  "deterministic_render_compared": true,
+  "identical_rerender_artifacts": 65
+}

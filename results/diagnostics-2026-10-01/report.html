@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Plots</title><style>body{font:16px/1.5 system-ui,sans-serif;color:#222;margin:0;background:white}main{max-width:1080px;margin:auto;padding:24px}h1{font-size:24px;font-weight:600;margin:0 0 24px}img{display:block;width:100%;height:auto;margin-top:36px}p{margin:12px 0}a{color:#356379;font-size:13px}@media print{img{break-inside:avoid}main{padding:0}}</style><main><h1>Plots</h1>
+<p><img src="figures/20_circuit_protocol.png" alt="Circuit" /></p>
+<p>Seven inputs pass through three months of evolution with three memory qubits. Inputs reset between months. QR2 needs separate runs for its two readout times; backend support remains unverified.</p>
+<p><a href="figures/20_circuit_protocol.pdf">PDF</a> · <a href="tables/example_three_month_inputs.csv">Data 1</a> · <a href="tables/example_three_month_angles.csv">Data 2</a> · <a href="tables/circuit_resources.csv">Data 3</a></p>
+<p><img src="figures/21_gate_sequence.png" alt="Gate sequence" /></p>
+<p>RY encodes each input. One Trotter step applies 45 pairwise RXX gates, then RZ on every qubit. Only this evolution block repeats; measurements occur at the final readout.</p>
+<p><a href="figures/21_gate_sequence.pdf">PDF</a> · <a href="tables/gate_sequence.csv">Data</a></p>
+<p><img src="figures/01_data_overview.png" alt="Volatility" /></p>
+<p>920 monthly observations. Volatility has sharp spikes and short-term persistence; the extended period has weaker autocorrelation at longer lags.</p>
+<p><a href="figures/01_data_overview.pdf">PDF</a> · <a href="tables/rv_series.csv">Data 1</a> · <a href="tables/rv_autocorrelation.csv">Data 2</a></p>
+<p><img src="figures/02_missingness.png" alt="Missing data" /></p>
+<p>Preparation reduced missing values from 416 to 4. The remaining August factors prevent September forecasts that need those inputs.</p>
+<p><a href="figures/02_missingness.pdf">PDF</a> · <a href="tables/missingness.csv">Data</a></p>
+<p><img src="figures/03_encoding_ranges.png" alt="Input angles" /></p>
+<p>Each input becomes a rotation angle: π × value. Four DP values and two IP values exceed their historical ranges; inputs were not clipped.</p>
+<p><a href="figures/03_encoding_ranges.pdf">PDF</a> · <a href="tables/encoding_ranges.csv">Data 1</a> · <a href="tables/encoded_angles.csv">Data 2</a></p>
+<p><img src="figures/04_input_correlations.png" alt="Input correlations" /></p>
+<p>DP and EP are strongly correlated. Some relationships change in the extended period, so historical input relationships may not remain stable.</p>
+<p><a href="figures/04_input_correlations.pdf">PDF</a> · <a href="tables/input_correlation_1950.csv">Data 1</a> · <a href="tables/input_correlation_2018.csv">Data 2</a></p>
+<p><img src="figures/05_couplings.png" alt="Qubit couplings" /></p>
+<p>All 10 qubits interact: 45 pairs per Trotter step. White lines separate seven input qubits from three memory qubits.</p>
+<p><a href="figures/05_couplings.pdf">PDF</a> · <a href="tables/extended_couplings_seed0.csv">Data 1</a> · <a href="tables/historical_couplings_QR1.csv">Data 2</a> · <a href="tables/historical_couplings_QR2.csv">Data 3</a></p>
+<p><img src="figures/06_feature_traces.png" alt="Quantum outputs" /></p>
+<p>Each row is a qubit’s Z expectation at one readout time. Several channels change little across months, suggesting overlapping or weakly varying information.</p>
+<p><a href="figures/06_feature_traces.pdf">PDF</a> · <a href="tables/QR1_features_seed0.csv">Data 1</a> · <a href="tables/QR2_features_seed0.csv">Data 2</a></p>
+<p><img src="figures/07_feature_variance.png" alt="Output variance" /></p>
+<p>The least-variable channels have variances of 0.000081 (QR1) and 0.000024 (QR2). Small changes may be difficult to resolve with limited shots.</p>
+<p><a href="figures/07_feature_variance.pdf">PDF</a> · <a href="tables/feature_variance.csv">Data</a></p>
+<p><img src="figures/08_feature_correlations.png" alt="Output correlations" /></p>
+<p>Several memory-qubit outputs are strongly correlated. This suggests redundancy, but removing outputs or qubits requires testing forecast accuracy.</p>
+<p><a href="figures/08_feature_correlations.pdf">PDF</a> · <a href="tables/QR1_feature_correlation.csv">Data 1</a> · <a href="tables/QR2_feature_correlation.csv">Data 2</a></p>
+<p><img src="figures/09_feature_spectra.png" alt="Feature redundancy" /></p>
+<p>Small singular values indicate nearly overlapping feature directions. QR2 has more of these directions; extra outputs may add little independent information.</p>
+<p><a href="figures/09_feature_spectra.pdf">PDF</a> · <a href="tables/feature_spectra.csv">Data</a></p>
+<p><img src="figures/10_conditioning.png" alt="Readout conditioning" /></p>
+<p>Higher values mean greater sensitivity to small input errors. Median condition numbers are about 967 vs 5,982 for QR1 vs QR2 at 120 months—roughly a sixfold difference.</p>
+<p><a href="figures/10_conditioning.pdf">PDF</a> · <a href="tables/rolling_conditioning.csv">Data 1</a> · <a href="tables/conditioning_summary.csv">Data 2</a></p>
+<p><img src="figures/11_hidden_purity.png" alt="Memory-state purity" /></p>
+<p>Across 12 histories, average purity falls from 1 to 0.509 (QR1) and 0.484 (QR2). Memory becomes mixed even without hardware noise; purity alone does not measure usefulness.</p>
+<p><a href="figures/11_hidden_purity.pdf">PDF</a> · <a href="tables/hidden_states.csv">Data 1</a> · <a href="tables/selected_histories.csv">Data 2</a></p>
+<p><img src="figures/12_forecasts.png" alt="Forecasts" /></p>
+<p>Black shows observed volatility; colored lines show five reservoir seeds. Both models miss some large spikes. Faint lines show seed variation, not confidence intervals.</p>
+<p><a href="figures/12_forecasts.pdf">PDF</a> · <a href="tables/validated_predictions.csv">Data</a></p>
+<p><img src="figures/13_residual_timeline.png" alt="Forecast errors" /></p>
+<p>Error = predicted − observed log volatility. The largest errors cluster around the 2020 volatility shock; positive errors mean overprediction.</p>
+<p><a href="figures/13_residual_timeline.pdf">PDF</a> · <a href="tables/validated_predictions.csv">Data</a></p>
+<p><img src="figures/14_residual_distribution.png" alt="Error distribution and autocorrelation" /></p>
+<p>Errors have tails and some repeated lag patterns. Shading shows variation across seeds, not confidence intervals.</p>
+<p><a href="figures/14_residual_distribution.pdf">PDF</a> · <a href="tables/validated_predictions.csv">Data 1</a> · <a href="tables/residual_autocorrelation.csv">Data 2</a></p>
+<p><img src="figures/15_rolling_error.png" alt="Rolling error" /></p>
+<p>Trailing 12-month squared error peaks around 2020–2021. Model rankings change over time; neither quantum model consistently has the lowest error.</p>
+<p><a href="figures/15_rolling_error.pdf">PDF</a> · <a href="tables/rolling_error.csv">Data</a></p>
+<p><img src="figures/16_regime_errors.png" alt="Error by volatility level" /></p>
+<p>Errors are lowest in the middle-volatility group. Low and high volatility are harder to forecast; groups use historical thresholds and observed outcomes.</p>
+<p><a href="figures/16_regime_errors.pdf">PDF</a> · <a href="tables/error_by_regime.csv">Data</a></p>
+<p><img src="figures/17_coverage.png" alt="Forecast availability" /></p>
+<p>Two ARMAX fits failed and 44 records were unavailable. Counts include unscored September forecasts; models with five seeds have more records.</p>
+<p><a href="figures/17_coverage.pdf">PDF</a> · <a href="tables/forecast_coverage.csv">Data 1</a> · <a href="tables/validated_predictions.csv">Data 2</a></p>
+<p><img src="figures/18_accuracy_cost.png" alt="Trotter error and gate count" /></p>
+<p>From 1 to 8 steps, mean Z error falls from 0.0704 to 0.0050 (QR1) and 0.0236 to 0.0054 (QR2), while gate counts rise eightfold. These are logical gates, not compiled IonQ counts.</p>
+<p><a href="figures/18_accuracy_cost.pdf">PDF</a> · <a href="tables/trotter_error_summary.csv">Data 1</a> · <a href="tables/circuit_resources.csv">Data 2</a> · <a href="tables/circuit_total_cost.csv">Data 3</a></p>
+<p><img src="figures/19_shot_uncertainty.png" alt="Sampling uncertainty" /></p>
+<p>Worst-case Z standard error is 0.10, 0.032, and 0.01 at 100, 1,000, and 10,000 shots. This estimates sampling uncertainty only; it excludes hardware noise.</p>
+<p><a href="figures/19_shot_uncertainty.pdf">PDF</a> · <a href="tables/shot_uncertainty.csv">Data 1</a> · <a href="tables/shot_summary.csv">Data 2</a></p>
+</main></html>
