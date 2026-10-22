@@ -1,0 +1,91 @@
+{
+  "rule": {
+    "max_forecast_gap": 0.05,
+    "mean_forecast_gap": 0.01,
+    "cost": "fewest RXX gates per forecast month, ties to smaller mean gap",
+    "units": "log realized volatility, versus the exact (authors) model, all 245 forecasts",
+    "not_used": "forecast accuracy against realized volatility"
+  },
+  "chosen": {
+    "QR1": {
+      "order": 2,
+      "steps": 2,
+      "max_forecast_gap": 0.0352889476944398,
+      "mean_forecast_gap": 0.005726017843026926,
+      "max_feature_gap": 0.03378455078415121,
+      "mean_feature_gap": 0.012796441146488738,
+      "max_gap_vs_authors": 0.03528899952028075,
+      "circuits_per_month": 1,
+      "rxx_per_month": 270,
+      "max_rxx_per_circuit": 270,
+      "max_depth": 82,
+      "resets_per_circuit": 14,
+      "mse_reported_only": 0.10520815532244192,
+      "qlike_reported_only": 1.4469940319753798,
+      "passes": true,
+      "job_plan": {
+        "all_feature_months": {
+          "months": 813,
+          "circuits": 813,
+          "shots_at_100": 81300,
+          "shots_at_1000": 813000,
+          "shots_at_10000": 8130000
+        },
+        "out_of_sample_only": {
+          "months": 245,
+          "circuits": 245,
+          "shots_at_100": 24500,
+          "shots_at_1000": 245000,
+          "shots_at_10000": 2450000
+        }
+      }
+    },
+    "QR2": {
+      "order": 2,
+      "steps": 3,
+      "max_forecast_gap": 0.03925626788022818,
+      "mean_forecast_gap": 0.0047100989300727075,
+      "max_feature_gap": 0.010720703395532216,
+      "mean_feature_gap": 0.00262045088445884,
+      "max_gap_vs_authors": 0.03925634080124807,
+      "circuits_per_month": 2,
+      "rxx_per_month": 945,
+      "max_rxx_per_circuit": 540,
+      "max_depth": 149,
+      "resets_per_circuit": 14,
+      "mse_reported_only": 0.10422099588011553,
+      "qlike_reported_only": 1.4053556195686645,
+      "passes": true,
+      "job_plan": {
+        "all_feature_months": {
+          "months": 813,
+          "circuits": 1626,
+          "shots_at_100": 162600,
+          "shots_at_1000": 1626000,
+          "shots_at_10000": 16260000
+        },
+        "out_of_sample_only": {
+          "months": 245,
+          "circuits": 490,
+          "shots_at_100": 49000,
+          "shots_at_1000": 490000,
+          "shots_at_10000": 4900000
+        }
+      }
+    }
+  },
+  "checks": {
+    "QR1": {
+      "exact_vs_authors_max_abs": 1.1982588308256936e-06,
+      "exact_mse": 0.10508123683054545,
+      "exact_qlike": 1.442770778271189,
+      "exported_circuit_vs_selection_features_max_abs": 1.1102230246251565e-15
+    },
+    "QR2": {
+      "exact_vs_authors_max_abs": 1.0803764256550608e-06,
+      "exact_mse": 0.10375598130823714,
+      "exact_qlike": 1.400403968075485,
+      "exported_circuit_vs_selection_features_max_abs": 2.9976021664879227e-15
+    }
+  }
+}

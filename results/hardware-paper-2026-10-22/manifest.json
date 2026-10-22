@@ -1,0 +1,50 @@
+{
+  "purpose": "Trotter order/steps selection for paper-faithful IonQ circuits; nothing submitted",
+  "commit": "9ee1affffbff456e77a6a96c9cb458ae4c325632",
+  "uncommitted_changes": true,
+  "source_hashes": {
+    "hardware/paper_circuits.py": "545bcfb467ac14a790f2a729cb3103f9ee7936bc11dfab5a272a4d2fe911908f",
+    "hardware/select_trotter.py": "81bc95451f2e5a8d14edf1b7ea9742fd117cf2342d6b3dd055e2ebf38f5a829d",
+    "quantum_reservoir_qiskit.py": "66df10e9fc462eeba2112dc231ca8d5d9fd33fafef6413c227ca0c30dccfa572"
+  },
+  "input_hashes": {
+    "data/Data.CSV": "40982cc705dee23bd67ef4a3337424cd3288e05a944371108e0b566001be323c",
+    "data/coeff_10.jld2": "c4b90e6fb79530e34f2a72995a44b9a494146a78f6806b717b529281f41c66dc",
+    "data/predict_result.csv": "58d9a227c19e89e23e5ae9b993dc6b90ced8f25fbb2a00d9fa68b236af90249a"
+  },
+  "grid": {
+    "orders": [
+      1,
+      2
+    ],
+    "steps": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8
+    ]
+  },
+  "export_month_index": 571,
+  "check_months": [
+    3,
+    300,
+    571,
+    815
+  ],
+  "basis": [
+    "rxx",
+    "rz",
+    "ry",
+    "reset",
+    "measure"
+  ],
+  "python": "3.11.15",
+  "versions": {
+    "qiskit": "2.3.1",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1"
+  },
+  "elapsed_seconds": 1904
+}

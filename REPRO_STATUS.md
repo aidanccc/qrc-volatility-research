@@ -48,3 +48,9 @@ Item 1 of `analysis/diagnostics/FUTURE_CODEX_PROMPTS.md` is done. Docstrings in 
 New `tests/test_quantum_conventions.py` runs the known-state qubit-order check and the two-qubit gate-order check in the main suite (the same checks also remain as assertions in `analysis/diagnostics/compute.py`).
 
 Because the two quantum files' byte hashes changed, `analysis/diagnostics/verify.py` now accepts them only when their docstring-stripped code still matches the recorded pre-edit fingerprints; any code change still fails. Run on a copy of `results/diagnostics-2026-10-01`, verification with `--check-render` passed: 176 baseline files checked, 21 figures, 65 re-rendered artifacts identical. All 24 main tests and 3 diagnostic tests pass. Runs started before this change keep their recorded source hashes, so resuming them requires a new output directory.
+
+## 22 October 2026 — paper-faithful IonQ circuit path
+
+`hardware/` builds hardware circuits for the authors' exact QR1/QR2 configuration: their `coeff_10.jld2` couplings and their feature lists. Input qubits are reset between months instead of traced out. A noiseless sweep over Trotter order {1, 2} × steps {1, 2, 3, 4, 6, 8} chose by fidelity to the exact model only, using thresholds fixed in advance: forecasts within 0.05 log-RV max and 0.01 mean.
+
+Chosen: QR1 second order, 2 steps (270 RXX per forecast month); QR2 second order, 3 steps (945). No first-order candidate passed. The exported reset circuits match the selection features to 3e-15, and the exact baseline matches the authors' `predict_result.csv` to 1.2e-6. Nothing was submitted to IonQ. Reset support, native compilation, shot noise and hardware noise remain open; see `hardware/README.md` and `results/hardware-paper-2026-10-22/`.
