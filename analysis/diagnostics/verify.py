@@ -22,6 +22,17 @@ DOCSTRING_ONLY = {
 }
 
 
+# Added dependency (22 October 2026, analysis/noise). A requirements file passes only
+# if removing exactly this pinned line restores the recorded file.
+ADDED_REQUIREMENT = 'qiskit-aer==0.18.0'
+REQUIREMENTS = {'requirements.txt', 'requirements-lock.txt'}
+
+
+def without_added_requirement(path):
+    lines = Path(path).read_text().splitlines(keepends=True)
+    return ''.join(l for l in lines if not l.startswith(ADDED_REQUIREMENT)).encode()
+
+
 def code_fingerprint(path):
     tree=ast.parse(Path(path).read_text())
     for node in ast.walk(tree):
@@ -33,6 +44,8 @@ def code_fingerprint(path):
 
 def unchanged(path,checksum):
     if digest(ROOT/path)==checksum:return True
+    if path in REQUIREMENTS:
+        return hashlib.sha256(without_added_requirement(ROOT/path)).hexdigest()==checksum
     return path in DOCSTRING_ONLY and code_fingerprint(ROOT/path)==DOCSTRING_ONLY[path]
 
 
@@ -48,7 +61,7 @@ def verify(out, check_render=False):
             assert unchanged(path,checksum), f'Changed computation source: {path}'
     baseline=json.loads((out/'baseline_hashes.json').read_text())
     changed=[path for path,checksum in baseline.items() if not (ROOT/path).is_file() or digest(ROOT/path)!=checksum]
-    unexpected=set(changed)-DOCUMENTATION-{p for p in DOCSTRING_ONLY if (ROOT/p).is_file() and unchanged(p,baseline.get(p))}
+    unexpected=set(changed)-DOCUMENTATION-{p for p in set(DOCSTRING_ONLY)|REQUIREMENTS if (ROOT/p).is_file() and unchanged(p,baseline.get(p))}
     assert not unexpected, f'Changed baseline artifacts: {sorted(unexpected)}'
     index=json.loads((out/'figure_index.json').read_text());assert len(index)==21
     for entry in index:

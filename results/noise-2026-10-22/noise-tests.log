@@ -1,0 +1,10 @@
+test_circuit_uses_resets_and_saves_each_endpoint (test_noise.NoiseEmulationTests.test_circuit_uses_resets_and_saves_each_endpoint) ... ok
+test_noise_model_targets_ry_and_rxx_only (test_noise.NoiseEmulationTests.test_noise_model_targets_ry_and_rxx_only) ... ok
+test_noise_shrinks_features_monotonically (test_noise.NoiseEmulationTests.test_noise_shrinks_features_monotonically) ... ok
+test_readout_map_scales_z_by_one_minus_two_p (test_noise.NoiseEmulationTests.test_readout_map_scales_z_by_one_minus_two_p) ... ok
+test_scale_zero_equals_ideal_trotter_features (test_noise.NoiseEmulationTests.test_scale_zero_equals_ideal_trotter_features) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 8.142s
+
+OK

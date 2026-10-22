@@ -63,3 +63,11 @@ Read `results/diagnostics-2026-10-01/report.html` first. For a complete fresh di
 Use a new output directory; the runner rejects existing ones. It computes seed-0 quantum features and the 12-history circuit study, renders 21 figure pairs and the report, runs baseline/diagnostic tests, and verifies original-artifact preservation and deterministic re-rendering. It does not train LSTMs, rerun the full classical benchmark, download data, or use IonQ. The first computation took about seven minutes locally.
 
 See `analysis/diagnostics/README.md` for report-only regeneration, caches, and precise scope. Deferred model changes are copy-ready prompts, not prerequisites for reading this study. The established historical and benchmark workflows above remain separate and unchanged.
+
+## Noise simulations (22 October 2026)
+
+```bash
+.venv/bin/python analysis/noise/run.py --output results/noise-new-run
+```
+
+The run emulates IonQ Aria-1 gate, readout and shot noise locally with `qiskit-aer`. It needs no API key or cloud job. See `analysis/noise/README.md` and `results/noise-2026-10-22/report.md`. It is analysis-only, so models and published results are unchanged.

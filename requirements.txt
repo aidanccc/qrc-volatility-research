@@ -11,6 +11,7 @@ matplotlib==3.10.8
 # ============================================================
 qiskit==2.3.1
 # qiskit-aer is optional; the exact simulator uses qiskit.quantum_info.
+qiskit-aer==0.18.0 # noise simulations only (analysis/noise)
 h5py==3.16.0 # reads coeff_10.jld2 (JLD2 is HDF5-compatible)
 
 # ============================================================

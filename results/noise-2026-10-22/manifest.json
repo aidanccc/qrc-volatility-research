@@ -1,0 +1,78 @@
+{
+  "purpose": "Local emulation of IonQ Aria-1 noise on the QR1/QR2 reservoir (analysis-only).",
+  "aria1_rates": {
+    "fidelity_1q": 0.9998,
+    "fidelity_2q": 0.9867,
+    "fidelity_spam": 0.9958,
+    "records_used": 25,
+    "records_total": 30,
+    "first_date": "2025-08-07",
+    "last_date": "2025-09-02"
+  },
+  "noise_source": "analysis/noise/aria1_characterizations.json",
+  "noise_model": "depolarizing on ry and rxx; rz noiseless; symmetric readout flip = 1 - SPAM fidelity; ideal resets; all-to-all, untranspiled",
+  "coupling": "generate_coupling_matrix(10, seed=0), shared by QR1/QR2 (published seed 0)",
+  "sweep": {
+    "histories": 12,
+    "scales": [
+      0,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "trotter_steps": [
+      1,
+      2,
+      4
+    ]
+  },
+  "forecasts": {
+    "trotter_steps": 1,
+    "scales": [
+      0,
+      0.5,
+      1,
+      2
+    ],
+    "shots": [
+      100,
+      1000,
+      10000
+    ],
+    "shot_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "windows": [
+      120,
+      571
+    ],
+    "target_months": "2018-01-31 to 2026-08-31"
+  },
+  "exact_reproduces_published_max_abs_log_rv": 5.534923630534649e-10,
+  "input_hashes": {
+    "data/snapshots/extended-2026-09-24-v2/monthly.csv": "f7214ff933e460ce66931ab73f074f1c91c2b615dea9e2428bf8b063d5c6fbcc",
+    "results/extended-2026-09-24/predictions.csv": "91dd91288f7c1967e4f8021938216c7b6f2fd75a8281e056cc32a6c68f69c656",
+    "analysis/noise/aria1_characterizations.json": "17b0d2f34f48f74214ac6843321004eb089bf67fa063426a4856c0ef479e5c3b",
+    "results/diagnostics-2026-10-01/tables/QR1_features_seed0.csv": "727d1ecdcd2338f42c36b4f95047f52ac95bc2f3f0bea53cc5b9904482a6d675",
+    "results/diagnostics-2026-10-01/tables/QR2_features_seed0.csv": "a153b8200d729f7ffa2eabfa82e2474804994c6b0a0c2a6961d126d001477686"
+  },
+  "source_hashes": {
+    "analysis/noise/compute.py": "3ec32e04a08378cdbecc626593cd086a6bd8f9ce6c32403492b1212ad133dcb1",
+    "analysis/noise/noise_model.py": "a71e1696252efa7cf0150f96ce0a17dc7fdba16f90f24efb531d87a1e2202472",
+    "analysis/noise/render.py": "b80540421b27b3fff147c5f9bfb8750d1098c4b6eed5513fa64896f0886a2846",
+    "analysis/noise/run.py": "fe5e21b95372071ae3e1156808e283633a6d51e78dc62803ae4c8093334f8591",
+    "analysis/noise/test_noise.py": "581bbbd779c7d8a2e6c6786382681ecdef1c323fc10c5f965a31af3f93d30132"
+  },
+  "versions": {
+    "qiskit": "2.3.1",
+    "qiskit-aer": "0.18.0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2"
+  },
+  "elapsed_seconds": 3538
+}

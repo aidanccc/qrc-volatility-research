@@ -1,0 +1,103 @@
+sweep QR1 steps=1 scale=0
+sweep QR1 steps=1 scale=0.5
+sweep QR1 steps=1 scale=1
+sweep QR1 steps=1 scale=2
+sweep QR1 steps=1 scale=4
+sweep QR1 steps=2 scale=0
+sweep QR1 steps=2 scale=0.5
+sweep QR1 steps=2 scale=1
+sweep QR1 steps=2 scale=2
+sweep QR1 steps=2 scale=4
+sweep QR1 steps=4 scale=0
+sweep QR1 steps=4 scale=0.5
+sweep QR1 steps=4 scale=1
+sweep QR1 steps=4 scale=2
+sweep QR1 steps=4 scale=4
+sweep QR2 steps=1 scale=0
+sweep QR2 steps=1 scale=0.5
+sweep QR2 steps=1 scale=1
+sweep QR2 steps=1 scale=2
+sweep QR2 steps=1 scale=4
+sweep QR2 steps=2 scale=0
+sweep QR2 steps=2 scale=0.5
+sweep QR2 steps=2 scale=1
+sweep QR2 steps=2 scale=2
+sweep QR2 steps=2 scale=4
+sweep QR2 steps=4 scale=0
+sweep QR2 steps=4 scale=0.5
+sweep QR2 steps=4 scale=1
+sweep QR2 steps=4 scale=2
+sweep QR2 steps=4 scale=4
+forecast QR1 scale=0: 675 circuits
+  331s
+forecast QR1 scale=0.5: 675 circuits
+  336s
+forecast QR1 scale=1: 675 circuits
+  334s
+forecast QR1 scale=2: 675 circuits
+  334s
+forecast QR2 scale=0: 675 circuits
+  438s
+forecast QR2 scale=0.5: 675 circuits
+  439s
+forecast QR2 scale=1: 675 circuits
+  431s
+forecast QR2 scale=2: 675 circuits
+  431s
+   model  window                      config  mse_log_rv  mse_seed_std  mae_log_rv  qlike_variance  runs
+0    QR1     120                 exact_ideal    0.211279           NaN    0.343599        0.726528     1
+1    QR1     120             trotter1_scale0    0.217053           NaN    0.353017        0.804447     1
+2    QR1     120           trotter1_scale0.5    0.220298           NaN    0.356967        0.783534     1
+3    QR1     120  trotter1_scale0_shots10000    0.207754      0.004418    0.347845        0.771119     5
+4    QR1     120   trotter1_scale0_shots1000    0.201972      0.003816    0.341263        0.779704     5
+5    QR1     120    trotter1_scale0_shots100    0.199381      0.013286    0.341807        0.768356     5
+6    QR1     120             trotter1_scale1    0.223537           NaN    0.360010        0.764715     1
+7    QR1     120  trotter1_scale1_shots10000    0.199300      0.005064    0.340189        0.691573     5
+8    QR1     120   trotter1_scale1_shots1000    0.204462      0.007232    0.342808        0.811520     5
+9    QR1     120    trotter1_scale1_shots100    0.223699      0.012185    0.362716        0.956823     5
+10   QR1     120             trotter1_scale2    0.229893           NaN    0.363844        0.723471     1
+11   QR1     571                 exact_ideal    0.184786           NaN    0.323701        0.636203     1
+12   QR1     571             trotter1_scale0    0.185721           NaN    0.325262        0.665702     1
+13   QR1     571           trotter1_scale0.5    0.185008           NaN    0.325411        0.666332     1
+14   QR1     571  trotter1_scale0_shots10000    0.184044      0.001742    0.323711        0.679920     5
+15   QR1     571   trotter1_scale0_shots1000    0.180812      0.002827    0.322818        0.650894     5
+16   QR1     571    trotter1_scale0_shots100    0.184307      0.014444    0.329269        0.602764     5
+17   QR1     571             trotter1_scale1    0.184417           NaN    0.325575        0.665569     1
+18   QR1     571  trotter1_scale1_shots10000    0.180647      0.002538    0.321694        0.670977     5
+19   QR1     571   trotter1_scale1_shots1000    0.182673      0.005881    0.321245        0.661039     5
+20   QR1     571    trotter1_scale1_shots100    0.205884      0.017441    0.347945        0.701925     5
+21   QR1     571             trotter1_scale2    0.183609           NaN    0.326217        0.661852     1
+22   QR2     120                 exact_ideal    0.231798           NaN    0.372117        0.864211     1
+23   QR2     120             trotter1_scale0    0.241599           NaN    0.367314        1.125030     1
+24   QR2     120           trotter1_scale0.5    0.243212           NaN    0.368139        1.160687     1
+25   QR2     120  trotter1_scale0_shots10000    0.234486      0.008339    0.368520        0.950963     5
+26   QR2     120   trotter1_scale0_shots1000    0.222404      0.004173    0.362484        0.934764     5
+27   QR2     120    trotter1_scale0_shots100    0.222983      0.012963    0.361897        0.979730     5
+28   QR2     120             trotter1_scale1    0.245072           NaN    0.369262        1.192959     1
+29   QR2     120  trotter1_scale1_shots10000    0.225352      0.011735    0.359803        0.984429     5
+30   QR2     120   trotter1_scale1_shots1000    0.221425      0.007808    0.358841        0.926520     5
+31   QR2     120    trotter1_scale1_shots100    0.226719      0.011448    0.360215        0.937436     5
+32   QR2     120             trotter1_scale2    0.248531           NaN    0.371817        1.239138     1
+33   QR2     571                 exact_ideal    0.172863           NaN    0.322489        0.596597     1
+34   QR2     571             trotter1_scale0    0.174518           NaN    0.318662        0.600140     1
+35   QR2     571           trotter1_scale0.5    0.174183           NaN    0.318314        0.600867     1
+36   QR2     571  trotter1_scale0_shots10000    0.170018      0.003468    0.314420        0.569597     5
+37   QR2     571   trotter1_scale0_shots1000    0.172671      0.004577    0.312829        0.584019     5
+38   QR2     571    trotter1_scale0_shots100    0.175969      0.004346    0.315704        0.629552     5
+39   QR2     571             trotter1_scale1    0.173907           NaN    0.317972        0.601801     1
+40   QR2     571  trotter1_scale1_shots10000    0.169711      0.004198    0.310076        0.578838     5
+41   QR2     571   trotter1_scale1_shots1000    0.172714      0.007783    0.312746        0.595815     5
+42   QR2     571    trotter1_scale1_shots100    0.186663      0.006120    0.332255        0.622270     5
+43   QR2     571             trotter1_scale2    0.173678           NaN    0.317794        0.603596     1
+44   QR1     120              reference_HARX    0.231926           NaN    0.353037        1.149148     1
+45   QR1     571              reference_HARX    0.171100           NaN    0.314295        0.614882     1
+46   QR2     120              reference_HARX    0.231926           NaN    0.353037        1.149148     1
+47   QR2     571              reference_HARX    0.171100           NaN    0.314295        0.614882     1
+48   QR1     120               reference_AR1    0.182363           NaN    0.326285        0.726637     1
+49   QR1     571               reference_AR1    0.175719           NaN    0.325137        0.591652     1
+50   QR2     120               reference_AR1    0.182363           NaN    0.326285        0.726637     1
+51   QR2     571               reference_AR1    0.175719           NaN    0.325137        0.591652     1
+52   QR1     120       reference_Persistence    0.228679           NaN    0.378306        0.718969     1
+53   QR1     571       reference_Persistence    0.228679           NaN    0.378306        0.718969     1
+54   QR2     120       reference_Persistence    0.228679           NaN    0.378306        0.718969     1
+55   QR2     571       reference_Persistence    0.228679           NaN    0.378306        0.718969     1

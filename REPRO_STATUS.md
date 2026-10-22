@@ -54,3 +54,24 @@ Because the two quantum files' byte hashes changed, `analysis/diagnostics/verify
 `hardware/` builds hardware circuits for the authors' exact QR1/QR2 configuration: their `coeff_10.jld2` couplings and their feature lists. Input qubits are reset between months instead of traced out. A noiseless sweep over Trotter order {1, 2} × steps {1, 2, 3, 4, 6, 8} chose by fidelity to the exact model only, using thresholds fixed in advance: forecasts within 0.05 log-RV max and 0.01 mean.
 
 Chosen: QR1 second order, 2 steps (270 RXX per forecast month); QR2 second order, 3 steps (945). No first-order candidate passed. The exported reset circuits match the selection features to 3e-15, and the exact baseline matches the authors' `predict_result.csv` to 1.2e-6. Nothing was submitted to IonQ. Reset support, native compilation, shot noise and hardware noise remain open; see `hardware/README.md` and `results/hardware-paper-2026-10-22/`.
+
+## 22 October 2026 — noise simulations (IonQ Aria-1 emulation)
+
+`analysis/noise/` runs the published extended QR1/QR2 reservoir (seed-0 couplings, first-order Trotter) under a local emulation of IonQ Aria-1 noise. The emulation follows the group's IonQ `aria-1` noise demo but needs no API key and submits no cloud job. Rates are medians of 25 public Aria-1 daily calibrations from August–September 2025 (Aria-1 is now retired): 2-qubit fidelity 0.9867, 1-qubit 0.9998, SPAM 0.9958.
+
+- The noise model has depolarizing error on RXX/RY, noiseless virtual RZ, and readout error.
+- Each month is one 10-qubit circuit with real input-qubit resets, run on the qiskit-aer density-matrix method. Finite shots are sampled afterwards.
+- The study sweeps noise scale {0, 0.5, 1, 2, 4} × Trotter steps {1, 2, 4} on the 12 diagnostic histories. It also computes full 2018–2026 forecasts at Trotter 1 for noise {0, 0.5, 1, 2} and shots {100, 1,000, 10,000}, with 5 shot seeds.
+- The exact baseline reproduces the published seed-0 forecasts to 5.5e-10 log RV.
+
+Findings (`results/noise-2026-10-22/report.md`):
+
+- At 1× Aria-1, features shrink by about 28% and differ from the exact reservoir by about 0.19 on average.
+- Under noise, one Trotter step is always best: each extra step adds 45 noisy RXX gates.
+- Forecast MSE moves by at most 0.002 (571-month) and 0.013 (120-month) across 0.5–2× noise, because the refit ridge readout absorbs the contraction.
+- 100 shots costs +0.013 to +0.022 MSE (571-month). 1,000 or more shots stays within the shot-seed spread.
+- The benchmark picture is unchanged.
+
+This bears directly on the paper-faithful `hardware/` selection above. Its chosen second-order circuits (up to 405 RXX per QR2 circuit) were selected on noiseless fidelity only, and their noisy forecasts have not been measured yet.
+
+`qiskit-aer==0.18.0` was added to both requirements files as a single extra line. `analysis/diagnostics/verify.py` accepts that addition and nothing else in those files. 5 new noise tests and all 29 main tests pass, and diagnostics verification with `--check-render` still passes (176 baseline files, 65 identical re-rendered artifacts). The models, data and published results are unchanged.
