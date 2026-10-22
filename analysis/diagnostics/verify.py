@@ -1,6 +1,8 @@
 """Verify integrity and optionally reproduce every figure in a temporary folder."""
 from pathlib import Path
 import argparse
+import ast
+import hashlib
 import json
 import os
 import re
@@ -12,6 +14,26 @@ from PIL import Image
 from compute import ROOT, digest, write_json
 
 DOCUMENTATION = {'README.md','ASSUMPTIONS.md','REPRO_STATUS.md','RUN_ORDER.md'}
+# Docstring-only corrections (22 October 2026). A changed file passes only if its
+# executable code, with docstrings removed, still matches the recorded fingerprint.
+DOCSTRING_ONLY = {
+    'quantum_reservoir_qiskit.py': '6d5952c1d1d32b7ac262a3b27835794adfb152839fd8b1b969f886b42dd9685a',
+    'quantum_reservoir_trotter.py': 'ccfff2828889e4792821e04ce0aa808672a6fdbb072beca8e18365ada9e81c2e',
+}
+
+
+def code_fingerprint(path):
+    tree=ast.parse(Path(path).read_text())
+    for node in ast.walk(tree):
+        if isinstance(node,(ast.Module,ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef)) and node.body \
+           and isinstance(node.body[0],ast.Expr) and isinstance(node.body[0].value,ast.Constant) and isinstance(node.body[0].value.value,str):
+            node.body=node.body[1:] or [ast.Pass()]
+    return hashlib.sha256(ast.dump(tree,include_attributes=False).encode()).hexdigest()
+
+
+def unchanged(path,checksum):
+    if digest(ROOT/path)==checksum:return True
+    return path in DOCSTRING_ONLY and code_fingerprint(ROOT/path)==DOCSTRING_ONLY[path]
 
 
 def verify(out, check_render=False):
@@ -23,10 +45,10 @@ def verify(out, check_render=False):
         # Source hashes collected before computation cover its scientific code.
         # A renderer may be refined during visual QA; record its final revision below.
         if Path(path).name not in {'render.py', 'verify.py', 'circuit_diagram.py'}:
-            assert digest(ROOT/path)==checksum, f'Changed computation source: {path}'
+            assert unchanged(path,checksum), f'Changed computation source: {path}'
     baseline=json.loads((out/'baseline_hashes.json').read_text())
     changed=[path for path,checksum in baseline.items() if not (ROOT/path).is_file() or digest(ROOT/path)!=checksum]
-    unexpected=set(changed)-DOCUMENTATION
+    unexpected=set(changed)-DOCUMENTATION-{p for p in DOCSTRING_ONLY if (ROOT/p).is_file() and unchanged(p,baseline.get(p))}
     assert not unexpected, f'Changed baseline artifacts: {sorted(unexpected)}'
     index=json.loads((out/'figure_index.json').read_text());assert len(index)==21
     for entry in index:

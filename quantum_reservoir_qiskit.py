@@ -199,8 +199,17 @@ def encode_input(feature_values: np.ndarray, n_input: int) -> DensityMatrix:
     Encode feature values into n_input qubits via RY rotation gates,
     starting from the |0...0> state.
 
-    RY(pi * x_i) on qubit i, for each input feature x_i.
-    Features are in [-1, 0], so RY angles are in [-pi, 0].
+    RY(pi * x_i) on qubit i, for each input feature x_i. Values are encoded
+    as given: no clipping or rescaling is applied here.
+
+    The inputs do not share one range. In data/Data.CSV (1950-2017):
+        RV, RV_q        in [-1, 0]
+        MKT, STR        in [-1, 1]
+        DP, DEF, EP     in [ 0, 1]
+        IP, INF         small values near 0 (about [-0.044, 0.064])
+    so RY angles span up to [-pi, pi]. Post-2017 extended inputs can fall
+    outside these historical ranges (e.g. DP and IP); see
+    results/diagnostics-2026-10-01/tables/encoding_ranges.csv.
 
     Returns
     -------
@@ -230,7 +239,10 @@ def quantum_reservoir(
     """
     Run the quantum reservoir over all data points.
 
-    Direct translation of Quantum_Reservoir() in Time_series.jl.
+    Direct translation of Quantum_Reservoir() in Time_series.jl. This is an
+    ideal, noiseless density-matrix simulation: <Z_i> values are exact
+    expectations, not finite-shot estimates, and the partial trace below
+    stands in for a reset/re-encode of the input qubits on hardware.
 
     Protocol for each time step l (from K_delay to n_samples-1):
 

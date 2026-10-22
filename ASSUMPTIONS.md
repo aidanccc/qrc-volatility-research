@@ -22,3 +22,9 @@ Full logical resource counts assume the mathematically equivalent seven-input re
 Regime thresholds are pre-2018 log-RV tertiles; error grouping by realized target regime is retrospective. Feature range flags use each feature’s historical extrema, not the inaccurate blanket [-1,0] comment in the encoder. No clipping, imputation, normalization change, or readout optimization is applied. Hidden-state mixedness is not interpreted as proof of useful memory or entanglement.
 
 The observed Trotter gate ordering is retained: chronological XX then Z corresponds to the matrix product Z × XX. The reversed formula in its docstring is documented as a mismatch, not silently repaired. Historical prediction agreement is checked from existing artifacts; this run additionally validates one original-coupling three-input instrumentation example per QR model, but does not rerun the full original benchmark.
+
+## 22 October 2026 — quantum documentation corrections
+
+The two mismatches above are now corrected in the docstrings only. `encode_input` lists each feature's historical range instead of a blanket [-1,0], and says post-2017 inputs can leave those ranges. The Trotter docstrings state the product the circuit actually implements, exp(-i dt H_Z) exp(-i dt H_XX), with XX applied first. The modules now describe themselves as ideal, noiseless density-matrix simulations, and the Trotter circuit as an evolution block rather than a hardware-ready protocol. The differing `n_trotter` defaults (1, 4, and 2 at the script entry point) are documented as they are and left unchanged.
+
+Executable code is unchanged: with docstrings removed, both modules' syntax trees match their pre-edit fingerprints. Gate order, angles, defaults, numerical outputs and published results are untouched.

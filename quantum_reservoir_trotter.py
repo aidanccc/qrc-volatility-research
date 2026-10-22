@@ -8,16 +8,23 @@ with a proper Trotterized quantum circuit built from native Qiskit gates.
 WHY THIS FILE EXISTS
 --------------------
 quantum_reservoir_qiskit.py computes e^{-iτH} via scipy.linalg.expm —
-mathematically exact, but not a quantum circuit. You cannot submit a matrix
-exponential to real hardware. This file decomposes that same evolution into
-RXX and RZ gates using the Suzuki-Trotter product formula, producing a
-circuit that can run on any gate-based quantum processor.
+mathematically exact, but not a quantum circuit. This file decomposes that
+same evolution into RXX and RZ gates using a first-order Trotter product
+formula.
+
+The result is a gate-level *evolution block* only, not a hardware-ready
+reservoir protocol. The full protocol also needs the input qubits to be
+reset and re-encoded between monthly steps (simulated here by a partial
+trace), one separately prepared circuit per virtual-node readout, and
+finite-shot Z measurements. Hardware gate support, compilation and noise
+are not checked here.
 
 WHAT CHANGES vs quantum_reservoir_qiskit.py
 --------------------------------------------
 - Evolution: scipy.linalg.expm  →  Trotterized QuantumCircuit
-- Simulation backend: DensityMatrix.evolve(Operator)
-                    → DensityMatrix.evolve(QuantumCircuit)
+- Simulation: still an ideal, noiseless density-matrix simulation. Each
+  circuit is converted once to Operator(circuit) and applied with
+  DensityMatrix.evolve(Operator); Z values are exact expectations.
 - New parameter: n_trotter — number of Trotter steps (accuracy vs depth)
 - Everything else (encoding, partial trace, ridge regression, metrics)
   is imported directly from quantum_reservoir_qiskit.py
@@ -28,8 +35,12 @@ For H = H_XX + H_Z where:
     H_XX = Σ_{i<j} J_ij X_i X_j
     H_Z  = Σ_i Z_i
 
-First-order (Lie-Trotter):
-    e^{-iτH} ≈ [ e^{-i(τ/n)H_XX} · e^{-i(τ/n)H_Z} ]^n
+First-order (Lie-Trotter). Each step applies the XX gates first and the
+Z gates second, so as a matrix product it implements
+    e^{-iτH} ≈ [ e^{-i(τ/n)H_Z} · e^{-i(τ/n)H_XX} ]^n
+(the rightmost factor acts first). Both orderings are valid first-order
+formulas; this one matches the circuit. The two orderings give different
+finite-n unitaries, so the order matters for reproducing results.
 
 Each factor maps to native Qiskit gates:
     e^{-iδt J_ij X_i X_j} = RXX(2 J_ij δt)   on qubits i, j
@@ -38,6 +49,13 @@ Each factor maps to native Qiskit gates:
 Trotter error scales as O(τ²/n) — more steps = more accurate, deeper circuit.
 For n_trotter=1 on small τ=1 the error is manageable; increase for better
 accuracy at the cost of circuit depth.
+
+DEFAULT n_trotter BY ENTRY POINT (they differ; none is tuned)
+-------------------------------------------------------------
+- quantum_reservoir_trotter(..., n_trotter=1)
+- run_trotter_simulation(..., n_trotter=4)
+- python quantum_reservoir_trotter.py  →  run_trotter_simulation(n_trotter=2)
+- trotter_accuracy(...) has no default; it always builds U with V=1.
 
 QUBIT LAYOUT (same as quantum_reservoir_qiskit.py)
 --------------------------------------------------
@@ -74,8 +92,10 @@ def build_trotter_step(nqubit: int, J: np.ndarray, delta_t: float) -> QuantumCir
     """
     Build one first-order Trotter step as a QuantumCircuit.
 
-    Implements:
-        e^{-i delta_t H_XX} · e^{-i delta_t H_Z}
+    Applies all RXX gates, then all RZ gates. As a matrix product this is:
+        e^{-i delta_t H_Z} · e^{-i delta_t H_XX}
+    (XX acts first). The RXX gates commute with each other, so their
+    order within the layer does not matter.
 
     Gate mapping:
         e^{-i delta_t J[i,j] X_i X_j} = RXX(2 * J[i,j] * delta_t)
@@ -239,9 +259,11 @@ def quantum_reservoir_trotter(
         quantum_reservoir_qiskit.py : DensityMatrix.evolve(Operator(U_matrix))
         this file                   : DensityMatrix.evolve(U_circuit)
 
-    The circuit U_circuit is built from RXX and RZ gates and can be compiled
-    for real quantum hardware. The simulation still uses Qiskit's DensityMatrix
-    backend for exact statevector-level results.
+    U_circuit is built from RXX and RZ gates, but it is converted once to
+    Operator(U_circuit) and applied as a matrix. The simulation is an ideal,
+    noiseless density-matrix run: Z values are exact expectations, and the
+    partial trace stands in for resetting the input qubits. This function
+    does not produce or validate a hardware-executable circuit.
 
     Parameters
     ----------
@@ -252,7 +274,7 @@ def quantum_reservoir_trotter(
     K_delay      : int          — memory depth (3)
     virtual_node : int          — virtual nodes (1=QR1, 2=QR2)
     nqubit       : int          — total qubits (10)
-    n_trotter    : int          — Trotter steps (default 4, increase for accuracy)
+    n_trotter    : int          — Trotter steps (default 1, increase for accuracy)
 
     Returns
     -------
@@ -327,7 +349,7 @@ def run_trotter_simulation(
     ----------
     data_path : str  — path to Data.CSV
     jld2_path : str  — path to coeff_10.jld2
-    n_trotter : int  — Trotter steps (4 is a good starting point)
+    n_trotter : int  — Trotter steps (default 4; the script entry point uses 2)
     save_csv  : bool — whether to save predictions to CSV
 
     Returns
