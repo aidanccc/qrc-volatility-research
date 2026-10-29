@@ -74,4 +74,16 @@ The run emulates IonQ Aria-1 gate, readout and shot noise locally with `qiskit-a
 
 ## IonQ noise simulations of the paper circuits (28–29 October 2026)
 
-See `analysis/ionq_cloud/README.md` for the commands (local run about 2 h on 14 cores; the optional cloud check needs `IONQ_API_KEY` and uses only IonQ's simulator). Results: `results/ionq-noise-2026-10-28/report.md`. It is analysis-only, so models and published results are unchanged.
+```bash
+uv pip install --python .venv/bin/python -r analysis/ionq_cloud/requirements.txt
+PYTHONPATH=. .venv/bin/python -m unittest analysis.ionq_cloud.test_ionq_cloud -v
+PYTHONPATH=. .venv/bin/python -m analysis.ionq_cloud.local --output results/ionq-noise-new-run      # ~1 h, 14 cores
+IONQ_API_KEY=... PYTHONPATH=. .venv/bin/python -m analysis.ionq_cloud.submit --output results/ionq-noise-new-run   # IonQ simulator only
+PYTHONPATH=. .venv/bin/python -m analysis.ionq_cloud.analyze --output results/ionq-noise-new-run
+PYTHONPATH=. .venv/bin/python -m analysis.ionq_cloud.calibrate --output results/ionq-noise-new-run
+PYTHONPATH=. .venv/bin/python -m analysis.ionq_cloud.local --output results/ionq-noise-new-run --cloud-matched   # ~1 h
+PYTHONPATH=. .venv/bin/python -m analysis.ionq_cloud.analyze --output results/ionq-noise-new-run
+```
+
+Results: `results/ionq-noise-2026-10-28/report.md`. Analysis-only; models and published results are unchanged.
+
