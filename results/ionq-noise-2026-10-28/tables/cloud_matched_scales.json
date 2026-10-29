@@ -1,0 +1,19 @@
+{
+  "statistic": "through-origin slope of noisy vs noiseless <Z>, pooled over cloud-check circuits",
+  "scale": {
+    "aria-1": 0.73,
+    "forte-1": 2.84
+  },
+  "target_shrink_cloud": {
+    "aria-1": 0.7331335150379679,
+    "forte-1": 0.6701572196487224
+  },
+  "shrink_local_at_1x": {
+    "aria-1": 0.6602825630837624,
+    "forte-1": 0.8632464574124668
+  },
+  "shrink_local_at_fit": {
+    "aria-1": 0.7337998681143194,
+    "forte-1": 0.669728917671184
+  }
+}

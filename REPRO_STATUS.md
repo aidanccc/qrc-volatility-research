@@ -75,3 +75,19 @@ Findings (`results/noise-2026-10-22/report.md`):
 This bears directly on the paper-faithful `hardware/` selection above. Its chosen second-order circuits (up to 405 RXX per QR2 circuit) were selected on noiseless fidelity only, and their noisy forecasts have not been measured yet.
 
 `qiskit-aer==0.18.0` was added to both requirements files as a single extra line. `analysis/diagnostics/verify.py` accepts that addition and nothing else in those files. 5 new noise tests and all 29 main tests pass, and diagnostics verification with `--check-render` still passes (176 baseline files, 65 identical re-rendered artifacts). The models, data and published results are unchanged.
+
+## 28–29 October 2026 — IonQ noise simulations of the paper-faithful circuits
+
+`analysis/ionq_cloud/` runs the `hardware/` circuits (authors' couplings, order-2 Trotter; chosen depth and a 1-step depth) under Aria-1 and Forte-1 noise for all 813 feature months, then refits the authors' rolling ridge readout. It follows the group's `ionq_simulator` demo.
+
+- IonQ's cloud simulator could not run the full circuits. It has no reset, and for this project, jobs above 19 qubits (above 11 for `forte-1`) never start, while the reset-free circuits need 24. So every month ran locally (10-qubit reset circuits, Aer density matrix, depolarizing noise from calibration medians).
+- 10 cloud jobs on 10- and 17-qubit versions checked the local model. Cloud `ideal` matches our noiseless probabilities to 1.4e-3. Cloud `aria-1` shrinks features less than the calibration rates predict, and `forte-1` much more. A second local run at matched scales (0.73×, 2.84×) changes no conclusion.
+
+Findings (`results/ionq-noise-2026-10-28/report.md`):
+
+- With infinite shots, noisy MSE stays at 0.1051–0.1053 (QR1) and 0.1050–0.1078 (QR2). The paper's values are 0.1051 and 0.1038.
+- At 1,000 shots, MSE is 0.114–0.122, which is HAR level (0.1156) and worse than HARX (0.1047).
+- Matching the paper needs about 10⁵–10⁶ shots per circuit even without gate noise.
+- The 1-step circuit does not help.
+
+Nothing was submitted to a QPU. `qiskit-ionq==1.1.1` is pinned in `analysis/ionq_cloud/requirements.txt` only, and the root requirements are unchanged. 5 new tests and all 29 main tests pass. Diagnostics verification with `--check-render` passes on a copy (65 identical re-rendered artifacts). The models, data and published results are unchanged.

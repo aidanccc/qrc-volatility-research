@@ -71,3 +71,7 @@ See `analysis/diagnostics/README.md` for report-only regeneration, caches, and p
 ```
 
 The run emulates IonQ Aria-1 gate, readout and shot noise locally with `qiskit-aer`. It needs no API key or cloud job. See `analysis/noise/README.md` and `results/noise-2026-10-22/report.md`. It is analysis-only, so models and published results are unchanged.
+
+## IonQ noise simulations of the paper circuits (28–29 October 2026)
+
+See `analysis/ionq_cloud/README.md` for the commands (local run about 2 h on 14 cores; the optional cloud check needs `IONQ_API_KEY` and uses only IonQ's simulator). Results: `results/ionq-noise-2026-10-28/report.md`. It is analysis-only, so models and published results are unchanged.

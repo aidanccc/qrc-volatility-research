@@ -1,0 +1,817 @@
+{
+ "source": "https://api.ionq.co/v0.4/backends/qpu.forte-1/characterizations (pages 1-3)",
+ "retrieved": "2026-10-29",
+ "backend_status_at_retrieval": "available",
+ "records": [
+  {
+   "id": "c5bb5a79-3905-489b-b567-15e34bb63e61",
+   "date": "2026-10-27T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9965
+    },
+    "1q": {
+     "median": 0.9998,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9945,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "c1eb7819-9c87-441b-b873-53ca5424f423",
+   "date": "2026-10-26T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9966
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9961,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "ab5dab94-7b2c-429e-9967-5e4688e754bf",
+   "date": "2026-10-25T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9965
+    },
+    "1q": {
+     "median": 0.9998,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9955,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "5c3b19dd-7d4d-409d-8f1f-c7b22f554963",
+   "date": "2026-10-24T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9959
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9951,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "2e892a0e-2e4c-40a2-aaf2-cf26f79b0d9a",
+   "date": "2026-10-23T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9959
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9958,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "6f764478-bac3-41ce-b411-11085f81523d",
+   "date": "2026-10-22T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9961
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9956,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "e6a261a1-82d2-4175-a671-08c1eb0cc7b1",
+   "date": "2026-10-21T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9961
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9957,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "88eb11a5-792c-46f1-81c0-d9a193ff43fb",
+   "date": "2026-10-20T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9949
+    },
+    "1q": {
+     "median": 0.9998,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9893,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "f03c6931-e4e6-458b-a9d3-2fa5242886f9",
+   "date": "2026-10-19T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9953
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9915,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "b574a272-ed39-4914-9641-fa5b4b1b5aab",
+   "date": "2026-10-18T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9958
+    },
+    "1q": {
+     "median": 0.9998,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9947,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "8ea4c523-1d60-4c93-a73d-3b5960e16dc9",
+   "date": "2026-10-17T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.996,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "8c818914-fcd2-44be-89d8-e7e3fb588f5d",
+   "date": "2026-10-16T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9961
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.995,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "d11bd8f3-ac26-4a9c-b043-789558ddfea6",
+   "date": "2026-10-15T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9962
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9958,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "589dfa2b-a77c-41de-bcf6-e591278cd426",
+   "date": "2026-10-14T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9957,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "777308a2-9da1-49ee-b8ae-14b983a9d11e",
+   "date": "2026-10-13T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9958,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "33dc403b-c9e8-4c67-9223-ebc0c17da44c",
+   "date": "2026-10-12T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9944,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "e35c3dc2-9e00-46fe-8e4c-f95d0e5402f2",
+   "date": "2026-10-11T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9964
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9956,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "27bcd578-6f78-4a82-a004-0e1ea1f17eee",
+   "date": "2026-10-10T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9955,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "b4f063f0-e0d3-4f20-8d23-40ef5499cb90",
+   "date": "2026-10-09T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9941,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "2a2d7f38-add8-4949-b352-eac605fb41f8",
+   "date": "2026-10-08T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9955,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "de96eff4-12af-452c-9b71-867b6377e1ff",
+   "date": "2026-10-07T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9963
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9942,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "cb290f52-91c6-4c44-87e6-9535a2cc2baa",
+   "date": "2026-10-06T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9964
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9931,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "8aae584a-6378-4db4-8b25-38b01347824d",
+   "date": "2026-10-05T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9964
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9934,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "f59ed66f-bd74-4e66-b87f-f6d1abf3df58",
+   "date": "2026-10-04T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9965
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9963,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "918e0812-c093-4e2e-8e31-70edfe6840a2",
+   "date": "2026-10-03T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9965
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9947,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "d4179a2a-88a8-4156-983f-5f871e4c4e56",
+   "date": "2026-10-02T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9964
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9947,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "a27de5d7-0f5d-4e18-9e71-48e4f86e520e",
+   "date": "2026-10-01T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9909
+    },
+    "1q": {
+     "median": 0.9998,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9951,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "5d87c3c7-9af4-425b-b1e0-b4866a1da94e",
+   "date": "2026-09-30T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9913
+    },
+    "1q": {
+     "median": 0.9999,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.9952,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "044b0314-2ee2-4f8f-975e-172040338278",
+   "date": "2026-09-29T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9911
+    },
+    "1q": {
+     "median": 0.9998,
+     "stderr": 0
+    },
+    "2q": {
+     "median": 0.995,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  },
+  {
+   "id": "ef313ec5-22e2-434d-a765-75e0cc11b294",
+   "date": "2026-08-25T00:00:00Z",
+   "backend": "qpu.forte-1",
+   "qubits": 36,
+   "fidelity": {
+    "spam": {
+     "median": 0.9933
+    },
+    "1q": {
+     "median": 0.9965,
+     "stderr": 0
+    },
+    "2q": {
+     "median": null,
+     "stderr": 0
+    }
+   },
+   "timing": {
+    "readout": 0.00015,
+    "reset": 5e-05,
+    "1q": 0.00013,
+    "2q": 0.00097,
+    "t1": 100,
+    "t2": 1
+   }
+  }
+ ]
+}

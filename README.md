@@ -24,3 +24,5 @@ The [1 October diagnostic report](results/diagnostics-2026-10-01/report.html) ex
 ## Noise simulations
 
 The [22 October noise report](results/noise-2026-10-22/report.md) reruns the QR1/QR2 reservoir circuits under a local emulation of IonQ Aria-1 noise, built from IonQ's public calibration data. It includes noise and shot sweeps and their effect on forecasts. See [instructions](analysis/noise/README.md).
+
+The [28 October IonQ noise report](results/ionq-noise-2026-10-28/report.md) does the same for the paper-faithful circuits in `hardware/`, using Aria-1 and Forte-1 noise and a check against IonQ's cloud simulator. It finds that shot noise, not gate noise, limits the forecasts. See [instructions](analysis/ionq_cloud/README.md).

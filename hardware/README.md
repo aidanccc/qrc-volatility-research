@@ -63,7 +63,7 @@ The sweep takes about an hour on a 14-core laptop. Most of that time goes to the
 
 ## Not yet established
 
-- **Reset support.** IonQ must support mid-circuit reset of qubits 0–6 on the target system; this has not been confirmed. Without reset, the protocol would need 24 qubits (7 per month plus 3 memory), which changes the hardware cost. That would need an explicit decision; nothing here does it silently.
-- **Native gates.** No IonQ native-gate compilation, timing or backend query has been done; `qiskit-ionq` is not installed. Gate counts and depth are logical counts in the QIS basis {rxx, rz, ry, reset, measure}.
-- **Noise and shots.** Hardware noise and shot noise come on top of the Trotter gap. Reservoir features at 1,000 shots have a standard error of up to about 0.03 per Z value, and the ridge readout is ill-conditioned (see the 1 October diagnostics). Measure the effect of shots and noise on forecasts with these circuits before paying for hardware time.
+- **Reset support.** Not available on IonQ's cloud simulator (checked 29 Oct 2026): `reset` is not in its gate list, and reset circuits fail with `SimulationError`. Without reset, the protocol needs 24 qubits (7 per month plus 3 memory); `analysis/ionq_cloud/circuits.py` builds that version and tests that it matches. Whether the QPUs support reset is still unconfirmed.
+- **Native gates.** The cloud simulator compiles these circuits to IonQ's native gpi2/zz gates at precision 1e-3 (`analysis/ionq_cloud/`). Hardware timing has not been measured.
+- **Noise and shots.** Measured in simulation by `results/ionq-noise-2026-10-28/report.md`: at 1,000 shots, shot noise rather than gate noise sets the forecast error. Hardware has not been run.
 - **Training data.** The readout is trained on features from all earlier months. A full hardware reproduction needs circuits for all 813 feature months, not only the 245 forecast months. Training on simulated features and running only the forecast months on hardware is a methodology choice the team has to make explicitly. `selection.json` gives the job size for both options.
