@@ -23,33 +23,13 @@ CLAUDE.md
 # Claude Code configuration directory
 .claude/
 
-# Personal reproduction documentation
-docs/
-
-# ── Generated data (recreated by running preprocess.py) ──────
-# data/ is included in version control
-
-# ── Generated results (recreated by running the notebooks) ───
-# results/ is included in version control
-
-# ── Legacy paths (kept for safety in case of stale clones) ───
-Classical_Reservoir_learning/
-LSTM/
-Data_raw.csv
-dff.csv
-output.csv
-predict_results.csv
-# Root-level model plots and stat files (canonical location: results/)
-/*_model.png
-/dm_stat.csv
-/p_value.csv
 # Extended study: raw downloads, caches and per-origin checkpoints remain local.
 data/snapshots/*/raw/
 data/snapshots/*/yahoo.json
 data/snapshots/*/fred.csv
 data/snapshots/*/daily.csv
 data/snapshots/*/crosscheck.csv
-results/*/cache/
-results/*/checkpoints/
-results/*/workspace/
+results/**/cache/
+results/**/checkpoints/
+results/**/workspace/
 .cache/

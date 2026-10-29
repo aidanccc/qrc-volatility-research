@@ -1,13 +1,12 @@
 """Gate-level checks for the paper-faithful hardware circuits; no backend is contacted."""
 import unittest
 import numpy as np
-import pandas as pd
 from qiskit.quantum_info import DensityMatrix, Operator, SparsePauliOp
 from scipy.linalg import expm
-from hardware.paper_circuits import (ROOT, PAPER_MODELS, IONQ_QIS_BASIS, paper_inputs, trotter_block,
+from qrc.hardware.paper_circuits import (ROOT, PAPER_MODELS, IONQ_QIS_BASIS, paper_inputs, trotter_block,
                                      history_circuit, month_values, ideal_features)
-from quantum_reservoir_qiskit import build_ising_hamiltonian, build_z_observables, generate_coupling_matrix
-from quantum_reservoir_trotter import build_trotter_evolution
+from qrc.reservoir import build_ising_hamiltonian, build_z_observables, generate_coupling_matrix
+from qrc.trotter import build_trotter_evolution
 
 
 def exact(J, t):
@@ -24,7 +23,7 @@ class PaperCircuitTests(unittest.TestCase):
         self.assertEqual(data.shape, (816, 15))
         self.assertEqual(PAPER_MODELS['QR1']['features'], ['RV', 'MKT', 'DP', 'IP', 'RV_q', 'STR', 'DEF'])
         self.assertEqual(PAPER_MODELS['QR2']['features'], ['RV', 'MKT', 'STR', 'RV_q', 'EP', 'INF', 'DEF'])
-        from quantum_reservoir_qiskit import load_coupling_matrices
+        from qrc.reservoir import load_coupling_matrices
         ms = load_coupling_matrices(str(ROOT / 'data/coeff_10.jld2'))
         np.testing.assert_array_equal(couplings['QR1'], ms[0])
         np.testing.assert_array_equal(couplings['QR2'], ms[1])

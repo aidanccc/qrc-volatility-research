@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from qrcstudy.exploration import choose_alpha,ridge_grid
+from qrc.benchmark.exploration import choose_alpha,ridge_grid
 
 class ExplorationTests(unittest.TestCase):
     def test_no_current_or_future_selection(self):

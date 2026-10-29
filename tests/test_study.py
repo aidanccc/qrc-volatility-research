@@ -1,4 +1,3 @@
-import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -6,11 +5,11 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from qrcstudy.data import FEATURES, fit_scaler, inverse_target, monthly_features, transform, validate_prices
-from qrcstudy.models import sequences, forecast
-from qrcstudy.run import checked_manifest
-from qrcstudy.report import losses, stationary_indices, load_validated
-from qrcstudy.data import digest, write_json
+from qrc.benchmark.data import fit_scaler, inverse_target, monthly_features, transform, validate_prices
+from qrc.benchmark.models import sequences, forecast
+from qrc.benchmark.run import checked_manifest
+from qrc.benchmark.report import losses, stationary_indices, load_validated
+from qrc.benchmark.data import digest, write_json
 
 
 class StudyTests(unittest.TestCase):
@@ -90,7 +89,7 @@ class StudyTests(unittest.TestCase):
         self.assertGreater(np.mean(a[:,1:]==(a[:,:-1]+1)%104),.7)
 
     def test_seeded_lstm_resume_order(self):
-        from qrcstudy.models import lstm_forecast
+        from qrc.benchmark.models import lstm_forecast
         rng=np.random.default_rng(7)
         x=rng.uniform(-1,0,(130,7));y=rng.uniform(-1,0,130)
         seq=sequences(x)
@@ -114,7 +113,6 @@ class StudyTests(unittest.TestCase):
             for i,r in enumerate(records):write_json(folder/f"checkpoints/Persistence/{i}.json",r)
             self.assertEqual(len(load_validated(folder)[0]),2)
             published_hash=digest(folder/"predictions.csv")
-            write_json(folder/"report_receipt.json",{"prediction_sha256":published_hash})
             (folder/"checkpoints").rename(folder/"local-checkpoints")
             self.assertEqual(len(load_validated(folder)[0]),2)
             self.assertEqual(digest(folder/"predictions.csv"),published_hash)

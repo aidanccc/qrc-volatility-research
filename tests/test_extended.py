@@ -3,16 +3,15 @@ from pathlib import Path
 import tempfile
 import numpy as np
 import pandas as pd
-from qrcstudy.extended_data import derived,read_monthly,affine_map,prepare
-from qrcstudy.extended_models import inputs,predict,QR1,QR2
-from qrcstudy.models import sequences
-from quantum_reservoir_qiskit import MIN_RV,DIF
+from qrc.benchmark.extended_data import derived,read_monthly,affine_map,prepare
+from qrc.benchmark.extended_models import inputs,predict,QR1,QR2
+from qrc.reservoir import MIN_RV,DIF
 ROOT=Path(__file__).resolve().parents[1]
 
 class ExtendedTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.raw=read_monthly(ROOT/'1950-2026.csv')
+        cls.raw=read_monthly(ROOT / 'data/1950-2026.csv')
         cls.prepared=read_monthly(ROOT/'data/snapshots/extended-2026-09-24-v2/monthly.csv')
 
     def test_supplied_missing_block_and_prepared_gaps(self):
@@ -69,7 +68,7 @@ class ExtendedTests(unittest.TestCase):
     def test_incomplete_month_rejected_before_download(self):
         with tempfile.TemporaryDirectory() as d:
             with self.assertRaisesRegex(ValueError,'incomplete month'):
-                prepare(ROOT/'1950-2026.csv',Path(d)/'snapshot',as_of='2026-08-24')
+                prepare(ROOT / 'data/1950-2026.csv',Path(d)/'snapshot',as_of='2026-08-24')
 
     def test_invalid_calendar_rejected(self):
         with tempfile.TemporaryDirectory() as d:

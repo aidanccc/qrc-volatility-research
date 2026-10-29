@@ -3,8 +3,8 @@ import unittest
 import numpy as np
 from qiskit.quantum_info import DensityMatrix, Operator, SparsePauliOp, partial_trace
 from scipy.linalg import expm
-from quantum_reservoir_qiskit import build_z_observables, encode_input, generate_coupling_matrix
-from quantum_reservoir_trotter import build_trotter_step
+from qrc.reservoir import build_z_observables, encode_input, generate_coupling_matrix
+from qrc.trotter import build_trotter_step
 
 
 class QuantumConventionTests(unittest.TestCase):
