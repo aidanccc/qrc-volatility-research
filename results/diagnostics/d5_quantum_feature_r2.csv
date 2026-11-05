@@ -1,0 +1,3 @@
+classical basis,median R2,min R2,features
+linear in 3 lags,0.6753463655420691,0.19826264310971198,20.0
++ cos/sin(pi x) of 3 lags,0.9962243230649847,0.7614547483506565,20.0

@@ -1,0 +1,5 @@
+reservoir,target,2q_gates,depth,est_fidelity@0.1%,est_fidelity@0.3%,est_fidelity@1.0%
+paper all-to-all J,"all-to-all, trapped-ion style (rxx native)",360,104,0.6975506718651009,0.3390447252858265,0.026833050939885684
+paper all-to-all J,"IBM heavy-hex (ecr, sx, rz)",1854,2582,0.15646426738912234,0.0038091099592347747,8.08445566760964e-09
+line J (E6),"all-to-all, trapped-ion style (rxx native)",72,40,0.9304973749532336,0.8054737627981654,0.48499137027416284
+line J (E6),"IBM heavy-hex (ecr, sx, rz)",144,182,0.8658253647948586,0.6487879825562353,0.23521662924041012
