@@ -6,7 +6,8 @@ Replication and stress-test of **[arXiv:2505.13933] Quantum Reservoir Computing 
 
 > **New here? Read [HOW_IT_WORKS.md](HOW_IT_WORKS.md) first.** It explains the task, what the quantum
 > reservoir actually does, what shots are (and why a million is pointless), and what we found, all in
-> plain English.
+> plain English. For everyone's results in one place (all branches and the weekly notes, including
+> where they disagree and why), see [FINAL_RESULTS.md](FINAL_RESULTS.md).
 
 ---
 
@@ -56,7 +57,8 @@ Replication and stress-test of **[arXiv:2505.13933] Quantum Reservoir Computing 
 │   ├── run_research_suite.py         E1–E8: fair baselines, coupling draws, Trotter, shots, noise, memory
 │   ├── overfitting_diagnostics.py    D1–D6: overfitting, selection bias, classical swap, 2018–26 holdout
 │   ├── confidence_bands.py           D7–D8: repeated trials with bands, year-by-year error
-│   └── quantum_value_and_cost.py     does the circuit add value? minimal circuit, shots, cost
+│   ├── quantum_value_and_cost.py     does the circuit add value? minimal circuit, shots, cost
+│   └── locked_protocol.py            all settings chosen on pre-1997 validation, scored once
 │
 ├── hardware/               real quantum-computer work
 │   ├── qpu_shot_budget.py            how many shots a hardware run needs
@@ -93,6 +95,7 @@ python -m experiments.run_research_suite       # --quick for a fast pass
 python -m experiments.overfitting_diagnostics  # --quick
 python -m experiments.confidence_bands
 python -m experiments.quantum_value_and_cost
+python -m experiments.locked_protocol        # --quick for 5 coupling matrices
 
 # Hardware planning
 python -m hardware.qpu_shot_budget
@@ -123,6 +126,9 @@ QR2 0.281. QRC is the worst of the fitted models.
 **Why the paper looked better:** its coupling draw ranks 2/20, its memory depth K = 3 is the single best,
 and its feature set was picked on the test window. On 40 random feature sets QRC beat linear regression on
 the same inputs 0% of the time.
+
+**Locked protocol (settings chosen on 1987–1997 validation only):** QRC 0.118 / 0.183 vs linear 0.121 / 0.185,
+HAR 0.116 / 0.187 (1997–2017 / 2018–2026), all statistical ties. The paper's settings rank 297/300 on validation.
 
 **Hardware (IonQ Forte-1, 12 months, 400 shots):** hardware ⟨Z⟩ vs simulator correlation 0.996, noise
 shrink s = 0.958. 12 months is enough to show the hardware path works, but too few to rank models.

@@ -117,7 +117,11 @@ precision no longer matters, for three reasons:
 reduce random noise a little; the returns just diminish very quickly. An early experiment
 (`results/research/e4_shots.csv`, `experiments/run_research_suite.py`, E4) did keep
 improving up to 100,000 shots per circuit. That happened because it used the paper's readout, which is almost
-un-regularised (ridge λ = 10⁻⁸) and over-reacts to tiny noise in the features. The right
+un-regularised (ridge λ = 10⁻⁸) and over-reacts to tiny noise in the features. Some reservoir features
+only vary by about ±0.005 from month to month, which is smaller than the ±0.03 shot noise at 1,000 shots, and an
+un-regularised regression still leans heavily on them. Vikas's IonQ noise study (`Vikas` branch,
+`results/6-ionq-noise`) hit the same effect and concluded that 100,000–1,000,000 shots were needed. That's where
+the "million shots" figure comes from. The right
 fix was a better readout (noise-aware ridge, λ = 1–10), not more shots. The "millions"
 printed in that experiment's log were **total shots summed over all ~813 circuits of a full
 backtest**, not shots per circuit.
@@ -151,6 +155,7 @@ results/       every output table, plot and report (see results/README.md for an
 | 6 | `experiments/run_research_suite.py` | E1–E8: fair baselines, all 100 coupling draws, Trotter depth, shots, noise, memory |
 | 7 | `experiments/overfitting_diagnostics.py` | D1–D6: train/test gap, regularisation, learning curve, selection bias, classical swap, 2018–26 holdout |
 | 8 | `experiments/confidence_bands.py` | D7–D8: repeated trials with error bands, year-by-year error |
+| 8b | `experiments/locked_protocol.py` | All settings chosen on 1987–1997 validation only, then scored once on 1997–2017 and 2018–2026 |
 | 9 | `experiments/quantum_value_and_cost.py` | Does the quantum circuit add anything? Smallest usable circuit, fewest shots, cost |
 | 10 | `hardware/qpu_shot_budget.py`, `hardware/ionq_feasibility.py` | How many shots/gates a real run needs, and what it costs |
 | 11 | `hardware/qpu_experiment.py` | The actual IonQ run (local simulator → IonQ cloud simulator → real Forte-1) |
@@ -193,7 +198,10 @@ evolution into real gates, and `quantum_reservoir_noisy.py` adds gate noise.
 5. **The entanglement does do something.** Switching couplings off (J = 0) makes it clearly
    worse. But the quantum features are ~99% explained by simple cos/sin functions of the
    inputs, so the circuit is a fixed non-linear feature map that a laptop can compute.
-6. **Hardware is feasible and cheap** once the circuit is trimmed and shots are kept at a few
+6. **With honestly chosen settings it is competitive but not better.** When every setting is picked on
+   1987–1997 validation data only (`experiments/locked_protocol.py`), QRC ties linear regression, HAR and AR(1)
+   on both 1997–2017 and 2018–2026. The paper's own settings rank 297th of 300 on that validation.
+7. **Hardware is feasible and cheap** once the circuit is trimmed and shots are kept at a few
    hundred. The Forte-1 run matched the simulator.
 
 Details: `results/diagnostics/summary.md`, `results/diagnostics/summary_d7_d8.md`,

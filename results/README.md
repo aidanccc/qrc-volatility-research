@@ -9,6 +9,7 @@ Every file here is written by a script. Re-run the script to regenerate it.
 | `stats/` | `notebooks/Reservoir_Learning.ipynb` | Diebold–Mariano statistics and p-values, 11 × 11 models | `p_value.csv` |
 | `research/` | `experiments/run_research_suite.py` (E1–E8), `experiments/quantum_value_and_cost.py` (Q1–Q6) | fair baselines, coupling robustness, Trotter depth, shots, noise, memory, circuit/shot reduction, cost | `quantum_value_and_cost.md` |
 | `diagnostics/` | `experiments/overfitting_diagnostics.py` (D1–D6), `experiments/confidence_bands.py` (D7–D8), `hardware/qpu_shot_budget.py` | overfitting checks, selection bias, 2018–26 holdout, repeated-trial bands, year-by-year error, shot budget | `summary.md`, `QRC_Overfitting_Audit.docx` |
+| `locked/` | `experiments/locked_protocol.py` | settings chosen on 1987–1997 validation only, scored once on both test windows (quick mode, 5 coupling matrices) | `summary.md` |
 | `qpu/` | `hardware/qpu_experiment.py` | one folder per hardware-path run (see below) | `qpu.forte-1_m15_s1_pack3_shots400/report.md` |
 
 ## `qpu/` run folders
