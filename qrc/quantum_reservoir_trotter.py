@@ -54,7 +54,7 @@ from qiskit import QuantumCircuit
 from qiskit.quantum_info import DensityMatrix, Operator, partial_trace, SparsePauliOp
 
 # Reuse everything that doesn't change from the exact version
-from quantum_reservoir_qiskit import (
+from qrc.quantum_reservoir_qiskit import (
     MAX_RV, MIN_RV, COE, DIF,
     load_coupling_matrices,
     generate_coupling_matrix,

@@ -1,351 +1,150 @@
 # Quantum Reservoir Computing for Realized Volatility Forecasting
 
-Replication of: **[arXiv:2505.13933] Quantum Reservoir Computing for Realized Volatility Forecasting**  
-Published: *Physical Review Research 8, 023028 (2026)*  
-Original repo: [LeeQY1996/Quantum-Reservoir-computing-for-Realized-Volatility-Forecasting](https://github.com/LeeQY1996/Quantum-Reservoir-computing-for-Realized-Volatility-Forecasting)
+Replication and stress-test of **[arXiv:2505.13933] Quantum Reservoir Computing for Realized Volatility Forecasting**
+(*Physical Review Research 8, 023028, 2026*). Original repo:
+[LeeQY1996/Quantum-Reservoir-computing-for-Realized-Volatility-Forecasting](https://github.com/LeeQY1996/Quantum-Reservoir-computing-for-Realized-Volatility-Forecasting).
+
+> **New here? Read [HOW_IT_WORKS.md](HOW_IT_WORKS.md) first.** It explains the task, what the quantum
+> reservoir actually does, what shots are (and why a million is pointless), and what we found, all in
+> plain English.
 
 ---
 
-## Overview
+## What this project does
 
-This repository reproduces the full benchmark pipeline from the paper, which forecasts monthly realized equity volatility using 11 competing models. The central finding — that a quantum reservoir computer (QR2) is the statistically best forecaster under both MSE and QLIKE loss — is confirmed by our independent run.
-
-The Python-side pipeline (preprocessing, LSTM, classical reservoir, linear baselines, and statistical comparison) runs end-to-end from a clean clone. The quantum reservoir is reproduced via an independent Python/Qiskit implementation (`quantum_reservoir_qiskit.py`) that matches the original Julia/GPU output to machine precision.
-
----
-
-## Pipeline Architecture
-
-```
-                     ┌──────────────────────┐
-                     │    data/Data.CSV      │
-                     │  816 rows x 16 cols   │
-                     │  Jan 1950 - Dec 2017  │
-                     └──────────┬───────────┘
-                                │
-                                ▼
-                         preprocess.py
-                       (ADF stationarity)
-                        /               \
-                       ▼                 ▼
-           data/Data_raw.csv        data/dff.csv
-           (copy of Data.CSV)  (DP, TB differenced)
-                        \               /
-                         \_____________/
-                                │
-           ┌────────────────────┼───────────────────────┐
-           ▼                    ▼                       │
-     LSTM.ipynb    classical_reservoir.ipynb            │
-   (LSTM, LSTMX)       (CRL, CRLX)                      │
-           │                    │                       │
-           ▼                    ▼                       │
-  results/predictions/  results/predictions/            │
-  LSTM/                 Classical_Reservoir_learning/   │
-                                                        │
-  data/Data.CSV  ─────────────────────┐                 │
-  data/coeff_10.jld2 ─────────────────►                 │
-                          run_qrc_simulation.py         │
-                          (quantum_reservoir_qiskit.py) │
-                                       │                │
-                                       ▼                │
-                           results/predictions/         │
-                           qrc_predict_result.csv       │
-                           (verified vs                 │
-                            data/predict_result.csv)    │
-                                                        │
-           ┌────────────────────────────────────────────┘
-           │  + all prediction CSVs above
-           ▼
-   Reservoir_Learning.ipynb
-  ┌────────────────────────────────┐
-  │  HAR / HARX / AR(1) / AR(3)    │
-  │  ARMAX   (rolling OLS / MLE)   │
-  │  + loads LSTM, CRL, QR preds   │
-  │  -> MCS test (MSE + QLIKE)     │
-  │  -> Diebold-Mariano (55 pairs) │
-  └────────────────────────────────┘
-           │
-  ┌────────┴────────┐
-  ▼                 ▼
-results/plots/   results/stats/
-(7 model PNGs)   dm_stat.csv
-                 p_value.csv
-```
+1. **Replicates the paper.** A 10-qubit quantum reservoir (QR1/QR2) forecasts monthly US stock-market
+   volatility. Our Python/Qiskit version reproduces the authors' Julia/GPU forecasts to 1e-6, and in the
+   paper's own test window QR2 ranks first.
+2. **Stress-tests the claim.** We compare against fair baselines on identical inputs, check for selection
+   bias and overfitting, and test on brand-new 2018–2026 data. Result: QRC ties a plain linear regression
+   on the same inputs (not significantly different) and does worse than simple models on the 2018–2026
+   holdout.
+3. **Runs it on a real quantum computer.** We trimmed the circuit and ran 12 forecast months (2008–09
+   crisis) on **IonQ Forte-1**: 4 circuits × 30 qubits × 400 shots for $80.32. The hardware matched the
+   simulator (correlation 0.996).
 
 ---
 
-## Repository Structure
+## Repository layout
 
 ```
 .
+├── HOW_IT_WORKS.md        ← plain-English guide to the whole project
 ├── data/
-│   ├── Data.CSV                # Source dataset (816 rows, monthly 1950-2017, normalized)
-│   ├── coeff_10.jld2           # Pre-generated Ising coupling matrices (100 instances)
-│   ├── predict_result.csv      # Original authors' QR1/QR2 predictions (245 rows)
-│   ├── Data_raw.csv            # Generated by preprocess.py
-│   └── dff.csv                 # ADF-differenced dataset, generated by preprocess.py
+│   ├── Data.CSV            monthly inputs 1950–2017 (816 rows, normalised)
+│   ├── 1950-2026.csv       extended series for the 2018–2026 true holdout
+│   ├── coeff_10.jld2       100 random Ising coupling matrices (from the authors)
+│   └── predict_result.csv  authors' original QR1/QR2 forecasts (reference)
 │
-├── results/
-│   ├── predictions/
-│   │   ├── LSTM/               # lstm60_predictions.csv, lstmx50_predictions.csv
-│   │   ├── Classical_Reservoir_learning/  # best_CRL(50)_*, best_CRLX(20)_*
-│   │   └── qrc_predict_result.csv         # Qiskit-reproduced QR1/QR2 (verified)
-│   ├── plots/                  # HAR_model.png, HARX_model.png, AR(1)_model.png,
-│   │                           # AR(3)_model.png, ARMAX_model.png, QR1_model.png, QR2_model.png
-│   └── stats/                  # dm_stat.csv, p_value.csv
+├── qrc/                    the quantum reservoir (library imported by everything else)
+│   ├── quantum_reservoir_qiskit.py   exact simulator, line-by-line translation of the Julia code
+│   ├── fast_qrc.py                   same physics, ~100× faster; adds shots / readout error / noise
+│   ├── quantum_reservoir_trotter.py  the evolution as a real gate circuit (RXX + RZ)
+│   └── quantum_reservoir_noisy.py    the circuit with depolarizing gate noise
 │
-├── preprocess.py               # Stage 1: generates data/Data_raw.csv + data/dff.csv
-├── LSTM.ipynb                  # Stage 2: trains LSTM and LSTMX baselines
-├── classical_reservoir.ipynb   # Stage 3: trains CRL and CRLX (echo state network) baselines
-├── Reservoir_Learning.ipynb    # Stage 4: linear models + full MCS/DM comparison
-├── quantum_reservoir_qiskit.py # Python/Qiskit translation of Time_series.jl
-├── run_qrc_simulation.py       # Stage 4b: Python-native QR1/QR2 quantum simulation
-├── Time_series.jl              # Original Julia quantum library (requires GPU + private pkgs)
-├── Time_serial_Finance_regression.ipynb  # Original Julia notebook (see Julia section below)
-└── requirements.txt
+├── pipeline/               reproduce the paper
+│   ├── preprocess.py                 step 1: build data/Data_raw.csv and data/dff.csv
+│   └── run_qrc_simulation.py         step 2: QR1/QR2 forecasts, checked against the authors' output
+│
+├── notebooks/              baselines and the paper's comparison
+│   ├── LSTM.ipynb                    LSTM / LSTMX
+│   ├── classical_reservoir.ipynb     echo-state networks CRL / CRLX
+│   ├── Reservoir_Learning.ipynb      HAR, HARX, AR, ARMAX + MCS and Diebold–Mariano tests
+│   └── Quantum_Reservoir_Metrics.ipynb  classical vs quantum metric table
+│
+├── experiments/            our research on top of the replication
+│   ├── run_research_suite.py         E1–E8: fair baselines, coupling draws, Trotter, shots, noise, memory
+│   ├── overfitting_diagnostics.py    D1–D6: overfitting, selection bias, classical swap, 2018–26 holdout
+│   ├── confidence_bands.py           D7–D8: repeated trials with bands, year-by-year error
+│   └── quantum_value_and_cost.py     does the circuit add value? minimal circuit, shots, cost
+│
+├── hardware/               real quantum-computer work
+│   ├── qpu_shot_budget.py            how many shots a hardware run needs
+│   ├── ionq_feasibility.py           gate counts, noisy simulation, cost on IonQ
+│   └── qpu_experiment.py             the IonQ run (local → IonQ simulator → Forte-1 QPU)
+│
+├── julia/                  authors' original Julia code (reference only)
+└── results/                every table, plot and report (index: results/README.md)
 ```
-
----
-
-## Models
-
-All models use a **rolling window** of 571 months for training and predict the last 245 months (Aug 1997 – Dec 2017) out-of-sample, one step ahead.
-
-| Model | Type | Run via | Input features |
-|-------|------|---------|----------------|
-| QR2 | Quantum reservoir (2 virtual nodes) | `run_qrc_simulation.py` | 7 (RV, MKT, STR, RV_q, EP, INF, DEF) |
-| QR1 | Quantum reservoir (1 virtual node) | `run_qrc_simulation.py` | 7 (RV, MKT, DP, IP, RV_q, STR, DEF) |
-| ARMAX | AR(3) + exogenous | `Reservoir_Learning.ipynb` | AR(3) + all 10 macro features |
-| HARX | HAR + exogenous | `Reservoir_Learning.ipynb` | HAR lags + all 10 macro features |
-| HAR | Linear | `Reservoir_Learning.ipynb` | RV lags (1mo, 3mo, 12mo) |
-| AR(3) | Autoregressive | `Reservoir_Learning.ipynb` | 3 RV lags |
-| AR(1) | Autoregressive | `Reservoir_Learning.ipynb` | 1 RV lag |
-| LSTMX | Neural network | `LSTM.ipynb` | 11 features, hidden=50 |
-| LSTM | Neural network | `LSTM.ipynb` | RV only, hidden=60 |
-| CRLX | Echo state network | `classical_reservoir.ipynb` | 11 features, N=20 neurons |
-| CRL | Echo state network | `classical_reservoir.ipynb` | RV only, N=50 neurons |
 
 ---
 
 ## Installation
 
 ```bash
+python -m venv venv
+venv\Scripts\activate          # Windows   (macOS/Linux: source venv/bin/activate)
 pip install -r requirements.txt
 ```
 
-Key dependencies: `numpy`, `pandas`, `scipy`, `matplotlib`, `torch`, `reservoirpy`, `statsmodels`, `scikit-learn`, `arch`, `qiskit>=1.0`, `h5py>=3.10`
+## Running
 
----
-
-## Running the Pipeline
-
-### Stage 1 — Preprocess
+**Run everything from the repository root.** Scripts are run as modules (`python -m folder.script`) so
+they can import `qrc/`. The notebooks have a setup cell that moves to the repo root automatically.
 
 ```bash
-python preprocess.py
-```
+# Reproduce the paper
+python -m pipeline.preprocess
+python -m pipeline.run_qrc_simulation          # writes results/predictions/qrc_predict_result.csv
+# then run notebooks/LSTM.ipynb, notebooks/classical_reservoir.ipynb, notebooks/Reservoir_Learning.ipynb
 
-Reads `data/Data.CSV`, runs ADF stationarity tests, first-differences non-stationary columns (`DP` → `diff_DP`, `TB` → `diff_TB`), writes `data/Data_raw.csv` and `data/dff.csv`. Must run before any notebook.
+# Research experiments (CPU, minutes each)
+python -m experiments.run_research_suite       # --quick for a fast pass
+python -m experiments.overfitting_diagnostics  # --quick
+python -m experiments.confidence_bands
+python -m experiments.quantum_value_and_cost
 
-### Stage 2 — LSTM baselines
-
-Open and run `LSTM.ipynb`.
-
-Writes:
-- `results/predictions/LSTM/lstm60_predictions.csv`
-- `results/predictions/LSTM/lstmx50_predictions.csv`
-
-### Stage 3 — Classical reservoir baselines
-
-Open and run `classical_reservoir.ipynb`.
-
-Writes:
-- `results/predictions/Classical_Reservoir_learning/best_CRL(50)_predictions.csv`
-- `results/predictions/Classical_Reservoir_learning/best_CRLX(20)_predictions.csv`
-
-### Stage 4 — Main comparison
-
-Open and run `Reservoir_Learning.ipynb`.
-
-Trains all linear models (HAR, HARX, AR, ARMAX), loads all upstream predictions and `data/predict_result.csv` for quantum, then runs MCS and DM tests.
-
-Writes:
-- `results/plots/*.png` — per-model forecast plots
-- `results/stats/dm_stat.csv` — 11×11 DM test statistics
-- `results/stats/p_value.csv` — 11×11 DM p-values
-
-### Stage 4b — Quantum reservoir (Python/Qiskit, optional)
-
-```bash
-python run_qrc_simulation.py
-```
-
-Independently reproduces QR1 and QR2 predictions using the Python/Qiskit implementation and automatically compares them against `data/predict_result.csv`. Output saved to `results/predictions/qrc_predict_result.csv`.
-
----
-
-## Script and Notebook Details
-
-### `preprocess.py`
-
-Reads `data/Data.CSV`, runs an ADF stationarity test on each column, and first-differences non-stationary columns. Writes `data/Data_raw.csv` (copy of source) and `data/dff.csv` (differenced). Required before any notebook.
-
-### `LSTM.ipynb`
-
-Implements two LSTM variants via PyTorch:
-- **LSTM** — RV-only input, 2-layer stacked LSTM, `hidden_size=60`
-- **LSTMX** — 11 macro-financial features, `hidden_size=50`
-
-Both: `K=3` sequence length, `batch_size=64`, `num_epochs=100`, `lr=0.001` (Adam optimizer).
-
-### `classical_reservoir.ipynb`
-
-Implements two Echo State Network (ESN) variants via `reservoirpy`:
-- **CRL** — RV-only input, `N=50` reservoir neurons
-- **CRLX** — 11 features, `N=20` neurons
-
-Reservoir hyperparameters: `lr=0.6` (leak rate), `sr=0.9` (spectral radius), `input_scaling=0.1`. Output weights via Ridge regression (`ridge=1e-7`).
-
-### `Reservoir_Learning.ipynb`
-
-- Trains **HAR**, **HARX**, **AR(1)**, **AR(3)**, **ARMAX** via rolling OLS/ARIMA
-- Loads predictions from all upstream notebooks and `data/predict_result.csv`
-- Runs **Model Confidence Set (MCS)** test (`arch` library) under MSE and QLIKE loss functions
-- Runs pairwise **Diebold-Mariano (DM)** tests with Newey-West HAC variance across all 55 model pairs
-- Outputs model plots, `results/stats/dm_stat.csv`, and `results/stats/p_value.csv`
-
-### `quantum_reservoir_qiskit.py`
-
-Python/Qiskit library that translates `Time_series.jl` function-by-function into CPU-executable code. Implements:
-
-- **Transverse-field Ising Hamiltonian**: `H = sum_{i<j} J_ij X_i X_j + sum_i Z_i` (10 qubits)
-- **Input encoding**: RY rotation gates, angle = `pi * feature_value`, features normalized to `[-1, 0]`
-- **Density matrix evolution**: `rho -> U rho U†` via `scipy.linalg.expm(-i tau H)`
-- **Virtual node readout**: `<Z_i>` expectation values per qubit, per virtual node step
-- **Rolling ridge regression**: output weights trained with `lambda = 1e-8`
-- **Metrics**: MSE, RMSE, MAE, MAPE, QLIKE, hit rate — exact translations from Julia
-
-### `run_qrc_simulation.py`
-
-Driver that runs QR1 and QR2 end-to-end. Loads `data/Data.CSV` and `data/coeff_10.jld2`, builds Ising Hamiltonians, runs the quantum reservoir simulation over all 816 time steps, applies rolling ridge regression for 245 out-of-sample forecasts, and writes `results/predictions/qrc_predict_result.csv`. Reports per-metric comparison against `data/predict_result.csv` (original Julia run).
-
----
-
-## Python Quantum Implementation
-
-`quantum_reservoir_qiskit.py` is a verified, independent Python reimplementation of the original Julia quantum reservoir code (`Time_series.jl`). It requires no GPU and uses Qiskit's `DensityMatrix` simulator in place of the CUDA-accelerated Julia path.
-
-**Physical model:**
-- 10 qubits total: 7 input qubits (one per feature) + 3 hidden memory qubits
-- Coupling matrices `J` loaded from `data/coeff_10.jld2` (pre-generated by original authors, HDF5 format)
-- Ising Hamiltonian built using `SparsePauliOp` respecting Qiskit's qubit-ordering convention
-- Unitary operators `U = e^{-i tau H}` and `dU = e^{-i (tau/V) H}` computed once via matrix exponential and reused across all 816 time steps
-- Virtual nodes provide additional readout diversity: V=1 for QR1, V=2 for QR2
-
-**Verification:**
-
-The Qiskit run matches the original Julia GPU output exactly:
-
-| Series | Max absolute error | Mean absolute error |
-|--------|--------------------|---------------------|
-| QR1 (245 predictions) | 1e-6 | < 1e-7 |
-| QR2 (245 predictions) | 1e-6 | < 1e-7 |
-
-The 1e-6 residual is floating-point rounding from float32 storage in `coeff_10.jld2`. Every metric (MSE, RMSE, MAE, MAPE, QLIKE, hit rate) matches to 4 decimal places.
-
----
-
-## Reproduced Results
-
-All results below were produced by running the pipeline in this repository from a fresh execution. Quantum predictions use `run_qrc_simulation.py` (Qiskit).
-
-### Quantum model metrics
-
-| Metric | QR1 | QR2 |
-|--------|-----|-----|
-| Hit Rate | 0.4408 | 0.4571 |
-| MSE | 0.1051 | 0.1038 |
-| RMSE | 0.3242 | 0.3221 |
-| MAE | 0.2488 | 0.2426 |
-| MAPE (%) | 8.28 | 8.17 |
-| QLIKE | 1.4428 | 1.4004 |
-
-### Model Confidence Set — MSE loss
-
-| Model | MCS p-value | In best set? |
-|-------|------------|-------------|
-| QR2 | **1.0000** | Yes |
-| ARMAX | 0.9886 | Yes |
-| QR1 | 0.9886 | Yes |
-| HARX | 0.9886 | Yes |
-| LSTMX | 0.3139 | Yes |
-| HAR | 0.0573 | Yes |
-| CRLX | 0.0316 | No |
-| CRL | 0.0295 | No |
-| AR3 | 0.0271 | No |
-| LSTM | 0.0028 | No |
-| AR1 | 0.0028 | No |
-
-### Model Confidence Set — QLIKE loss
-
-| Model | MCS p-value | In best set? |
-|-------|------------|-------------|
-| QR2 | **1.0000** | Yes |
-| HARX | 0.6458 | Yes |
-| QR1 | 0.6458 | Yes |
-| ARMAX | 0.6458 | Yes |
-| HAR | 0.3218 | Yes |
-| CRL | 0.2774 | Yes |
-| AR3 | 0.2774 | Yes |
-| LSTM | 0.2258 | Yes |
-| LSTMX | 0.2774 | Yes |
-| AR1 | 0.0720 | Yes |
-| CRLX | 0.0394 | No |
-
-**QR2 achieves MCS p-value = 1.0 under both loss functions**, confirming it as the uniquely best model. This matches the paper's central claim. QR2 also significantly outperforms every other model in pairwise Diebold-Mariano tests (all 10 DM p-values < 0.001).
-
----
-
-## Julia Pipeline — Original Quantum Implementation
-
-`Time_series.jl` and `Time_serial_Finance_regression.ipynb` contain the original quantum reservoir implementation, but depend on two **custom, unpublished packages** not included in this repository:
-
-- `QuantumCircuits_demo` — expected at `../package/QuantumCircuits_demo/src`
-- `VQC_demo_cuda` — expected at `../package/VQC_demo_cuda/src`
-
-An **NVIDIA GPU with CUDA support** is also required. The Julia path cannot be executed without these.
-
-`data/predict_result.csv` ships with the repo and contains the original authors' 245-row QR1/QR2 predictions used as a reference by `Reservoir_Learning.ipynb`. The Qiskit-reproduced `results/predictions/qrc_predict_result.csv` matches this file to within 1e-6.
-
-### What `Time_series.jl` implements
-
-- `Qreservoir(nqubit, ps)` — builds the transverse-field Ising Hamiltonian (`H = sum J_ij X_i X_j + sum Z_i`)
-- `Quantum_Reservoir(...)` — GPU-accelerated simulation (RY encoding → `e^{-i tau H}` evolution → `<Z_i>` readout)
-- `Quantum_Reservoir_util(...)` — variant for Shapley value analysis
-- `Quantum_Reservoir_single(...)` — single-sample CPU version for threaded parallelism
-- `MyModel` — struct storing per-window ridge regression weights
-- Metrics: `MSE`, `RMSE`, `MAE`, `MAPE`, `compute_qlike`, `hitrate`
-- Helpers: `normalization`, `denormalization`, `shift`, `rolling`, `coeff_matrix`
-
-### Julia dependencies (when packages are available)
-
-```
-Julia 1.11+, CUDA.jl, Flux.jl, JLD2.jl, CSV.jl, DataFrames.jl,
-Statistics, LinearAlgebra, ShapML.jl, Plots.jl
+# Hardware planning
+python -m hardware.qpu_shot_budget
+python -m hardware.qpu_experiment --backend local          # free, offline ideal simulator
+# --backend ionq_simulator (free cloud simulator) / qpu.forte-1 (paid; needs IONQ_API_KEY,
+# --dry-run-qpu gives a free quote, a real submission also needs --confirm-qpu)
 ```
 
 ---
 
-## Reproducibility Notes
+## Key results
 
-| Component | Status |
-|-----------|--------|
-| Preprocessing (`preprocess.py`) | Fully reproducible |
-| LSTM / LSTMX (`LSTM.ipynb`) | Reproducible — minor variation between runs due to random LSTM init |
-| CRL / CRLX (`classical_reservoir.ipynb`) | Reproducible — minor variation between runs due to random reservoir init |
-| Linear models in `Reservoir_Learning.ipynb` | Fully reproducible (deterministic OLS/ARIMA) |
-| QR1 / QR2 via Qiskit (`run_qrc_simulation.py`) | **Fully verified** — matches Julia to 1e-6 |
-| QR1 / QR2 via original Julia | **Not reproducible** — requires private packages + NVIDIA GPU |
-| Shapley analysis in Julia notebook | Not reproducible — requires `ShapML.jl` + GPU |
+**Paper test window, Aug 1997 – Dec 2017 (245 months).** Same inputs, same rolling 571-month ridge readout.
 
-The MCS rankings and DM test conclusions are robust to minor LSTM/ESN run-to-run variation. QR2 ranks first in all cases.
+| model | MSE | vs QR2 (DM p) |
+|---|---|---|
+| Linear regression, QR2's inputs, lags 1–3 | **0.1016** | 0.66 (no significant difference) |
+| QR2 (paper) | 0.1038 | – |
+| QR1 (paper) | 0.1051 | 0.78 |
+| Echo-state network | 0.1077 | 0.53 |
+| HAR | 0.1156 | 0.06 |
+| QR2 with couplings off (J = 0) | 0.1229 | 0.001 (significantly worse) |
+| Random walk | 0.1428 | 0.003 |
+
+**True holdout, Jan 2018 – Aug 2026 (never used for any choice):** linear 0.177, HAR 0.187, QR1 0.217,
+QR2 0.281. QRC is the worst of the fitted models.
+
+**Why the paper looked better:** its coupling draw ranks 2/20, its memory depth K = 3 is the single best,
+and its feature set was picked on the test window. On 40 random feature sets QRC beat linear regression on
+the same inputs 0% of the time.
+
+**Hardware (IonQ Forte-1, 12 months, 400 shots):** hardware ⟨Z⟩ vs simulator correlation 0.996, noise
+shrink s = 0.958. 12 months is enough to show the hardware path works, but too few to rank models.
+
+**Shots:** with a noise-aware readout, the gain from more shots is essentially gone by 300–1,000 shots per
+circuit (see [HOW_IT_WORKS.md §4](HOW_IT_WORKS.md#4-shots-and-why-a-million-shots-is-pointless)).
+
+Full write-ups: `results/diagnostics/summary.md`, `results/diagnostics/summary_d7_d8.md`,
+`results/research/quantum_value_and_cost.md`, `results/diagnostics/QRC_Overfitting_Audit.docx`.
+
+### Paper replication tables (original pipeline)
+
+Qiskit QR1/QR2 vs the authors' Julia output: max absolute difference 1e-6 over 245 forecasts (float32
+storage of the couplings). Metrics: QR1 MSE 0.1051 / QLIKE 1.443, QR2 MSE 0.1038 / QLIKE 1.400.
+In the paper's 11-model Model Confidence Set, QR2 has p = 1.0 under both MSE and QLIKE, as the paper
+reports. Note that the paper's comparison does not include a linear model on QR2's own inputs, which is the
+baseline that ties it.
+
+---
+
+## Julia code (reference only)
+
+`julia/Time_series.jl` and `julia/Time_serial_Finance_regression.ipynb` are the authors' original
+implementation. They depend on two unpublished packages (`QuantumCircuits_demo`, `VQC_demo_cuda`) and an
+NVIDIA GPU, so they cannot run here. `qrc/quantum_reservoir_qiskit.py` translates them function by function.
