@@ -38,7 +38,7 @@ import pandas as pd
 
 from qiskit.quantum_info import DensityMatrix, Kraus, Operator, partial_trace
 
-from quantum_reservoir_qiskit import (
+from qrc.quantum_reservoir_qiskit import (
     MAX_RV, MIN_RV, COE, DIF,
     load_coupling_matrices,
     generate_coupling_matrix,
@@ -48,7 +48,7 @@ from quantum_reservoir_qiskit import (
     MSE, RMSE, MAE, MAPE, compute_qlike, hitrate,
 )
 
-from quantum_reservoir_trotter import build_trotter_evolution
+from qrc.quantum_reservoir_trotter import build_trotter_evolution
 
 
 # ============================================================

@@ -17,7 +17,7 @@ D8  Year-by-year error, 1997-08..2026-08, one continuous run.
     across the N_RUNS coupling draws.
 
 Writes CSVs, PNGs and summary_d7_d8.md to results/diagnostics/.
-Usage:  python confidence_bands.py   (~2-4 min CPU)
+Usage:  python -m experiments.confidence_bands   (~2-4 min CPU)
 """
 
 import time
@@ -26,11 +26,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from quantum_reservoir_qiskit import MSE, COE
-from overfitting_diagnostics import (DATA, FULL, OUT, L_OOS, FEATURES_HOLD, C1, C2, C3, C4, INK, MUTED,
+from qrc.quantum_reservoir_qiskit import MSE, COE
+from experiments.overfitting_diagnostics import (DATA, FULL, OUT, L_OOS, FEATURES_HOLD, C1, C2, C3, C4, INK, MUTED,
                                      qrc_features, esn_features, lagged, rolling_fit, block_bootstrap_ci,
                                      md_table)
-from fast_qrc import FEATURES_QR2
+from qrc.fast_qrc import FEATURES_QR2
 
 N_RUNS = 20
 PAPER_MI = 1                       # QR2 coupling used in the paper

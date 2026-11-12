@@ -29,10 +29,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from quantum_reservoir_qiskit import MSE
-from overfitting_diagnostics import (md_table, DATA, OUT, L_OOS, WI, LAMBDA, C1, C2, C3, C4, INK, MUTED,
+from qrc.quantum_reservoir_qiskit import MSE
+from experiments.overfitting_diagnostics import (md_table, DATA, OUT, L_OOS, WI, LAMBDA, C1, C2, C3, C4, INK, MUTED,
                                      qrc_features, lagged, rolling_fit)
-from fast_qrc import FEATURES_QR1, FEATURES_QR2
+from qrc.fast_qrc import FEATURES_QR1, FEATURES_QR2
 
 SHOTS = [100, 300, 1000, 3000, 10000, None]
 S_HW = 0.79

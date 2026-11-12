@@ -25,8 +25,8 @@ The QRC readout is closed-form ridge regression (no iterative training), so the
 
 Usage
 -----
-  python overfitting_diagnostics.py            # everything (~10 min CPU)
-  python overfitting_diagnostics.py --quick    # fewer seeds / subsets
+  python -m experiments.overfitting_diagnostics            # everything (~10 min CPU)
+  python -m experiments.overfitting_diagnostics --quick    # fewer seeds / subsets
 """
 
 import argparse
@@ -40,8 +40,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 
-from quantum_reservoir_qiskit import load_coupling_matrices, build_ising_hamiltonian, compute_unitaries, MSE, COE
-from fast_qrc import run_reservoir, metrics, FEATURES_QR1, FEATURES_QR2
+from qrc.quantum_reservoir_qiskit import load_coupling_matrices, build_ising_hamiltonian, compute_unitaries, MSE, COE
+from qrc.fast_qrc import run_reservoir, metrics, FEATURES_QR1, FEATURES_QR2
 
 OUT = "results/diagnostics"
 NQ, TAU, K, LAMBDA = 10, 1.0, 3, 1e-8
@@ -60,7 +60,7 @@ plt.rcParams.update({
 })
 
 DATA = pd.read_csv("data/Data.CSV", index_col=0, parse_dates=True)
-FULL = pd.read_csv("1950-2026.csv", index_col=0, parse_dates=True)
+FULL = pd.read_csv("data/1950-2026.csv", index_col=0, parse_dates=True)
 MS = load_coupling_matrices("data/coeff_10.jld2")
 SUMMARY = []
 

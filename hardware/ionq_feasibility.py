@@ -19,8 +19,8 @@ IonQ mapping: RXX(theta) is one native MS gate (arbitrary angle), RZ is virtual
 
 Usage
 -----
-  python ionq_feasibility.py            # ~15-30 min (Aer runs dominate)
-  python ionq_feasibility.py --quick    # 120 time steps per noisy run, MSE columns skipped
+  python -m hardware.ionq_feasibility            # ~15-30 min (Aer runs dominate)
+  python -m hardware.ionq_feasibility --quick    # 120 time steps per noisy run, MSE columns skipped
 """
 
 import argparse
@@ -38,9 +38,9 @@ from qiskit.quantum_info import Operator
 from qiskit_aer import AerSimulator
 from qiskit_aer.noise import NoiseModel, depolarizing_error
 
-from quantum_reservoir_qiskit import rolling_ridge_regression, MSE
-from fast_qrc import run_reservoir, z_signs
-from run_research_suite import (
+from qrc.quantum_reservoir_qiskit import rolling_ridge_regression, MSE
+from qrc.fast_qrc import run_reservoir, z_signs
+from experiments.run_research_suite import (
     DATA, TARGET, Y, MS, CONFIGS, NQ, TAU, K, WI, TOTAL, L_OOS,
     trotter_circuits, graph_coupling, md_table, C1, C2, C3, INK, MUTED,
 )

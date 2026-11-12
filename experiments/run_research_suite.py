@@ -30,9 +30,9 @@ Experiments
 
 Usage
 -----
-  python run_research_suite.py                 # everything (~15 min on CPU)
-  python run_research_suite.py --only e1,e4    # a subset
-  python run_research_suite.py --quick         # fewer seeds/matrices (~4 min)
+  python -m experiments.run_research_suite                 # everything (~15 min on CPU)
+  python -m experiments.run_research_suite --only e1,e4    # a subset
+  python -m experiments.run_research_suite --quick         # fewer seeds/matrices (~4 min)
 """
 
 import argparse
@@ -51,11 +51,11 @@ from qiskit import QuantumCircuit, transpile
 from qiskit.quantum_info import Operator
 from qiskit.transpiler import CouplingMap
 
-from quantum_reservoir_qiskit import (
+from qrc.quantum_reservoir_qiskit import (
     load_coupling_matrices, generate_coupling_matrix, build_ising_hamiltonian, compute_unitaries, MSE,
 )
-from quantum_reservoir_trotter import build_trotter_evolution
-from fast_qrc import (
+from qrc.quantum_reservoir_trotter import build_trotter_evolution
+from qrc.fast_qrc import (
     run_reservoir, forecast, metrics, build_hardware_circuit,
     TOTAL, L_OOS, LAMBDA, FEATURES_QR1, FEATURES_QR2,
 )

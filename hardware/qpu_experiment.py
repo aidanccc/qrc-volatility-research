@@ -39,10 +39,10 @@ import pandas as pd
 from qiskit import QuantumCircuit
 from qiskit.quantum_info import Operator
 
-from quantum_reservoir_qiskit import MSE
-from overfitting_diagnostics import DATA, WI, lagged, rolling_fit
-from fast_qrc import FEATURES_QR1, z_signs
-from quantum_value_and_cost import circuit as reservoir_circuit, prune, probs_for
+from qrc.quantum_reservoir_qiskit import MSE
+from experiments.overfitting_diagnostics import DATA, WI, lagged, rolling_fit
+from qrc.fast_qrc import FEATURES_QR1, z_signs
+from experiments.quantum_value_and_cost import circuit as reservoir_circuit, prune, probs_for
 
 NQ, N_IN = 10, 7
 TEST = pd.date_range("2008-07-31", "2009-06-30", freq="ME")

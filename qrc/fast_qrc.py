@@ -33,7 +33,7 @@ Qubit convention matches quantum_reservoir_qiskit.py (Qiskit little-endian):
 import numpy as np
 from qiskit import QuantumCircuit
 
-from quantum_reservoir_qiskit import rolling_ridge_regression, MSE, RMSE, MAE, MAPE, compute_qlike, hitrate
+from qrc.quantum_reservoir_qiskit import rolling_ridge_regression, MSE, RMSE, MAE, MAPE, compute_qlike, hitrate
 
 
 # ------------------------------------------------------------------

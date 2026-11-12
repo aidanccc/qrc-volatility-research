@@ -41,7 +41,7 @@ STATIONARITY LOGIC:
 
 USAGE:
     Run from the repository root directory:
-        python preprocess.py
+        python -m pipeline.preprocess
 
     This must be run BEFORE any of the Jupyter notebooks.
 

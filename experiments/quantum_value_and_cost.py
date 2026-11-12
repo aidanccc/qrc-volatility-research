@@ -36,10 +36,10 @@ import matplotlib.pyplot as plt
 from qiskit import QuantumCircuit
 from qiskit.quantum_info import Operator
 
-from quantum_reservoir_qiskit import MSE, COE, MIN_RV, DIF
-from overfitting_diagnostics import (DATA, WI, L_OOS, MS, C1, C2, C3, C4, INK, MUTED, md_table, lagged,
+from qrc.quantum_reservoir_qiskit import MSE, COE, MIN_RV, DIF
+from experiments.overfitting_diagnostics import (DATA, WI, L_OOS, MS, C1, C2, C3, C4, INK, MUTED, md_table, lagged,
                                      rolling_fit, unitaries)
-from fast_qrc import FEATURES_QR1, FEATURES_QR2, input_states, z_signs
+from qrc.fast_qrc import FEATURES_QR1, FEATURES_QR2, input_states, z_signs
 
 OUT = Path("results/research")
 NQ, N_IN = 10, 7
@@ -146,7 +146,7 @@ def q1_q2():
     U_exact = unitaries(0, 1)[1]
     P = probs_for(U_exact)
     Fq = feats(P)
-    from overfitting_diagnostics import qrc_features
+    from experiments.overfitting_diagnostics import qrc_features
     ref = qrc_features(DATA, FEATURES_QR1, 1, 0, k_delay=1)
     assert np.abs(Fq[1:] - ref[1:]).max() < 1e-8, np.abs(Fq[1:] - ref[1:]).max()
     x1 = lagged(DATA, FEATURES_QR1, [1])

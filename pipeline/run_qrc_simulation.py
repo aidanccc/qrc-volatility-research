@@ -23,7 +23,7 @@ import os
 import numpy as np
 import pandas as pd
 
-from quantum_reservoir_qiskit import (
+from qrc.quantum_reservoir_qiskit import (
     # coupling matrices
     load_coupling_matrices,
     generate_coupling_matrix,
